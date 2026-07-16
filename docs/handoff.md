@@ -77,3 +77,47 @@ The full site is the project root. Key files:
 - `assets/img/*.webp` — article imagery
 - `dist/` — full mirror of the above
 - This handoff also includes `nginx-directives.conf` (current Plesk nginx block) for reference.
+
+---
+
+## Server-side operations log — 2026-07-16
+
+Work done while setting up automatic deployment and clearing a SEMrush audit.
+**These changes live in Plesk / GoDaddy's managed stack, NOT in this repo** — recorded here so they're not lost.
+
+### Automatic deployment (in-repo, see root `README.md`)
+- Push to `main` → GitHub Actions minifies CSS/JS (clean-css + terser), rsyncs to
+  `httpdocs`, then `chmod 644` files / `755` dirs on the server so nginx can read them.
+- **Gotcha that bit us:** files written via `mktemp` are mode `600`; `rsync -a` copied
+  that to the server → nginx returned **403** on CSS/JS → site rendered unstyled. Fixed
+  by `--chmod=D755,F644` on rsync + an explicit server-side `chmod` step. Don't remove it.
+
+### Plesk changes (done)
+- **PHP support: OFF** for the domain (site is 100% static). Killed the flood of
+  `AH01071: Primary script unknown` WordPress-probe errors and shrank attack surface.
+- **HSTS:** removed a duplicate `add_header Strict-Transport-Security` (it was declared
+  twice at server scope in the Additional nginx directives, sending the header twice).
+- **WAF (Comodo/ModSecurity):** disabled rule **`210831`** ("Rogue web site crawler")
+  via *WAF → Switch off security rules → Security rule IDs*, because it was 403-ing
+  crawlers by user-agent. Keep all other rules on (they block `/.git`, `/.env`,
+  `/wp-json`, restricted file extensions — all legit).
+
+### Known-open items (server-side)
+- **SemrushBot still gets 403** even after disabling rule 210831. Confirmed it's NOT
+  ModSecurity (no `security2:error` log entry) and NOT `.htaccess` — it's a bad-bot
+  filter in **GoDaddy's managed nginx/Apache layer**. Real users and Googlebot are
+  unaffected. Resolution = GoDaddy support ticket asking them to whitelist SemrushBot
+  and confirm Googlebot/Bingbot aren't caught. Repro:
+  `curl -sSI -A "SemrushBot/7~bl (+http://www.semrush.com/bot.html)" https://alymelife.com/`
+  (want 200, currently 403).
+- **HSTS on `www`:** `https://www.alymelife.com/` 301-redirects to apex but the redirect
+  response carries no HSTS header (Plesk's preferred-domain redirect lives in its own
+  block). Cosmetic — the apex sends `includeSubDomains`, so browsers already enforce
+  HTTPS on `www`. Optional fix: add `if ($host = www.alymelife.com) { return 301 https://alymelife.com$request_uri; }`
+  to the Additional nginx directives so nginx does the redirect in-block (inherits HSTS).
+
+### SEMrush audit fixes shipped in the repo
+Minified CSS/JS (CI), gated the homepage React/Babel "tweaks" editor behind `?edit=1`,
+created `privacy.html`, shortened the hyperthermia assessment `<title>` + fixed its
+JSON-LD (`WebApplication`→`WebPage`), bumped `?v=` cache-busters, and added contextual
+internal links to `blog-lyme-and-pregnancy.html` and `blog-lyme-vs-fibromyalgia.html`.
