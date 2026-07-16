@@ -48,11 +48,20 @@ jobs:
         run: |
           set -euo pipefail
           for f in styles.css pages.css chronicles.css; do
-            [ -f "$f" ] && npx --yes clean-css-cli@5 -o "$f.min" "$f" && mv "$f.min" "$f" && echo "minified $f"
+            [ -f "$f" ] || continue
+            tmp="$(mktemp)"
+            npx --yes clean-css-cli@5 -o "$tmp" "$f"
+            mv "$tmp" "$f"
+            echo "minified $f"
           done
           for f in app.js image-slot.js doc-page.js yt-embed.js; do
-            [ -f "$f" ] && npx --yes terser@5 "$f" --compress --mangle -o "$f.min" \
-              && node --check "$f.min" && mv "$f.min" "$f" && echo "minified $f"
+            [ -f "$f" ] || continue
+            # Temp keeps a .js extension so `node --check` recognizes the format.
+            tmp="$(mktemp --suffix=.js)"
+            npx --yes terser@5 "$f" --compress --mangle -o "$tmp"
+            node --check "$tmp"
+            mv "$tmp" "$f"
+            echo "minified $f"
           done
 
       - name: Set up SSH key
