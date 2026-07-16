@@ -106,6 +106,25 @@ jobs:
             -e "ssh -i ~/.ssh/deploy_key -p ${PORT} -o StrictHostKeyChecking=yes" \
             ./ "${SSH_USER}@${SSH_HOST}:${REMOTE_PATH}"
 
+      - name: Normalize & verify file permissions on server
+        # Belt-and-suspenders: make sure every deployed file is world-readable
+        # (nginx runs as a different user) and every directory is traversable,
+        # then print the result so the perms are visible in the run log.
+        env:
+          SSH_HOST: ${{ secrets.DEPLOY_SSH_HOST }}
+          SSH_USER: ${{ secrets.DEPLOY_SSH_USER }}
+          SSH_PORT: ${{ secrets.DEPLOY_SSH_PORT }}
+          REMOTE_PATH: ${{ secrets.DEPLOY_REMOTE_PATH }}
+        run: |
+          PORT="${SSH_PORT:-22}"
+          ssh -i ~/.ssh/deploy_key -p "${PORT}" -o StrictHostKeyChecking=yes \
+            "${SSH_USER}@${SSH_HOST}" \
+            "cd '${REMOTE_PATH}' \
+             && find . -type f -exec chmod 644 {} + \
+             && find . -type d -exec chmod 755 {} + \
+             && echo '--- perms after chmod ---' \
+             && ls -la styles.css pages.css chronicles.css app.js image-slot.js doc-page.js yt-embed.js index.html"
+
       - name: Clean up SSH key
         if: always()
         run: rm -f ~/.ssh/deploy_key
