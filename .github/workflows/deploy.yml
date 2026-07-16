@@ -52,6 +52,7 @@ jobs:
             tmp="$(mktemp)"
             npx --yes clean-css-cli@5 -o "$tmp" "$f"
             mv "$tmp" "$f"
+            chmod 644 "$f"   # mktemp makes 600; nginx must be able to read it
             echo "minified $f"
           done
           for f in app.js image-slot.js doc-page.js yt-embed.js; do
@@ -61,6 +62,7 @@ jobs:
             npx --yes terser@5 "$f" --compress --mangle -o "$tmp"
             node --check "$tmp"
             mv "$tmp" "$f"
+            chmod 644 "$f"   # mktemp makes 600; nginx must be able to read it
             echo "minified $f"
           done
 
@@ -91,6 +93,7 @@ jobs:
           # No --delete: we never remove server-side files (backups, uploads,
           # image-slot state) that aren't tracked in the repo. Matches deploy.sh.
           rsync -avz --human-readable \
+            --chmod=D755,F644 \
             --exclude '.git/' \
             --exclude '.github/' \
             --exclude '.gitignore' \
