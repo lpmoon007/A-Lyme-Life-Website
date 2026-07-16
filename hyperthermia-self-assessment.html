@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Is Whole-Body Hyperthermia Right for Your Lyme? Free 5-Min Assessment | A Lyme Life</title>
+<meta name="description" content="A free, interactive 5-minute self-assessment for chronic Lyme patients wondering whether whole-body hyperthermia is worth considering. Answer 13 questions, get your candidacy range instantly, and take a printable result to your doctor." />
+<link rel="canonical" href="https://alymelife.com/hyperthermia-self-assessment.html" />
+<meta name="robots" content="index,follow" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="A Lyme Life" />
+<meta property="og:title" content="Is Whole-Body Hyperthermia Right for Your Lyme? Free 5-Min Assessment" />
+<meta property="og:description" content="Answer 13 honest questions and get your candidacy range instantly — a clear, printable read on whether hyperthermia is worth discussing with a clinician." />
+<meta property="og:url" content="https://alymelife.com/hyperthermia-self-assessment.html" />
+<meta property="og:image" content="https://alymelife.com/assets/img/chronic-lyme-nervous-system-hyperthermia.webp" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Whole-Body Hyperthermia Self-Assessment",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "url": "https://alymelife.com/hyperthermia-self-assessment.html",
+  "description": "A free, interactive 5-minute self-assessment that scores whether whole-body hyperthermia may be worth discussing for your chronic Lyme, with a printable result to bring to your doctor.",
+  "author": {
+    "@type": "Person",
+    "name": "Christina Carter",
+    "url": "https://alymelife.com/about.html",
+    "sameAs": ["https://www.youtube.com/@alymelife", "https://www.instagram.com/alymelife/", "https://www.linkedin.com/in/christinalcarter/"]
+  },
+  "publisher": { "@type": "Organization", "name": "A Lyme Life" }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css?v=20260711" />
+<link rel="stylesheet" href="pages.css?v=20260711" />
+<link rel="icon" href="assets/favicon.png" />
+<style>
+  /* ===== Interactive assessment ===== */
+  .ia-hero{ padding:150px 0 34px; }
+  .ia-eyebrow{ font-family:var(--font-body); font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+    font-size:12px; color:var(--green-deep,#5a7235); margin-bottom:16px; }
+  .ia-hero h1{ font-family:var(--font-head); font-weight:600; line-height:1.04; letter-spacing:-.01em;
+    font-size:clamp(34px,5vw,52px); color:var(--ink,#2d3239); margin:0 0 18px; max-width:15em; }
+  .ia-hero h1 em{ font-style:italic; color:var(--green-deep,#5a7235); }
+  .ia-lede{ font-family:var(--font-body); font-size:clamp(17px,1.4vw,19px); line-height:1.62; color:var(--ink-soft,#4a5058); max-width:40em; }
+
+  .ia-meta{ display:flex; flex-wrap:wrap; gap:22px; margin:26px 0 6px; }
+  .ia-meta span{ display:inline-flex; align-items:center; gap:9px; font-family:var(--font-body); font-size:14.5px; font-weight:600; color:var(--ink-soft,#4a5058); }
+  .ia-meta svg{ width:19px; height:19px; color:var(--green,#6f8a42); flex:none; }
+
+  .ia-start{ margin-top:30px; display:inline-flex; align-items:center; gap:10px; font-family:var(--font-body); font-weight:800; font-size:16px; cursor:pointer;
+    background:var(--green,#6f8a42); color:#fff; border:none; padding:16px 30px; border-radius:999px;
+    box-shadow:0 8px 20px rgba(111,138,66,.28); transition:background .15s, transform .15s; }
+  .ia-start:hover{ background:var(--green-deep,#5a7235); transform:translateY(-1px); }
+  .ia-sig{ display:flex; align-items:center; gap:14px; margin-top:34px; }
+  .ia-sig .av{ width:50px; height:50px; border-radius:50%; overflow:hidden; flex:none; box-shadow:0 2px 8px rgba(45,50,57,.15); }
+  .ia-sig .av img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .ia-sig p{ margin:0; font-family:var(--font-body); font-size:13.5px; line-height:1.45; color:var(--ink-soft,#4a5058); max-width:30em; }
+  .ia-sig strong{ color:var(--ink,#2d3239); }
+
+  /* progress */
+  .ia-progress{ position:sticky; top:0; z-index:20; background:var(--bg,#faf7f0); padding:14px 0 10px; border-bottom:1px solid var(--line,#e7e1d4); }
+  .ia-progress .wrap{ display:flex; align-items:center; gap:16px; }
+  .ia-bar{ flex:1; height:7px; background:var(--bg-alt,#f2ede1); border-radius:999px; overflow:hidden; }
+  .ia-bar i{ display:block; height:100%; width:0; background:var(--green,#6f8a42); border-radius:999px; transition:width .3s ease; }
+  .ia-count{ font-family:var(--font-body); font-weight:700; font-size:13px; color:var(--ink-soft,#4a5058); white-space:nowrap; }
+
+  .ia-quiz{ padding:34px 0 90px; }
+  .ia-part{ margin-bottom:40px; }
+  .ia-part-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:4px; }
+  .ia-part-num{ font-family:var(--font-head); font-size:30px; font-weight:700; color:var(--green,#9dbe63); line-height:1; }
+  .ia-part-head h2{ font-family:var(--font-head); font-weight:600; font-size:clamp(22px,2.6vw,28px); color:var(--ink,#2d3239); margin:0; }
+  .ia-part-sub{ font-family:var(--font-body); font-size:15px; color:var(--ink-faint,#8a8f83); margin:4px 0 22px 44px; max-width:44em; line-height:1.5; }
+  @media (max-width:640px){ .ia-part-sub{ margin-left:0; } }
+
+  .ia-q{ padding:22px 0; border-top:1px solid var(--line,#e7e1d4); }
+  .ia-q:first-of-type{ border-top:none; }
+  .ia-q p.stmt{ font-family:var(--font-body); font-size:17px; line-height:1.5; color:var(--ink,#2d3239); margin:0 0 14px; }
+  .ia-q p.stmt b{ font-weight:800; }
+  .ia-opts{ display:flex; flex-wrap:wrap; gap:10px; }
+  .ia-opt{ flex:1 1 auto; min-width:132px; }
+  .ia-opt input{ position:absolute; opacity:0; pointer-events:none; }
+  .ia-opt label{ display:block; text-align:center; cursor:pointer; font-family:var(--font-body); font-weight:600; font-size:14.5px;
+    color:var(--ink-soft,#4a5058); background:#fff; border:1.5px solid var(--line,#e7e1d4); border-radius:12px; padding:12px 10px; transition:all .13s; }
+  .ia-opt label b{ display:block; font-size:12px; font-weight:800; letter-spacing:.02em; color:var(--ink-faint,#8a8f83); margin-bottom:3px; }
+  .ia-opt label:hover{ border-color:var(--green,#6f8a42); background:var(--green-tint,#eef2e2); }
+  .ia-opt input:checked + label{ border-color:var(--green-deep,#5a7235); background:var(--green-deep,#5a7235); color:#fff; box-shadow:0 4px 12px rgba(111,138,66,.24); }
+  .ia-opt input:checked + label b{ color:rgba(255,255,255,.82); }
+  .ia-opt input:focus-visible + label{ outline:2px solid var(--green-deep,#5a7235); outline-offset:2px; }
+
+  /* safety */
+  .ia-safety{ border:2px solid var(--accent,#c77b53); background:var(--accent-tint,#f6e8df); border-radius:16px; padding:26px 28px; margin:8px 0 36px; }
+  .ia-safety h3{ font-family:var(--font-head); font-weight:600; font-size:24px; color:#a85c37; margin:0 0 8px; display:flex; align-items:center; gap:10px; }
+  .ia-safety > p{ font-family:var(--font-body); font-size:15px; color:#7c4a2d; margin:0 0 18px; max-width:44em; line-height:1.55; }
+  .ia-safety .grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px 26px; }
+  @media (max-width:640px){ .ia-safety .grid{ grid-template-columns:1fr; } }
+  .ia-check{ display:flex; align-items:flex-start; gap:11px; cursor:pointer; font-family:var(--font-body); font-size:15px; color:#7c4a2d; line-height:1.4; padding:5px 0; }
+  .ia-check input{ appearance:none; -webkit-appearance:none; width:20px; height:20px; flex:none; margin-top:1px; border:1.5px solid #c77b53; border-radius:6px; background:#fff; cursor:pointer; position:relative; transition:all .12s; }
+  .ia-check input:checked{ background:#c77b53; border-color:#c77b53; }
+  .ia-check input:checked::after{ content:""; position:absolute; left:6px; top:2px; width:5px; height:10px; border:solid #fff; border-width:0 2.5px 2.5px 0; transform:rotate(45deg); }
+
+  .ia-submit-row{ display:flex; flex-direction:column; align-items:center; gap:12px; text-align:center; }
+  .ia-submit{ display:inline-flex; align-items:center; gap:10px; font-family:var(--font-body); font-weight:800; font-size:17px; cursor:pointer;
+    background:var(--green,#6f8a42); color:#fff; border:none; padding:17px 40px; border-radius:999px; box-shadow:0 8px 20px rgba(111,138,66,.28); transition:background .15s, transform .15s; }
+  .ia-submit:hover:not(:disabled){ background:var(--green-deep,#5a7235); transform:translateY(-1px); }
+  .ia-submit:disabled{ background:var(--line,#d9d3c6); color:var(--ink-faint,#8a8f83); cursor:not-allowed; box-shadow:none; }
+  .ia-remain{ font-family:var(--font-body); font-size:13.5px; color:var(--ink-faint,#8a8f83); min-height:1.2em; }
+
+  /* result */
+  .ia-result{ padding:130px 0 90px; }
+  .ia-result-inner{ max-width:760px; margin:0 auto; }
+  .ia-score-hero{ text-align:center; margin-bottom:36px; }
+  .ia-score-hero .eyebrow{ font-family:var(--font-body); font-weight:800; letter-spacing:.14em; text-transform:uppercase; font-size:12px; color:var(--green-deep,#5a7235); margin-bottom:14px; }
+  .ia-dial{ font-family:var(--font-head); font-weight:700; line-height:1; color:var(--ink,#2d3239); font-size:clamp(64px,12vw,110px); }
+  .ia-dial span{ font-size:.32em; color:var(--ink-faint,#8a8f83); font-weight:600; }
+  .ia-band-name{ font-family:var(--font-head); font-weight:600; font-style:italic; font-size:clamp(24px,3.4vw,34px); margin:8px 0 0; }
+
+  .ia-band-card{ border:1px solid var(--line,#e7e1d4); border-left-width:6px; border-radius:16px; padding:28px 30px; background:#fff; box-shadow:0 12px 34px rgba(45,50,57,.07); }
+  .ia-band-card h3{ font-family:var(--font-head); font-weight:600; font-size:24px; margin:0 0 10px; color:var(--ink,#2d3239); }
+  .ia-band-card p{ font-family:var(--font-body); font-size:16.5px; line-height:1.62; color:var(--ink-soft,#4a5058); margin:0; }
+  .band-low{ border-left-color:#8a8f83; } .band-low h3, .ia-band-name.low{ color:#6c7169; }
+  .band-mid{ border-left-color:var(--green,#6f8a42); } .band-mid h3, .ia-band-name.mid{ color:var(--green-deep,#5a7235); }
+  .band-high{ border-left-color:var(--accent,#c77b53); } .band-high h3, .ia-band-name.high{ color:#a85c37; }
+
+  .ia-flag{ margin-top:20px; border:1.5px solid var(--accent,#c77b53); background:var(--accent-tint,#f6e8df); border-radius:14px; padding:20px 24px; }
+  .ia-flag h4{ font-family:var(--font-body); font-weight:800; font-size:15px; color:#a85c37; margin:0 0 6px; display:flex; align-items:center; gap:8px; }
+  .ia-flag p{ font-family:var(--font-body); font-size:14.5px; line-height:1.55; color:#7c4a2d; margin:0; }
+
+  /* email gate */
+  .ia-gate{ margin-top:32px; background:var(--bg-alt,#f2ede1); border:1px solid var(--line,#e7e1d4); border-radius:18px; padding:34px 34px 30px; }
+  .ia-gate h3{ font-family:var(--font-head); font-weight:600; font-size:26px; margin:0 0 8px; color:var(--ink,#2d3239); }
+  .ia-gate .sub{ font-family:var(--font-body); font-size:15.5px; color:var(--ink-soft,#4a5058); margin:0 0 20px; line-height:1.55; max-width:42em; }
+  .ia-gate .fields{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  @media (max-width:560px){ .ia-gate .fields{ grid-template-columns:1fr; } }
+  .ia-gate label{ display:block; font-family:var(--font-body); font-weight:700; font-size:12.5px; color:var(--ink,#2d3239); margin-bottom:6px; }
+  .ia-gate input[type=text], .ia-gate input[type=email]{ width:100%; box-sizing:border-box; font-family:var(--font-body); font-size:15px; padding:13px 15px; border:1px solid var(--line,#e7e1d4); border-radius:10px; background:#fff; color:var(--ink,#2d3239); }
+  .ia-gate input:focus{ outline:none; border-color:var(--green,#6f8a42); box-shadow:0 0 0 3px rgba(111,138,66,.16); }
+  .ia-gate .go{ grid-column:1 / -1; margin-top:4px; width:100%; font-family:var(--font-body); font-weight:800; font-size:15.5px; cursor:pointer; background:var(--green,#6f8a42); color:#fff; border:none; padding:15px 20px; border-radius:999px; box-shadow:0 6px 16px rgba(111,138,66,.26); transition:background .15s; }
+  .ia-gate .go:hover{ background:var(--green-deep,#5a7235); }
+  .ia-fine{ margin:14px 0 0; font-family:var(--font-body); font-size:11.5px; line-height:1.5; color:var(--ink-faint,#8a8f83); text-align:center; }
+  .ia-fine a{ color:var(--green-deep,#5a7235); }
+  .hp{ position:absolute; left:-9999px; opacity:0; height:0; width:0; }
+
+  .ia-cta2{ margin-top:26px; text-align:center; }
+  .ia-cta2 p{ font-family:var(--font-body); font-size:15px; color:var(--ink-soft,#4a5058); margin:0 0 14px; }
+  .ia-cta2 a{ display:inline-flex; align-items:center; gap:9px; font-family:var(--font-body); font-weight:800; font-size:15.5px; text-decoration:none; color:var(--green-deep,#5a7235); border:1.5px solid var(--green-deep,#5a7235); padding:13px 26px; border-radius:999px; transition:all .15s; }
+  .ia-cta2 a:hover{ background:var(--green-deep,#5a7235); color:#fff; }
+  .ia-restart{ margin-top:30px; text-align:center; }
+  .ia-restart button{ font-family:var(--font-body); font-size:13.5px; color:var(--ink-faint,#8a8f83); background:none; border:none; cursor:pointer; text-decoration:underline; }
+
+  .ia-disc{ margin-top:34px; font-family:var(--font-body); font-size:12.5px; line-height:1.55; color:var(--ink-faint,#8a8f83); border-top:1px solid var(--line,#e7e1d4); padding-top:18px; }
+
+  [hidden]{ display:none !important; }
+</style>
+</head>
+<body>
+
+<header class="site-header" id="header">
+  <div class="wrap nav">
+    <a href="index.html" class="nav-logo" aria-label="A Lyme Life — home"><img src="assets/a-lyme-life-logo.webp" alt="A Lyme Life — chronic Lyme patient advocacy" width="126" height="52" decoding="async" fetchpriority="high" /></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#story">Christina's Story</a>
+      <a href="about.html">About</a>
+      <a href="chronicles.html">Chronicles</a>
+      <a href="videos.html">Watch &amp; Learn</a>
+      <a href="blog.html">Articles</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="index.html#contact" class="btn btn-primary">Book a Free Call</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h20M3 13h20M3 19h20"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== STEP 1: INTRO ===== -->
+<section class="ia-hero" id="introStep"><div class="wrap">
+  <div class="ia-eyebrow">Free Interactive Self-Assessment</div>
+  <h1>Is whole-body hyperthermia <em>right for you?</em></h1>
+  <p class="ia-lede">If you've treated your Lyme and still feel stuck, you've probably wondered whether hyperthermia is worth considering — or whether it's just another dead end. Answer 13 honest questions and you'll get your candidacy range on the spot, plus a clear read on what it means and what to do next.</p>
+
+  <div class="ia-meta">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Takes about 5 minutes</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Instant, private result</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6M9 16h6M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Printable to bring to your doctor</span>
+  </div>
+
+  <button class="ia-start" id="startBtn">Start the assessment
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </button>
+
+  <div class="ia-sig">
+    <div class="av"><img src="assets/img/christina-carter-lyme-advocate.webp" alt="Christina Carter" width="50" height="50" /></div>
+    <p><strong>Built by Christina Carter</strong><br/>From the questions my own family wished we'd asked years sooner. This won't diagnose you — it turns a vague "maybe" into something you can actually talk through with a clinician.</p>
+  </div>
+</div></section>
+
+<!-- ===== STEP 2: QUIZ ===== -->
+<div id="quizStep" hidden>
+  <div class="ia-progress">
+    <div class="wrap">
+      <div class="ia-bar"><i id="progFill"></i></div>
+      <div class="ia-count" id="progCount">0 of 13</div>
+    </div>
+  </div>
+
+  <section class="ia-quiz"><div class="wrap" style="max-width:820px;">
+    <form id="quizForm">
+      <div id="partsMount"></div>
+
+      <!-- safety -->
+      <div class="ia-safety">
+        <h3>⚠ First, a safety check</h3>
+        <p>Whole-body hyperthermia puts real demand on the heart and circulation. Before your score matters at all, these need a clinician's sign-off. Tick any that apply to you (this doesn't change your score — it just flags what to clear first):</p>
+        <div class="grid" id="safetyMount"></div>
+      </div>
+
+      <div class="ia-submit-row">
+        <button type="submit" class="ia-submit" id="seeResult" disabled>See my result
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <div class="ia-remain" id="remainMsg"></div>
+      </div>
+    </form>
+  </div></section>
+</div>
+
+<!-- ===== STEP 3: RESULT ===== -->
+<section class="ia-result" id="resultStep" hidden><div class="wrap">
+  <div class="ia-result-inner">
+    <div class="ia-score-hero">
+      <div class="eyebrow">Your result</div>
+      <div class="ia-dial"><span id="scoreOut">0</span> <span>/ 39</span></div>
+      <p class="ia-band-name" id="bandName"></p>
+    </div>
+
+    <div class="ia-band-card" id="bandCard">
+      <h3 id="bandHead"></h3>
+      <p id="bandBody"></p>
+    </div>
+
+    <div class="ia-flag" id="safetyFlag" hidden>
+      <h4>⚠ You flagged one or more safety items</h4>
+      <p>That doesn't automatically rule you out — but it means hyperthermia should only be explored with a specialist who has your full history. That's exactly what a consultation is for. Be sure to raise these first.</p>
+    </div>
+
+    <!-- email gate -->
+    <div class="ia-gate">
+      <h3>Get your printable result</h3>
+      <p class="sub">Tell me where to send it and I'll email you a clean, printable version of this result — with the full scored worksheet you can bring to your doctor. I'll also see your range, so if you book a call, I'll already have context.</p>
+      <form id="gateForm" action="https://formspree.io/f/xjgnbyye" method="POST">
+        <input type="hidden" name="_subject" value="New hyperthermia assessment result" />
+        <input type="hidden" name="_next" value="https://alymelife.com/is-hyperthermia-right-for-me.html" />
+        <input type="hidden" name="assessment_score" id="hidScore" value="" />
+        <input type="hidden" name="assessment_band" id="hidBand" value="" />
+        <input type="hidden" name="safety_flags" id="hidFlags" value="" />
+        <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <div class="fields">
+          <div>
+            <label for="gName">First name</label>
+            <input id="gName" type="text" name="first_name" autocomplete="given-name" placeholder="Your first name" required />
+          </div>
+          <div>
+            <label for="gEmail">Email</label>
+            <input id="gEmail" type="email" name="email" autocomplete="email" placeholder="you@email.com" required />
+          </div>
+          <button type="submit" class="go">Send Me the Printable Result →</button>
+        </div>
+        <p class="ia-fine">No spam, ever. Unsubscribe anytime. See our <a href="privacy.html">privacy note</a>.</p>
+      </form>
+    </div>
+
+    <div class="ia-cta2">
+      <p>Not sure what your range means for <em>you</em>? That's the whole reason I do free calls.</p>
+      <a href="index.html#contact">Book a free call with Christina
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <div class="ia-restart"><button type="button" id="restartBtn">Retake the assessment</button></div>
+
+    <p class="ia-disc"><strong>Medical disclaimer:</strong> This assessment is for educational purposes only and reflects personal experience and general information. It is not medical advice, diagnosis, or treatment, and it does not replace consultation with a qualified healthcare professional who knows your history. Scores are a reflection aid, not a clinical assessment. Whole-body hyperthermia carries real risks and is not appropriate for everyone. Christina Carter is a patient advocate and educator, not a licensed medical provider. Always consult a qualified clinician before pursuing any treatment. Individual results vary.</p>
+  </div>
+</div></section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/a-lyme-life-logo-footer.webp" alt="A Lyme Life — chronic Lyme patient advocacy" width="140" height="58" loading="lazy" decoding="async" />
+        <p>Patient advocacy and treatment guidance for chronic Lyme disease — from someone who lived it and found her way back.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="index.html#story">Christina's Story</a>
+        <a href="index.html#how">How It Works</a>
+        <a href="index.html#treatments">Treatments</a>
+        <a href="videos.html">Watch &amp; Learn</a>
+        <a href="blog.html">Articles</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="index.html#contact">Book a Free Call</a>
+        <a href="https://www.youtube.com/@alymelife" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.instagram.com/alymelife/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/christinalcarter/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://thelymespecialist.com" target="_blank" rel="noopener">The Lyme Specialist</a>
+        <a href="https://www.lymeimmunotherapy.com" target="_blank" rel="noopener">Lyme Re-code</a>
+      </div>
+    </div>
+    <div class="footer-disclaimer"><strong>Medical disclaimer:</strong> Christina Carter is a patient advocate and educator, not a licensed medical provider. Content here is shared from personal experience and for educational purposes only — it is not medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional. Individual results vary.</div>
+    <div class="footer-bottom"><span>© 2026 A Lyme Life · Christina Carter. All rights reserved.</span><span>Designed with warmth for those still searching.</span></div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+(function(){
+  var PARTS = [
+    { n:1, title:"You've given standard treatment a fair shot",
+      sub:"Hyperthermia is usually considered <em>after</em> conventional treatment has stalled — not instead of it.",
+      qs:[
+        "I've been actively treating Lyme for <b>6 months or longer</b> and still have significant symptoms.",
+        "I've completed one or more courses of <b>antibiotics or herbal protocols</b> and either relapsed or never fully recovered.",
+        "I feel like I've \u201ctried everything\u201d and keep hitting the same wall."
+      ]},
+    { n:2, title:"Your symptoms are chronic and disruptive",
+      sub:"The longer and deeper the burden, the more a whole-body approach tends to be discussed.",
+      qs:[
+        "My symptoms have lasted <b>a year or longer</b>.",
+        "Fatigue, pain, or brain fog meaningfully <b>limit my daily life</b> — work, parenting, or activity.",
+        "My symptoms <b>flare and remit in cycles</b> rather than steadily improving."
+      ]},
+    { n:3, title:"Your infection behaves like it's \u201cdeep-seated\u201d",
+      sub:"Relapse patterns and co-infections point to persistence that surface treatment doesn't reach.",
+      qs:[
+        "I improve on treatment but <b>relapse when I stop</b>.",
+        "I suspect or have tested positive for <b>co-infections</b> (Bartonella, Babesia, etc.).",
+        "I've been told my labs look \u201cnormal,\u201d but I know something is still wrong."
+      ]},
+    { n:4, title:"Your immune system hasn't \u201creset\u201d",
+      sub:"This is the gap moderate hyperthermia paired with Treg therapy is built to address.",
+      qs:[
+        "Even after treatment \u201ckills the bacteria,\u201d my immune system doesn't seem to <b>recognize or clear</b> what's left.",
+        "I'm drawn to approaches that help the <b>immune system do the work</b>, not just add another antibiotic."
+      ]},
+    { n:5, title:"You're practically ready to act",
+      sub:"Hyperthermia is a real undertaking. Honest logistics now save heartache later.",
+      qs:[
+        "I'm able (or willing) to <b>travel for treatment</b> if it's the right fit.",
+        "I have <b>support</b> — a partner, family member, or friend — for a recovery period."
+      ]}
+  ];
+  var SAFETY = [
+    "Heart or cardiovascular disease","Uncontrolled high or low blood pressure",
+    "Pregnancy, or trying to conceive","Recent stroke, blood clots, or aneurysm",
+    "Severe kidney, liver, or lung compromise","Certain implants or a pacemaker",
+    "Uncontrolled seizures","Active cancer treatment (coordinate first)"
+  ];
+  var SCALE = [["0","Never"],["1","Sometimes"],["2","Often"],["3","Always"]];
+  var TOTAL_Q = 13, MAX = 39, KEY = "hyp-assess-v1";
+
+  var introStep=document.getElementById("introStep"),
+      quizStep=document.getElementById("quizStep"),
+      resultStep=document.getElementById("resultStep"),
+      partsMount=document.getElementById("partsMount"),
+      safetyMount=document.getElementById("safetyMount"),
+      progFill=document.getElementById("progFill"),
+      progCount=document.getElementById("progCount"),
+      seeResult=document.getElementById("seeResult"),
+      remainMsg=document.getElementById("remainMsg"),
+      quizForm=document.getElementById("quizForm");
+
+  // build questions
+  var qi=0, html="";
+  PARTS.forEach(function(p){
+    html+='<div class="ia-part"><div class="ia-part-head"><span class="ia-part-num">'+p.n+'</span><h2>'+p.title+'</h2></div>'
+        + '<div class="ia-part-sub">'+p.sub+'</div>';
+    p.qs.forEach(function(q){
+      var name="q"+qi;
+      html+='<div class="ia-q"><p class="stmt">'+q+'</p><div class="ia-opts">';
+      SCALE.forEach(function(s){
+        var id=name+"_"+s[0];
+        html+='<div class="ia-opt"><input type="radio" name="'+name+'" id="'+id+'" value="'+s[0]+'"/>'
+            + '<label for="'+id+'"><b>'+s[0]+'</b>'+s[1]+'</label></div>';
+      });
+      html+='</div></div>';
+      qi++;
+    });
+    html+='</div>';
+  });
+  partsMount.innerHTML=html;
+  safetyMount.innerHTML=SAFETY.map(function(s,i){
+    return '<label class="ia-check"><input type="checkbox" name="s'+i+'" value="1"/><span>'+s+'</span></label>';
+  }).join("");
+
+  // persistence
+  function save(){
+    var d={a:{},s:{}};
+    for(var i=0;i<TOTAL_Q;i++){ var el=quizForm.querySelector('input[name="q'+i+'"]:checked'); if(el) d.a[i]=el.value; }
+    SAFETY.forEach(function(_,i){ if(quizForm.querySelector('input[name="s'+i+'"]').checked) d.s[i]=1; });
+    try{ localStorage.setItem(KEY, JSON.stringify(d)); }catch(e){}
+  }
+  function restore(){
+    try{
+      var d=JSON.parse(localStorage.getItem(KEY)||"{}");
+      if(d.a) Object.keys(d.a).forEach(function(i){ var el=quizForm.querySelector('#q'+i+'_'+d.a[i]); if(el) el.checked=true; });
+      if(d.s) Object.keys(d.s).forEach(function(i){ var el=quizForm.querySelector('input[name="s'+i+'"]'); if(el) el.checked=true; });
+    }catch(e){}
+  }
+  function answered(){ var c=0; for(var i=0;i<TOTAL_Q;i++){ if(quizForm.querySelector('input[name="q'+i+'"]:checked')) c++; } return c; }
+  function updateProg(){
+    var c=answered();
+    progFill.style.width=(c/TOTAL_Q*100)+"%";
+    progCount.textContent=c+" of "+TOTAL_Q;
+    var left=TOTAL_Q-c;
+    seeResult.disabled = left>0;
+    remainMsg.textContent = left>0 ? (left+(left===1?" question":" questions")+" to go") : "All set — see your result.";
+  }
+  quizForm.addEventListener("change", function(){ save(); updateProg(); });
+
+  function score(){ var t=0; for(var i=0;i<TOTAL_Q;i++){ var el=quizForm.querySelector('input[name="q'+i+'"]:checked'); if(el) t+=parseInt(el.value,10); } return t; }
+  function flags(){ var f=[]; SAFETY.forEach(function(s,i){ if(quizForm.querySelector('input[name="s'+i+'"]').checked) f.push(s); }); return f; }
+
+  var BANDS=[
+    { max:13, key:"low", name:"Foundation first",
+      head:"It may not be your next step — yet.",
+      body:"Your picture points to earlier-stage work: confirming the diagnosis, addressing co-infections, and building a foundation before an intensive therapy. That's genuinely good news — it often means gentler options are still on the table. Start with the basics and reassess." },
+    { max:26, key:"mid", name:"Worth a conversation",
+      head:"You have several candidacy markers.",
+      body:"You're carrying the kind of chronic, relapsing picture where whole-body hyperthermia is often discussed — but the details matter. A conversation can help you weigh it honestly against where you are in treatment, and whether moderate or extreme protocols fit your situation." },
+    { max:39, key:"high", name:"Strong candidate profile",
+      head:"This is the picture hyperthermia is designed for.",
+      body:"Long-standing, relapsing, treatment-resistant Lyme with an immune system that won't reset — this is exactly the profile where moderate hyperthermia paired with Treg therapy comes up most. The right next move is a focused conversation about protocol, timing, and safety." }
+  ];
+  function bandFor(t){ for(var i=0;i<BANDS.length;i++){ if(t<=BANDS[i].max) return BANDS[i]; } return BANDS[BANDS.length-1]; }
+
+  function showStep(which){
+    introStep.hidden = which!=="intro";
+    quizStep.hidden = which!=="quiz";
+    resultStep.hidden = which!=="result";
+    window.scrollTo(0,0);
+  }
+
+  document.getElementById("startBtn").addEventListener("click", function(){ showStep("quiz"); updateProg(); });
+
+  quizForm.addEventListener("submit", function(e){
+    e.preventDefault();
+    if(answered()<TOTAL_Q) return;
+    var t=score(), b=bandFor(t), f=flags();
+    // animate count up (timer-based so it survives background throttling)
+    var out=document.getElementById("scoreOut"), dur=650, t0=Date.now();
+    out.textContent="0";
+    var timer=setInterval(function(){
+      var p=Math.min(1,(Date.now()-t0)/dur);
+      out.textContent=Math.round(p*t);
+      if(p>=1) clearInterval(timer);
+    },30);
+    document.getElementById("bandName").textContent=b.name;
+    document.getElementById("bandName").className="ia-band-name "+b.key;
+    document.getElementById("bandHead").textContent=b.head;
+    document.getElementById("bandBody").textContent=b.body;
+    document.getElementById("bandCard").className="ia-band-card band-"+b.key;
+    document.getElementById("safetyFlag").hidden = f.length===0;
+    document.getElementById("hidScore").value=t+" / "+MAX;
+    document.getElementById("hidBand").value=b.name;
+    document.getElementById("hidFlags").value=f.length? f.join("; ") : "none";
+    showStep("result");
+  });
+
+  document.getElementById("restartBtn").addEventListener("click", function(){
+    try{ localStorage.removeItem(KEY); }catch(e){}
+    quizForm.reset();
+    updateProg();
+    showStep("intro");
+  });
+
+  restore();
+  updateProg();
+})();
+</script>
+</body>
+</html>

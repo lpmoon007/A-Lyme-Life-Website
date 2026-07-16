@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Is Whole-Body Hyperthermia Right for Me? — A Self-Assessment | A Lyme Life</title>
+<meta name="description" content="A free, 5-minute self-assessment from A Lyme Life to help you gauge whether whole-body hyperthermia may be worth discussing for your chronic Lyme — a scored worksheet you can bring to your doctor." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Mulish:ital,wght@0,400;0,600;0,700;0,800&display=swap" rel="stylesheet" />
+<style>
+  doc-page:not(:defined){visibility:hidden}
+  :root{
+    --bg:#faf7f0; --bg-alt:#f2ede1; --surface:#ffffff;
+    --ink:#2d3239; --ink-soft:#555b62; --ink-faint:#8b9097; --line:#e3ddd0;
+    --green:#9dbe63; --green-deep:#6f8a42; --green-tint:#eef2e2;
+    --accent:#c77b53; --accent-tint:#f6e8df;
+    --font-head:'Cormorant Garamond', Georgia, serif;
+    --font-body:'Newsreader', Georgia, serif;
+    --font-ui:'Mulish', system-ui, sans-serif;
+  }
+  *{ box-sizing:border-box; }
+  doc-page{ font-family:var(--font-body); color:var(--ink); line-height:1.6; font-size:11pt; }
+  h1,h2,h3,h4{ font-family:var(--font-head); font-weight:600; line-height:1.12; color:var(--ink); margin:0; }
+  p{ margin:0 0 10px; }
+  a{ color:var(--green-deep); }
+  a:hover{ color:var(--accent); }
+  .eyebrow{ font-family:var(--font-ui); font-weight:800; font-size:9.5pt; letter-spacing:.16em; text-transform:uppercase; color:var(--green-deep); }
+
+  /* ---- Masthead ---- */
+  .masthead{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding-bottom:16px; border-bottom:2px solid var(--green); margin-bottom:26px; }
+  .masthead img{ height:44px; width:auto; display:block; }
+  .masthead .tag{ font-family:var(--font-ui); font-size:8.5pt; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-faint); text-align:right; line-height:1.5; }
+
+  .doc-title{ font-size:30pt; line-height:1.05; margin:6px 0 12px; letter-spacing:-.01em; }
+  .doc-title em{ font-style:italic; color:var(--green-deep); }
+  .lede{ font-size:12.5pt; color:var(--ink-soft); max-width:44em; }
+  .lede.sig{ font-family:var(--font-head); font-style:italic; font-size:13pt; color:var(--ink); margin-top:14px; }
+
+  /* ---- How to use ---- */
+  .howto{ background:var(--green-tint); border:1px solid #dce6c4; border-radius:12px; padding:20px 24px; margin:24px 0 30px; break-inside:avoid; }
+  .howto h3{ font-size:16pt; margin-bottom:8px; }
+  .howto p{ font-size:10.5pt; color:var(--ink-soft); margin-bottom:8px; }
+  .scale-key{ display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+  .scale-key span{ font-family:var(--font-ui); font-size:9pt; font-weight:700; background:#fff; border:1px solid var(--line); border-radius:999px; padding:5px 12px; color:var(--ink-soft); }
+  .scale-key b{ color:var(--green-deep); }
+
+  /* ---- Question sections ---- */
+  .part{ margin-bottom:26px; break-inside:avoid; }
+  .part-head{ display:flex; align-items:baseline; gap:12px; margin-bottom:4px; }
+  .part-num{ font-family:var(--font-head); font-size:22pt; font-weight:700; color:var(--green); line-height:1; }
+  .part-head h2{ font-size:17pt; }
+  .part-sub{ font-family:var(--font-ui); font-size:9.5pt; color:var(--ink-faint); margin:2px 0 14px 40px; }
+
+  table.q{ width:100%; border-collapse:collapse; }
+  table.q th{ font-family:var(--font-ui); font-size:8pt; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-faint); text-align:center; padding:0 0 8px; }
+  table.q th.stmt{ text-align:left; }
+  table.q td{ padding:9px 0; border-top:1px solid var(--line); vertical-align:middle; }
+  table.q td.stmt{ font-size:10.5pt; color:var(--ink); padding-right:14px; }
+  table.q td.stmt b{ color:var(--ink); }
+  table.q td.box{ width:34px; text-align:center; }
+  .bubble{ width:20px; height:20px; border:1.5px solid var(--green); border-radius:50%; display:inline-block; }
+  .colhead{ width:34px; }
+
+  /* ---- Safety screen ---- */
+  .safety{ border:2px solid var(--accent); background:var(--accent-tint); border-radius:12px; padding:20px 24px; margin:8px 0 30px; break-inside:avoid; }
+  .safety h3{ font-size:16pt; color:#a85c37; margin-bottom:6px; display:flex; align-items:center; gap:10px; }
+  .safety p{ font-size:10pt; color:#7c4a2d; margin-bottom:10px; }
+  .safety ul{ margin:0; padding-left:20px; columns:2; column-gap:28px; font-size:10pt; color:#7c4a2d; }
+  .safety li{ margin-bottom:5px; break-inside:avoid; }
+  .safety .flag{ font-family:var(--font-ui); font-weight:700; font-size:9.5pt; color:#a85c37; margin-top:12px; }
+
+  /* ---- Score ---- */
+  .score-block{ break-before:page; }
+  .total-line{ display:flex; align-items:center; justify-content:center; gap:16px; background:var(--bg-alt); border-radius:12px; padding:18px 24px; margin:6px 0 26px; }
+  .total-line .lbl{ font-family:var(--font-head); font-size:18pt; color:var(--ink); }
+  .total-line .blank{ width:70px; height:44px; border:2px solid var(--green); border-radius:10px; background:#fff; }
+  .total-line .of{ font-family:var(--font-ui); font-size:11pt; color:var(--ink-faint); font-weight:700; }
+
+  .bands{ display:flex; flex-direction:column; gap:14px; }
+  .band{ display:grid; grid-template-columns:96px 1fr; gap:18px; align-items:start; border:1px solid var(--line); border-left-width:5px; border-radius:10px; padding:16px 20px; break-inside:avoid; }
+  .band.low{ border-left-color:var(--ink-faint); }
+  .band.mid{ border-left-color:var(--green); }
+  .band.high{ border-left-color:var(--accent); }
+  .band .range{ font-family:var(--font-head); font-size:20pt; font-weight:700; color:var(--ink); line-height:1; }
+  .band .range span{ display:block; font-family:var(--font-ui); font-size:8pt; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); margin-top:6px; }
+  .band h4{ font-size:14pt; margin-bottom:4px; }
+  .band.mid h4{ color:var(--green-deep); }
+  .band.high h4{ color:var(--accent); }
+  .band p{ font-size:10pt; color:var(--ink-soft); margin:0; }
+
+  /* ---- CTA ---- */
+  .cta{ margin-top:30px; background:var(--bg-deep, #2d3239); color:#fff; border-radius:14px; padding:28px 30px; text-align:center; break-inside:avoid; }
+  .cta h3{ color:#fff; font-size:20pt; margin-bottom:8px; }
+  .cta p{ color:#cfd3cb; font-size:10.5pt; max-width:34em; margin:0 auto 16px; }
+  .cta .btn{ display:inline-block; font-family:var(--font-ui); font-weight:800; font-size:11pt; background:var(--green); color:#20261a; text-decoration:none; padding:13px 28px; border-radius:999px; }
+  .cta .url{ display:block; margin-top:14px; font-family:var(--font-ui); font-size:9.5pt; color:#9aa08f; letter-spacing:.04em; }
+
+  .disclaimer{ margin-top:24px; padding-top:16px; border-top:1px solid var(--line); font-size:8.5pt; color:var(--ink-faint); line-height:1.5; }
+
+  .foot{ display:flex; justify-content:space-between; align-items:center; font-family:var(--font-ui); font-size:8pt; color:var(--ink-faint); letter-spacing:.04em; }
+
+  @media print{ .cta .btn{ border:1px solid var(--green); } }
+
+  /* ---- screen-only print bar ---- */
+  .printbar{ position:fixed; top:16px; right:16px; z-index:50; display:flex; gap:10px; }
+  .printbar button{ font-family:var(--font-ui); font-weight:800; font-size:10.5pt; cursor:pointer;
+    background:var(--green, #6f8a42); color:#fff; border:none; padding:11px 20px; border-radius:999px;
+    box-shadow:0 4px 14px rgba(45,50,57,.22); display:inline-flex; align-items:center; gap:8px; }
+  .printbar button:hover{ background:var(--green-deep, #5a7235); }
+  .printbar svg{ width:15px; height:15px; }
+  @media print{ .printbar{ display:none !important; } }
+  @media (max-width:640px){ .printbar{ top:auto; bottom:16px; right:16px; left:16px; justify-content:center; } }
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#6f8a42"/><g fill="#faf7f0"><path d="M50 24c-9 0-16 7-16 16 0 12 16 24 16 24s16-12 16-24c0-9-7-16-16-16z" opacity=".25"/><text x="50" y="58" font-family="Georgia, serif" font-size="30" font-weight="700" text-anchor="middle">Hº</text></g></svg>
+</template>
+
+<div class="printbar">
+  <button onclick="window.print()" aria-label="Print or Save as PDF">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+    Print / Save as PDF
+  </button>
+</div>
+
+<doc-page size="letter" margin="0.7in">
+
+  <div class="masthead">
+    <img src="assets/a-lyme-life-logo.webp" alt="A Lyme Life" />
+    <div class="tag">Free Self-Assessment<br/>Bring it to your doctor</div>
+  </div>
+
+  <div class="eyebrow">A Lyme Life · Patient Worksheet</div>
+  <h1 class="doc-title">Is Whole-Body Hyperthermia <em>Right for Me?</em></h1>
+  <p class="lede">If you've treated your Lyme and still feel stuck, you've probably wondered whether hyperthermia is worth considering — or whether it's just another dead end. This 5-minute worksheet won't diagnose you. What it <em>will</em> do is turn a vague "maybe" into a clear picture you can talk through with a knowledgeable clinician.</p>
+  <p class="lede sig">I built this from the questions my own family wished we'd asked years sooner. — Christina</p>
+
+  <div class="howto">
+    <h3>How to use this</h3>
+    <p>Read each statement and score how true it is for you, right now. Add your scores at the end and find your range. There's no "passing" grade — a low score isn't bad news, it just points to a different next step.</p>
+    <div class="scale-key">
+      <span><b>0</b> — Not true / Never</span>
+      <span><b>1</b> — Sometimes</span>
+      <span><b>2</b> — Often</span>
+      <span><b>3</b> — Very true / Always</span>
+    </div>
+  </div>
+
+  <!-- PART 1 -->
+  <div class="part">
+    <div class="part-head"><span class="part-num">1</span><h2>You've given standard treatment a fair shot</h2></div>
+    <div class="part-sub">Hyperthermia is usually considered <em>after</em> conventional treatment has stalled — not instead of it.</div>
+    <table class="q">
+      <thead><tr><th class="stmt">Statement</th><th class="colhead">0</th><th class="colhead">1</th><th class="colhead">2</th><th class="colhead">3</th></tr></thead>
+      <tbody>
+        <tr><td class="stmt">I've been actively treating Lyme for <b>6 months or longer</b> and still have significant symptoms.</td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td></tr>
+        <tr><td class="stmt">I've completed one or more courses of <b>antibiotics or herbal protocols</b> and either relapsed or never fully recovered.</td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td></tr>
+        <tr><td class="stmt">I feel like I've "tried everything" and keep hitting the same wall.</td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PART 2 -->
+  <div class="part">
+    <div class="part-head"><span class="part-num">2</span><h2>Your symptoms are chronic and disruptive</h2></div>
+    <div class="part-sub">The longer and deeper the burden, the more a whole-body approach tends to be discussed.</div>
+    <table class="q">
+      <thead><tr><th class="stmt">Statement</th><th class="colhead">0</th><th class="colhead">1</th><th class="colhead">2</th><th class="colhead">3</th></tr></thead>
+      <tbody>
+        <tr><td class="stmt">My symptoms have lasted <b>a year or longer</b>.</td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td></tr>
+        <tr><td class="stmt">Fatigue, pain, or brain fog meaningfully <b>limit my daily life</b> — work, parenting, or activity.</td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td></tr>
+        <tr><td class="stmt">My symptoms <b>flare and remit in cycles</b> rather than steadily improving.</td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PART 3 -->
+  <div class="part">
+    <div class="part-head"><span class="part-num">3</span><h2>Your infection behaves like it's "deep-seated"</h2></div>
+    <div class="part-sub">Relapse patterns and co-infections point to persistence that surface treatment doesn't reach.</div>
+    <table class="q">
+      <thead><tr><th class="stmt">Statement</th><th class="colhead">0</th><th class="colhead">1</th><th class="colhead">2</th><th class="colhead">3</th></tr></thead>
+      <tbody>
+        <tr><td class="stmt">I improve on treatment but <b>relapse when I stop</b>.</td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td></tr>
+        <tr><td class="stmt">I suspect or have tested positive for <b>co-infections</b> (Bartonella, Babesia, etc.).</td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td></tr>
+        <tr><td class="stmt">I've been told my labs look "normal," but I know something is still wrong.</td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PART 4 -->
+  <div class="part">
+    <div class="part-head"><span class="part-num">4</span><h2>Your immune system hasn't "reset"</h2></div>
+    <div class="part-sub">This is the gap moderate hyperthermia paired with Treg therapy is built to address.</div>
+    <table class="q">
+      <thead><tr><th class="stmt">Statement</th><th class="colhead">0</th><th class="colhead">1</th><th class="colhead">2</th><th class="colhead">3</th></tr></thead>
+      <tbody>
+        <tr><td class="stmt">Even after treatment "kills the bacteria," my immune system doesn't seem to <b>recognize or clear</b> what's left.</td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td></tr>
+        <tr><td class="stmt">I'm drawn to approaches that help the <b>immune system do the work</b>, not just add another antibiotic.</td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PART 5 -->
+  <div class="part">
+    <div class="part-head"><span class="part-num">5</span><h2>You're practically ready to act</h2></div>
+    <div class="part-sub">Hyperthermia is a real undertaking. Honest logistics now save heartache later.</div>
+    <table class="q">
+      <thead><tr><th class="stmt">Statement</th><th class="colhead">0</th><th class="colhead">1</th><th class="colhead">2</th><th class="colhead">3</th></tr></thead>
+      <tbody>
+        <tr><td class="stmt">I'm able (or willing) to <b>travel for treatment</b> if it's the right fit.</td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td></tr>
+        <tr><td class="stmt">I have <b>support</b> — a partner, family member, or friend — for a recovery period.</td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td><td class="box"><span class="bubble"></span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SAFETY -->
+  <div class="safety">
+    <h3>⚠ First, a safety check</h3>
+    <p>Whole-body hyperthermia puts real demand on the heart and circulation. Before your score matters at all, these need a clinician's sign-off. Tick any that apply to you:</p>
+    <ul>
+      <li>Heart or cardiovascular disease</li>
+      <li>Uncontrolled high or low blood pressure</li>
+      <li>Pregnancy, or trying to conceive</li>
+      <li>Recent stroke, blood clots, or aneurysm</li>
+      <li>Severe kidney, liver, or lung compromise</li>
+      <li>Certain implants or a pacemaker</li>
+      <li>Uncontrolled seizures</li>
+      <li>Active cancer treatment (coordinate first)</li>
+    </ul>
+    <div class="flag">Ticked one or more? That doesn't automatically rule you out — but it means hyperthermia should only be explored with a specialist who has your full history. That's exactly what a consultation is for.</div>
+  </div>
+
+  <!-- SCORE -->
+  <div class="score-block">
+    <div class="eyebrow">Add It Up</div>
+    <h2 style="font-size:24pt; margin:8px 0 4px;">Your score</h2>
+    <p style="color:var(--ink-soft); font-size:10.5pt; max-width:40em;">Total your circled numbers across all five parts, then find your range below. Remember: this is a conversation-starter, not a verdict.</p>
+
+    <div class="total-line">
+      <span class="lbl">My total:</span>
+      <span class="blank"></span>
+      <span class="of">out of 39</span>
+    </div>
+
+    <div class="bands">
+      <div class="band low">
+        <div class="range">0–13<span>Foundation first</span></div>
+        <div>
+          <h4>It may not be your next step — yet.</h4>
+          <p>Your picture points to earlier-stage work: confirming the diagnosis, addressing co-infections, and building a foundation before an intensive therapy. That's genuinely good news — it often means gentler options are still on the table. Start with the basics and reassess.</p>
+        </div>
+      </div>
+      <div class="band mid">
+        <div class="range">14–26<span>Worth a conversation</span></div>
+        <div>
+          <h4>You have several candidacy markers.</h4>
+          <p>You're carrying the kind of chronic, relapsing picture where whole-body hyperthermia is often discussed — but the details matter. A conversation can help you weigh it honestly against where you are in treatment, and whether moderate or extreme protocols fit your situation.</p>
+        </div>
+      </div>
+      <div class="band high">
+        <div class="range">27–39<span>Strong candidate profile</span></div>
+        <div>
+          <h4>This is the picture hyperthermia is designed for.</h4>
+          <p>Long-standing, relapsing, treatment-resistant Lyme with an immune system that won't reset — this is exactly the profile where moderate hyperthermia paired with Treg therapy comes up most. The right next move is a focused conversation about protocol, timing, and safety.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h3>Not sure what your score means for <em>you</em>?</h3>
+    <p>That's the whole reason I do free calls. Bring this worksheet — we'll walk through your answers together and figure out whether hyperthermia belongs in your plan, or whether something else should come first.</p>
+    <a class="btn" href="https://alymelife.com/index.html#contact">Book a free call with Christina →</a>
+    <span class="url">alymelife.com</span>
+  </div>
+
+  <p class="disclaimer"><strong>Medical disclaimer:</strong> This worksheet is for educational purposes only and reflects personal experience and general information. It is not medical advice, diagnosis, or treatment, and it does not replace consultation with a qualified healthcare professional who knows your history. Scores are a reflection aid, not a clinical assessment. Whole-body hyperthermia carries real risks and is not appropriate for everyone. Christina Carter is a patient advocate and educator, not a licensed medical provider. Always consult a qualified clinician before pursuing any treatment. Individual results vary.</p>
+
+  <div class="foot" style="margin-top:18px;">
+    <span>© 2026 A Lyme Life · Christina Carter</span>
+    <span>alymelife.com · Sick of Lyme? So was I.</span>
+  </div>
+
+</doc-page>
+
+<script src="doc-page.js"></script>
+</body>
+</html>

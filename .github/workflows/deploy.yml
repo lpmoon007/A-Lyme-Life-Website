@@ -1,0 +1,78 @@
+name: Deploy to production (Plesk VPS)
+
+# Automatic deployment for alymelife.com
+# On every push to `main`, rsync the static site to the Plesk VPS web root.
+# Can also be run on demand from the Actions tab (workflow_dispatch).
+
+on:
+  push:
+    branches: [main]
+    # Skip deploys for changes that never reach the server anyway.
+    paths-ignore:
+      - 'docs/**'
+      - 'README.md'
+      - '.gitignore'
+  workflow_dispatch: {}
+
+# Never run two deploys at once; if a new push lands mid-deploy, let the
+# in-flight one finish (don't cancel a partial rsync to a live site).
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: rsync to httpdocs
+    runs-on: ubuntu-latest
+    # Bind to a GitHub Environment so you can (optionally) add required
+    # reviewers / protection rules later without touching this file.
+    environment:
+      name: production
+      url: https://alymelife.com
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up SSH key
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+
+      - name: Add server to known_hosts
+        env:
+          SSH_HOST: ${{ secrets.DEPLOY_SSH_HOST }}
+          SSH_PORT: ${{ secrets.DEPLOY_SSH_PORT }}
+        run: |
+          PORT="${SSH_PORT:-22}"
+          ssh-keyscan -p "$PORT" -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Deploy with rsync
+        env:
+          SSH_HOST: ${{ secrets.DEPLOY_SSH_HOST }}
+          SSH_USER: ${{ secrets.DEPLOY_SSH_USER }}
+          SSH_PORT: ${{ secrets.DEPLOY_SSH_PORT }}
+          REMOTE_PATH: ${{ secrets.DEPLOY_REMOTE_PATH }}
+        run: |
+          PORT="${SSH_PORT:-22}"
+          # Trailing slash on ./ means "contents of repo root", not the dir itself.
+          # No --delete: we never remove server-side files (backups, uploads,
+          # image-slot state) that aren't tracked in the repo. Matches deploy.sh.
+          rsync -avz --human-readable \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude '.gitignore' \
+            --exclude 'docs/' \
+            --exclude 'deploy.sh' \
+            --exclude 'README.md' \
+            --exclude 'dist/' \
+            --exclude '*.csv' \
+            --exclude '.DS_Store' \
+            -e "ssh -i ~/.ssh/deploy_key -p ${PORT} -o StrictHostKeyChecking=yes" \
+            ./ "${SSH_USER}@${SSH_HOST}:${REMOTE_PATH}"
+
+      - name: Clean up SSH key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key

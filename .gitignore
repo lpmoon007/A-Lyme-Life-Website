@@ -1,0 +1,19 @@
+# Deploy artifacts / local-only — never push or deploy
+dist/
+uploads/
+*-upload/
+_*-upload/
+screenshots/
+scraps/
+*.csv
+.image-slots.state.json
+.thumbnail
+SEO-GEO-audit.md
+design_handoff_*/
+blog-kit/
+chronicles-source/
+claude_code_handoff/
+favicon_update/
+linkedin_update/
+node_modules/
+.DS_Store

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" data-direction="sage">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta name="theme-color" content="#6f8a42" />
+<meta property="og:url" content="https://alymelife.com/videos.html" />
+<meta property="og:image" content="https://alymelife.com/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="A Lyme Life — chronic Lyme patient advocacy and treatment guidance" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Lyme &amp; Hyperthermia Video Library" />
+<meta name="twitter:description" content="Christina Carter's video library — real talk on chronic Lyme, hyperthermia, treatment abroad, and recovery, from a patient who lived it. Grouped by topic." />
+<meta name="twitter:image" content="https://alymelife.com/assets/og-image.png" />
+<title>Lyme &amp; Hyperthermia Video Library | A Lyme Life</title>
+<meta name="description" content="Christina Carter's video library — real talk on chronic Lyme, hyperthermia, treatment abroad, and recovery, from a patient who lived it. Grouped by topic." />
+<meta name="keywords" content="Lyme disease videos, whole-body hyperthermia, Lyme treatment, Treg therapy, Christina Carter, Lyme recovery" />
+<meta name="author" content="Christina Carter" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://alymelife.com/videos.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="A Lyme Life" />
+<meta property="og:title" content="Lyme &amp; Hyperthermia Video Library" />
+<meta property="og:description" content="Christina Carter's video library — real talk on chronic Lyme, hyperthermia, treatment abroad, and recovery, from a patient who lived it. Grouped by topic." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=Mulish:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Sacramento&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css?v=20260711" />
+<link rel="stylesheet" href="pages.css?v=20260711" />
+<style>
+  .playlist-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
+  .pl-card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(45,50,57,.06); display: flex; flex-direction: column; }
+  .pl-stage { position: relative; aspect-ratio: 16 / 9; border: 0; width: 100%; display: block; cursor: pointer; padding: 0; background: linear-gradient(135deg, #6f8a42, #4f6630); color: #fff; overflow: hidden; }
+  .pl-stage .pl-count { position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,.35); font-family: var(--font-body); font-weight: 700; font-size: .72rem; letter-spacing: .04em; padding: 4px 10px; border-radius: 999px; }
+  .pl-stage .pl-play { position: absolute; inset: 0; margin: auto; width: 60px; height: 60px; border-radius: 50%; background: rgba(255,255,255,.92); display: flex; align-items: center; justify-content: center; transition: transform .2s; }
+  .pl-stage:hover .pl-play { transform: scale(1.08); }
+  .pl-stage .pl-play::after { content: ""; margin-left: 4px; border-style: solid; border-width: 11px 0 11px 18px; border-color: transparent transparent transparent #6f8a42; }
+  .pl-stage .pl-label { position: absolute; left: 16px; bottom: 14px; right: 16px; text-align: left; font-family: var(--font-head); font-size: 1.3rem; font-weight: 600; text-shadow: 0 1px 6px rgba(0,0,0,.25); }
+  .pl-stage .pl-bg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+  .pl-stage .pl-scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.02) 42%, rgba(0,0,0,.58) 100%); }
+  .pl-stage .pl-play, .pl-stage .pl-label, .pl-stage .pl-count { z-index: 2; }
+  .pl-stage .pl-bg::part(empty) { display: none; }
+  .pl-stage:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .pl-stage iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .pl-meta { padding: 16px 18px 20px; }
+  .pl-meta .cat { font-family: var(--font-body); font-weight: 800; font-size: .7rem; letter-spacing: .07em; text-transform: uppercase; color: var(--green-deep); margin-bottom: 6px; }
+  .pl-meta h3 { margin: 0 0 6px; font-size: 1.18rem; }
+  .pl-meta p { margin: 0; color: var(--ink-soft); font-size: .98rem; line-height: 1.5; }
+  .pl-meta .pl-yt { display: inline-block; margin-top: 10px; font-family: var(--font-body); font-weight: 700; font-size: .9rem; color: var(--accent); text-decoration: none; }
+  .pl-meta .pl-yt:hover { text-decoration: underline; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "A Lyme Life Video Library",
+  "description": "Christina Carter's video library — real talk on chronic Lyme, whole-body hyperthermia, treatment abroad, and recovery.",
+  "url": "https://alymelife.com/videos.html",
+  "inLanguage": "en-US",
+  "about": [
+    { "@type": "MedicalCondition", "name": "Chronic Lyme disease" },
+    { "@type": "MedicalTherapy", "name": "Whole-body hyperthermia" }
+  ],
+  "author": { "@type": "Person", "name": "Christina Carter" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "A Lyme Life",
+    "logo": { "@type": "ImageObject", "url": "https://alymelife.com/assets/a-lyme-life-logo.webp" }
+  }
+}
+</script>
+</head>
+<body>
+
+<header class="site-header" id="header">
+  <div class="wrap nav">
+    <a href="index.html" class="nav-logo" aria-label="A Lyme Life — home"><img src="assets/a-lyme-life-logo.webp" alt="A Lyme Life — chronic Lyme patient advocacy" width="126" height="52" decoding="async" fetchpriority="high" /></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#story">Christina's Story</a>
+      <a href="about.html">About</a>
+      <a href="chronicles.html">Chronicles</a>
+      <a href="videos.html">Watch &amp; Learn</a>
+      <a href="blog.html">Articles</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="index.html#contact" class="btn btn-primary">Book a Free Call</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h20M3 13h20M3 19h20"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a> &nbsp;/&nbsp; Watch &amp; Learn</div>
+    <span class="eyebrow">Video Library</span>
+    <h1>Real talk about Lyme, treatment &amp; recovery.</h1>
+    <p class="lede">I've shared this journey openly for years — the treatments, the hard days, and the hope. These are the videos people find most helpful, grouped by where you might be right now. The full archive lives on my YouTube channel.</p>
+    <div class="hero-actions" style="margin-top:26px">
+      <a class="btn btn-primary" href="https://www.youtube.com/@alymelife/videos" target="_blank" rel="noopener">Full archive on YouTube <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="https://www.instagram.com/alymelife/" target="_blank" rel="noopener">Follow on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap">
+
+    <!-- START HERE / TREATMENT -->
+    <div class="vgroup">
+      <div class="vgroup-head"><h2>Start here: understanding Lyme &amp; treatment</h2><span class="count">Watch first</span></div>
+      <p class="intro">New to all this? Start with these — what the path to recovery can look like, what whole-body hyperthermia involves, and an honest answer to the question everyone asks about cost.</p>
+      <div class="video-grid">
+        <div class="video-card reveal">
+          <div class="video-thumb"><div class="yt" data-yt="BtNanQLP_kc"></div></div>
+          <div class="video-meta"><div class="cat">Education</div><h3>Exploring Lyme disease therapies in the 21st century</h3><p>A full lecture: the components of recovery and holistic approaches to overcoming Lyme.</p></div>
+        </div>
+        <div class="video-card reveal">
+          <div class="video-thumb"><div class="yt" data-yt="Cl048xtFd7w"></div></div>
+          <div class="video-meta"><div class="cat">Hyperthermia</div><h3>Whole-body hyperthermia: was it worth the money?</h3><p>My most-asked question — answered honestly about treatment at Klinik St. Georg.</p></div>
+        </div>
+        <div class="video-card reveal">
+          <div class="video-thumb"><div class="yt" data-yt="zlXXLg4hd2I"></div></div>
+          <div class="video-meta"><div class="cat">Treatment</div><h3>Inside a day of treatment</h3><p>A real update from the middle of the protocol — what the daily process is like.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAMILY / HOPE / THERAPIES -->
+    <div class="vgroup">
+      <div class="vgroup-head"><h2>Our family, hope &amp; other therapies</h2><span class="count">The journey</span></div>
+      <p class="intro">Lyme touched all of us. These share our son's progress, a powerful recovery story, and other therapies worth understanding.</p>
+      <div class="video-grid">
+        <div class="video-card reveal">
+          <div class="video-thumb"><div class="yt" data-yt="Dat7Ag8IKKM"></div></div>
+          <div class="video-meta"><div class="cat">Our Family</div><h3>The Boy Wonder: our son's progress</h3><p>Real, joyful milestones from our son's treatment journey.</p></div>
+        </div>
+        <div class="video-card reveal">
+          <div class="video-thumb"><div class="yt" data-yt="So2K68r8pOY"></div></div>
+          <div class="video-meta"><div class="cat">Success Story</div><h3>Justin &amp; Christa: a journey to life</h3><p>A moving recovery story — tough to watch, but worth it.</p></div>
+        </div>
+        <div class="video-card reveal">
+          <div class="video-thumb"><div class="yt" data-yt="1XEv85WgiZI"></div></div>
+          <div class="video-meta"><div class="cat">Immunotherapy</div><h3>Your immune system isn't broken — it's been hijacked</h3><p>How T-regulatory (Treg) cell therapy retrains a misguided immune system to govern itself again — from Lyme Re-code by the Immunotherapy Institute.</p></div>
+        </div>
+        <div class="video-card reveal">
+          <div class="video-thumb"><div class="yt" data-yt="txjp8-urL3c"></div></div>
+          <div class="video-meta"><div class="cat">Living With Lyme</div><h3>The Spoon Theory</h3><p>A simple way to help your well friends and family understand what it's really like to live with Lyme.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BROWSE BY PLAYLIST -->
+    <div class="vgroup">
+      <div class="vgroup-head"><h2>Browse the full series by playlist</h2><span class="count">Deep dives</span></div>
+      <p class="intro">I've documented this whole journey in detail — dozens of videos, organized into playlists. Click any one to start watching right here, or open it on YouTube for the full list.</p>
+      <div class="playlist-grid">
+
+        <div class="pl-card">
+          <div class="pl-stage" data-list="PL2GFI9Om09PmWiiGjtZbe6-TEKuKhRy3Q" role="button" tabindex="0" aria-label="Play: Understanding Hyperthermia"><image-slot class="pl-bg" id="pl-understanding" src="https://i.ytimg.com/vi/BtNanQLP_kc/maxresdefault.jpg" placeholder="Playlist thumbnail"></image-slot><span class="pl-scrim"></span><span class="pl-count">4 videos</span><span class="pl-play"></span><span class="pl-label">Understanding Hyperthermia</span></div>
+          <div class="pl-meta"><div class="cat">Hyperthermia · Learn</div><h3>What hyperthermia is &amp; how it works</h3><p>The essentials of whole-body hyperthermia for Lyme, explained.</p><a class="pl-yt" href="https://www.youtube.com/playlist?list=PL2GFI9Om09PmWiiGjtZbe6-TEKuKhRy3Q" target="_blank" rel="noopener">Open on YouTube →</a></div>
+        </div>
+
+        <div class="pl-card">
+          <div class="pl-stage" data-list="PL2GFI9Om09Pna6D0P5sVeeKv4R6FYXxHL" role="button" tabindex="0" aria-label="Play: Preparing for Hyperthermia"><image-slot class="pl-bg" id="pl-preparing" placeholder="Playlist thumbnail"></image-slot><span class="pl-scrim"></span><span class="pl-count">11 videos</span><span class="pl-play"></span><span class="pl-label">Preparing for Treatment</span></div>
+          <div class="pl-meta"><div class="cat">Pre-Hyperthermia</div><h3>Getting ready before you go</h3><p>How we prepared our bodies and lives before treatment in Germany.</p><a class="pl-yt" href="https://www.youtube.com/playlist?list=PL2GFI9Om09Pna6D0P5sVeeKv4R6FYXxHL" target="_blank" rel="noopener">Open on YouTube →</a></div>
+        </div>
+
+        <div class="pl-card">
+          <div class="pl-stage" data-list="PL2GFI9Om09Plu5P7Ax8urOA2NvAp0IrsE" role="button" tabindex="0" aria-label="Play: Treatment in Germany"><image-slot class="pl-bg" id="pl-germany-treat" src="https://i.ytimg.com/vi/zlXXLg4hd2I/maxresdefault.jpg" placeholder="Playlist thumbnail"></image-slot><span class="pl-scrim"></span><span class="pl-count">15 videos</span><span class="pl-play"></span><span class="pl-label">Treatment in Germany</span></div>
+          <div class="pl-meta"><div class="cat">Klinik St. Georg</div><h3>Our treatment, day by day</h3><p>An honest, inside look at whole-body hyperthermia at Klinik St. Georg.</p><a class="pl-yt" href="https://www.youtube.com/playlist?list=PL2GFI9Om09Plu5P7Ax8urOA2NvAp0IrsE" target="_blank" rel="noopener">Open on YouTube →</a></div>
+        </div>
+
+        <div class="pl-card">
+          <div class="pl-stage" data-list="PL2GFI9Om09PmQIbZcNqnzlGT4srrtNdd9" role="button" tabindex="0" aria-label="Play: Post-Hyperthermia Updates"><image-slot class="pl-bg" id="pl-post" src="https://i.ytimg.com/vi/tHaM1zaJYw0/maxresdefault.jpg" placeholder="Playlist thumbnail"></image-slot><span class="pl-scrim"></span><span class="pl-count">17 videos</span><span class="pl-play"></span><span class="pl-label">Life After Hyperthermia</span></div>
+          <div class="pl-meta"><div class="cat">Post-Hyperthermia · Recovery</div><h3>The honest long-term recovery</h3><p>Months of real updates on how I felt after treatment — the glitches and the gains few ever show.</p><a class="pl-yt" href="https://www.youtube.com/playlist?list=PL2GFI9Om09PmQIbZcNqnzlGT4srrtNdd9" target="_blank" rel="noopener">Open on YouTube →</a></div>
+        </div>
+
+        <div class="pl-card">
+          <div class="pl-stage" data-list="PL2GFI9Om09PlHXuJlLpIjD9RE4TlXC1uh" role="button" tabindex="0" aria-label="Play: Wiegman Protocol"><image-slot class="pl-bg" id="pl-wiegman" src="https://i.ytimg.com/vi/xSeesXlWpso/maxresdefault.jpg" placeholder="Playlist thumbnail"></image-slot><span class="pl-scrim"></span><span class="pl-count">5 videos</span><span class="pl-play"></span><span class="pl-label">The Wiegman Protocol</span></div>
+          <div class="pl-meta"><div class="cat">Treatment · Protocol</div><h3>Our Wiegman Protocol journey</h3><p>The full documented series — see the <a href="blog-wiegman-protocol.html">written guide</a> too.</p><a class="pl-yt" href="https://www.youtube.com/playlist?list=PL2GFI9Om09PlHXuJlLpIjD9RE4TlXC1uh" target="_blank" rel="noopener">Open on YouTube →</a></div>
+        </div>
+
+        <div class="pl-card">
+          <div class="pl-stage" data-list="PL2GFI9Om09PldESS1cwfACW0LAOxEQiu-" role="button" tabindex="0" aria-label="Play: Stem Cell Treatment"><image-slot class="pl-bg" id="pl-stemcell" placeholder="Playlist thumbnail"></image-slot><span class="pl-scrim"></span><span class="pl-count">6 videos</span><span class="pl-play"></span><span class="pl-label">Stem Cell Treatment</span></div>
+          <div class="pl-meta"><div class="cat">Treatment · Alternative</div><h3>My stem cell treatment</h3><p>What the stem cell experience was actually like — more in the <a href="blog-alternative-therapies.html">alternative therapies guide</a>.</p><a class="pl-yt" href="https://www.youtube.com/playlist?list=PL2GFI9Om09PldESS1cwfACW0LAOxEQiu-" target="_blank" rel="noopener">Open on YouTube →</a></div>
+        </div>
+
+        <div class="pl-card">
+          <div class="pl-stage" data-list="PL2GFI9Om09Pndu59gWGju3oXhHOOXZe5a" role="button" tabindex="0" aria-label="Play: Lyme FAQs"><image-slot class="pl-bg" id="pl-faqs" src="https://i.ytimg.com/vi/Cl048xtFd7w/maxresdefault.jpg" placeholder="Playlist thumbnail"></image-slot><span class="pl-scrim"></span><span class="pl-count">2 videos</span><span class="pl-play"></span><span class="pl-label">Lyme FAQs</span></div>
+          <div class="pl-meta"><div class="cat">Questions &amp; Answers</div><h3>Your most-asked questions</h3><p>Straight answers to the questions people ask me most about Lyme and treatment.</p><a class="pl-yt" href="https://www.youtube.com/playlist?list=PL2GFI9Om09Pndu59gWGju3oXhHOOXZe5a" target="_blank" rel="noopener">Open on YouTube →</a></div>
+        </div>
+
+        <div class="pl-card">
+          <div class="pl-stage" data-list="PL2GFI9Om09PlsBMNiL4mNwvhWi9F8eBEk" role="button" tabindex="0" aria-label="Play: What Do I Make for Dinner?"><image-slot class="pl-bg" id="pl-dinner" src="https://i.ytimg.com/vi/MWitspytr1w/maxresdefault.jpg" placeholder="Playlist thumbnail"></image-slot><span class="pl-scrim"></span><span class="pl-count">7 videos</span><span class="pl-play"></span><span class="pl-label">What's for Dinner?</span></div>
+          <div class="pl-meta"><div class="cat">Living Well · Food</div><h3>Cooking with Lyme</h3><p>Real meals for exhausted days — pairs with the <a href="blog-lyme-diet.html">Lyme diet guide</a>.</p><a class="pl-yt" href="https://www.youtube.com/playlist?list=PL2GFI9Om09PlsBMNiL4mNwvhWi9F8eBEk" target="_blank" rel="noopener">Open on YouTube →</a></div>
+        </div>
+
+        <div class="pl-card">
+          <div class="pl-stage" data-list="PL2GFI9Om09PlxN9VRmUUFZuk-3eLjWHu2" role="button" tabindex="0" aria-label="Play: Two More Steps — Motivation"><image-slot class="pl-bg" id="pl-motivation" src="https://i.ytimg.com/vi/So2K68r8pOY/maxresdefault.jpg" placeholder="Playlist thumbnail"></image-slot><span class="pl-scrim"></span><span class="pl-count">4 videos</span><span class="pl-play"></span><span class="pl-label">Two More Steps</span></div>
+          <div class="pl-meta"><div class="cat">Encouragement</div><h3>Motivation to keep going</h3><p>For the hard days. As I always say — just two more steps.</p><a class="pl-yt" href="https://www.youtube.com/playlist?list=PL2GFI9Om09PlxN9VRmUUFZuk-3eLjWHu2" target="_blank" rel="noopener">Open on YouTube →</a></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="blog-cta" style="margin-top:48px">
+      <h2>Prefer to read?</h2>
+      <p>Every video has a written companion guide on the blog — easier to search, skim, and share.</p>
+      <a class="btn btn-primary" href="blog.html">Visit the blog <span class="arrow">→</span></a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/a-lyme-life-logo-footer.webp" alt="A Lyme Life — chronic Lyme patient advocacy" width="140" height="58" loading="lazy" decoding="async" />
+        <p>Patient advocacy and treatment guidance for chronic Lyme disease — from someone who lived it and found her way back.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="index.html#story">Christina's Story</a>
+        <a href="index.html#how">How It Works</a>
+        <a href="index.html#treatments">Treatments</a>
+        <a href="videos.html">Watch &amp; Learn</a>
+        <a href="blog.html">Articles</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="index.html#contact">Book a Free Call</a>
+        <a href="https://www.youtube.com/@alymelife" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.instagram.com/alymelife/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/christinalcarter/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://thelymespecialist.com" target="_blank" rel="noopener">The Lyme Specialist</a>
+        <a href="https://www.lymeimmunotherapy.com" target="_blank" rel="noopener">Lyme Re-code</a>
+      </div>
+    </div>
+    <div class="footer-disclaimer"><strong>Medical disclaimer:</strong> Christina Carter is a patient advocate and educator, not a licensed medical provider. Content here is shared from personal experience and for educational purposes only — it is not medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional. Individual results vary.</div>
+    <div class="footer-bottom"><span>© 2026 A Lyme Life · Christina Carter. All rights reserved.</span><span>Designed with warmth for those still searching.</span></div>
+  </div>
+</footer>
+
+<script src="image-slot.js"></script>
+<script src="yt-embed.js"></script>
+<script>
+  // Click-to-load YouTube playlist embeds (keeps the page fast).
+  document.querySelectorAll('.pl-stage').forEach(function (stage) {
+    function play() {
+      var list = stage.getAttribute('data-list');
+      if (!list) return;
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/videoseries?list=' + list + '&autoplay=1&rel=0';
+      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.setAttribute('title', stage.getAttribute('aria-label') || 'Playlist');
+      stage.innerHTML = '';
+      stage.appendChild(iframe);
+      stage.style.cursor = 'default';
+    }
+    stage.addEventListener('click', function (e) {
+      // In the editor, a click on the image placeholder fills it; otherwise play.
+      if (window.omelette && e.target.closest && e.target.closest('image-slot')) return;
+      play();
+    });
+    stage.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); }
+    });
+  });
+</script>
+<script src="app.js"></script>
+</body>
+</html>
