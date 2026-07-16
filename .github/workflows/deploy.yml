@@ -35,6 +35,26 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v5
 
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Minify CSS & JS for production
+        # Minifies the checked-out working copy only — the repo source files
+        # stay readable and hand-editable. The minified versions are what gets
+        # rsynced to the server. If minification fails, the job stops here and
+        # NOTHING is deployed (rsync never runs), so the live site is untouched.
+        run: |
+          set -euo pipefail
+          for f in styles.css pages.css chronicles.css; do
+            [ -f "$f" ] && npx --yes clean-css-cli@5 -o "$f.min" "$f" && mv "$f.min" "$f" && echo "minified $f"
+          done
+          for f in app.js image-slot.js doc-page.js yt-embed.js; do
+            [ -f "$f" ] && npx --yes terser@5 "$f" --compress --mangle -o "$f.min" \
+              && node --check "$f.min" && mv "$f.min" "$f" && echo "minified $f"
+          done
+
       - name: Set up SSH key
         run: |
           mkdir -p ~/.ssh
