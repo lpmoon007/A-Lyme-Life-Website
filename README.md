@@ -19,6 +19,12 @@ which `rsync`s the site to the Plesk VPS web root over SSH.
   Plesk → *Apache & nginx Settings → Additional nginx directives*, not in this
   repo. A reference copy is kept at [`docs/nginx-directives.conf`](docs/nginx-directives.conf).
   On any URL change, add a matching 301 there (in Plesk).
+- **CSS/JS are minified in CI, not in the repo.** Keep editing the readable
+  source files (`styles.css`, `pages.css`, `chronicles.css`, `app.js`,
+  `image-slot.js`, `doc-page.js`, `yt-embed.js`); the deploy workflow minifies
+  them (clean-css + terser) right before rsync, so only the served copies are
+  minified. When you change a CSS/JS file, bump its `?v=` cache-buster in the
+  `<link>`/`<script>` tags so returning visitors pick up the new version.
 
 ### One-time setup — required GitHub secrets
 
