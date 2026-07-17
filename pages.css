@@ -234,3 +234,8 @@
 .reviewed-note { font-family:var(--font-body,'Mulish',sans-serif); font-size:12.5px; color:var(--ink-faint,#8b9097);
   margin:12px 0 0; letter-spacing:.01em; }
 .reviewed-note time { color:var(--ink-soft,#555b62); font-weight:600; }
+/* Answer-first "Quick answer" block (GEO: extractable, self-contained) */
+.prose .quick-answer{background:var(--surface,#fff);border:1px solid var(--line,#e7e1d4);border-left:4px solid var(--green,#6f8a42);border-radius:12px;padding:18px 22px;margin:28px 0}
+.prose .quick-answer .qa-label{font-family:var(--font-body);font-weight:800;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--green-deep,#5a7235);margin:0 0 8px}
+.prose .quick-answer .qa-q{font-weight:700;color:var(--ink,#2d3239);margin:0 0 6px}
+.prose .quick-answer .qa-a{margin:0;color:var(--ink-soft,#4a5058);line-height:1.6}

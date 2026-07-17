@@ -244,3 +244,68 @@ document.documentElement.classList.add('js-anim');
     document.querySelectorAll('.share-native').forEach(function (b) { b.style.display = 'inline-flex'; });
   }
 })();
+
+/* ============================================================
+   Analytics events (GA4 / gtag) — measures the funnel so we can
+   optimize it. Fires nothing if gtag is unavailable (e.g. blocked).
+   Events: cta_book_call, newsletter_signup, assessment_submit,
+   outbound_partner_click, outbound_click, share, scroll_depth.
+   Mark cta_book_call / newsletter_signup / assessment_submit as
+   conversions in GA4 → Admin → Events.
+   ============================================================ */
+(function () {
+  function track(name, params) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+  }
+  var path = location.pathname + location.search;
+
+  // ---- Clicks: CTAs, partner/outbound links, share ----
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a, button.share-btn') : null;
+    if (!a) return;
+    var href = a.getAttribute && a.getAttribute('href') || '';
+    var text = (a.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80);
+
+    // Primary conversion CTA — every "Book a Free Call" / "Talk with Christina" points at #contact
+    if (href.indexOf('#contact') !== -1) {
+      track('cta_book_call', { link_text: text, page_path: path });
+      return;
+    }
+    // Share buttons
+    if (a.classList && a.classList.contains('share-btn')) {
+      track('share', { method: text || 'share', page_path: path });
+      return;
+    }
+    // Outbound links
+    if (/^https?:\/\//i.test(href) && href.indexOf(location.host) === -1) {
+      var isPartner = /thelymespecialist\.com|lymeimmunotherapy\.com/i.test(href);
+      track(isPartner ? 'outbound_partner_click' : 'outbound_click', { link_url: href, link_text: text, page_path: path });
+    }
+  }, true);
+
+  // ---- Form submits: newsletter vs. self-assessment ----
+  document.addEventListener('submit', function (e) {
+    var form = e.target;
+    if (!form || form.tagName !== 'FORM') return;
+    var action = form.getAttribute('action') || '';
+    if (action.indexOf('mkoajneb') !== -1) track('newsletter_signup', { page_path: path });
+    else if (action.indexOf('xjgnbyye') !== -1) track('assessment_submit', { page_path: path });
+  }, true);
+
+  // ---- Scroll depth (25/50/75/90%), once each ----
+  var marks = [25, 50, 75, 90], hit = {}, ticking = false;
+  function checkDepth() {
+    ticking = false;
+    var doc = document.documentElement, body = document.body;
+    var scrollable = Math.max(doc.scrollHeight, body ? body.scrollHeight : 0) - window.innerHeight;
+    if (scrollable <= 0) return;
+    var pct = Math.round((window.scrollY / scrollable) * 100);
+    for (var i = 0; i < marks.length; i++) {
+      var m = marks[i];
+      if (pct >= m && !hit[m]) { hit[m] = 1; track('scroll_depth', { percent: m, page_path: path }); }
+    }
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; (window.requestAnimationFrame || setTimeout)(checkDepth); }
+  }, { passive: true });
+})();
