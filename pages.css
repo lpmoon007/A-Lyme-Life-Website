@@ -239,3 +239,13 @@
 .prose .quick-answer .qa-label{font-family:var(--font-body);font-weight:800;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--green-deep,#5a7235);margin:0 0 8px}
 .prose .quick-answer .qa-q{font-weight:700;color:var(--ink,#2d3239);margin:0 0 6px}
 .prose .quick-answer .qa-a{margin:0;color:var(--ink-soft,#4a5058);line-height:1.6}
+
+/* Topic-cluster internal linking ("More in this series") */
+.cluster-nav{padding:14px 0 0}
+.cluster-nav .cn-box{background:var(--bg-alt,#f2ede1);border-radius:16px;padding:24px 28px}
+.cluster-nav .cn-label{font-family:var(--font-body);font-weight:800;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--green-deep,#5a7235);margin:0 0 14px}
+.cluster-nav .cn-links{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px 22px}
+.cluster-nav .cn-links li{margin:0}
+.cluster-nav .cn-links a{color:var(--ink,#2d3239);text-decoration:none;font-weight:600;border-bottom:1px solid var(--line,#e7e1d4);padding-bottom:2px}
+.cluster-nav .cn-links a:hover{color:var(--green-deep,#5a7235);border-bottom-color:var(--green,#6f8a42)}
+.cluster-nav .cn-pillar a{color:var(--green-deep,#5a7235);font-weight:800}
