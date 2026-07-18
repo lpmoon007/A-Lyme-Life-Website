@@ -719,3 +719,8 @@ form.sent .form-fields { display: none; }
 .blog-filters button:hover { border-color: var(--green, #9dbe63); color: var(--green-deep, #6f8a42); }
 .blog-filters button.active { background: var(--green-deep, #6f8a42); border-color: var(--green-deep, #6f8a42); color: #fff; }
 .post-card.filtered-out { display: none; }
+
+/* Accessibility: skip-to-content link (visually hidden until focused) */
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:1000;}
+.skip-link:focus{left:8px;top:8px;width:auto;height:auto;overflow:visible;padding:10px 16px;background:#6f8a42;color:#fff;font-weight:600;text-decoration:none;border-radius:0 0 8px 8px;box-shadow:0 2px 8px rgba(0,0,0,.25);outline:2px solid #fff;}
+#main-content{scroll-margin-top:90px;}

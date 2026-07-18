@@ -36,7 +36,7 @@
 <meta property="og:description" content="Honest, experience-based guides on chronic Lyme, whole-body hyperthermia, treatment abroad, costs, and recovery — by patient advocate Christina Carter." />
 
 <link rel="stylesheet" href="fonts.css?v=20260718" />
-<link rel="stylesheet" href="styles.css?v=20260716" />
+<link rel="stylesheet" href="styles.css?v=20260718" />
 <link rel="stylesheet" href="pages.css?v=20260718" />
 <script type="application/ld+json">
 {
@@ -57,6 +57,7 @@
 <link rel="alternate" type="application/rss+xml" title="A Lyme Life — Articles" href="https://alymelife.com/feed.xml" />
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <header class="site-header" id="header">
   <div class="wrap nav">
@@ -74,6 +75,8 @@
     </div>
   </div>
 </header>
+<a id="main-content" tabindex="-1"></a>
+
 
 <section class="page-hero">
   <div class="wrap">
@@ -833,6 +836,13 @@
       });
       bar.appendChild(b);
     });
+
+    // Deep-link support: honor ?q= on load so Google's sitelinks search box
+    // (WebSite SearchAction) and shared search URLs land on filtered results.
+    try {
+      var q0 = new URLSearchParams(window.location.search).get('q');
+      if (q0) { input.value = q0; state.q = q0; apply(); }
+    } catch (e) {}
   })();
 </script>
 <script src="app.js?v=20260716"></script>

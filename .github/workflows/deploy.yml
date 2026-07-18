@@ -66,6 +66,28 @@ jobs:
             echo "minified $f"
           done
 
+      - name: Minify HTML for production
+        # Same principle as CSS/JS: only the deployed copy is minified — repo
+        # source stays readable and hand-editable. JSON-LD blocks
+        # (<script type="application/ld+json">) are NOT touched by --minify-js,
+        # so structured data is preserved byte-for-byte. --case-sensitive and
+        # --keep-closing-slash preserve the site's custom <image-slot> element
+        # and XHTML-style self-closing tags.
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          for f in *.html; do
+            tmp="$(mktemp --suffix=.html)"
+            npx --yes html-minifier-terser@7 \
+              --collapse-whitespace --remove-comments \
+              --minify-css true --minify-js true \
+              --keep-closing-slash --case-sensitive \
+              -o "$tmp" "$f"
+            mv "$tmp" "$f"
+            chmod 644 "$f"   # mktemp makes 600; nginx must be able to read it
+            echo "minified $f"
+          done
+
       - name: Set up SSH key
         run: |
           mkdir -p ~/.ssh
