@@ -38,7 +38,7 @@
 
 <link rel="preload" as="image" href="assets/img/christina-carter-family-lyme-recovery.webp" fetchpriority="high" />
 <link rel="stylesheet" href="fonts.css?v=20260718" />
-<link rel="stylesheet" href="styles.css?v=20260716" />
+<link rel="stylesheet" href="styles.css?v=20260718" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,7 +50,12 @@
       "name": "A Lyme Life",
       "description": "Chronic Lyme disease treatment guidance from patient advocate Christina Carter.",
       "publisher": { "@id": "https://alymelife.com/#org" },
-      "inLanguage": "en"
+      "inLanguage": "en",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": { "@type": "EntryPoint", "urlTemplate": "https://alymelife.com/blog.html?q={search_term_string}" },
+        "query-input": "required name=search_term_string"
+      }
     },
     {
       "@type": "Organization",
@@ -63,7 +68,8 @@
       "founder": { "@id": "https://alymelife.com/#christina" },
       "sameAs": [
         "https://www.youtube.com/@alymelife",
-        "https://www.instagram.com/alymelife/"
+        "https://www.instagram.com/alymelife/",
+        "https://www.linkedin.com/in/christinalcarter/"
       ]
     },
     {
@@ -124,6 +130,7 @@
 <link rel="alternate" type="application/rss+xml" title="A Lyme Life — Articles" href="https://alymelife.com/feed.xml" />
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <!-- ===================== HEADER ===================== -->
 <header class="site-header" id="header">
@@ -146,6 +153,8 @@
     </div>
   </div>
 </header>
+<a id="main-content" tabindex="-1"></a>
+
 
 <a id="top"></a>
 
