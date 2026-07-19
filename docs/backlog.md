@@ -48,3 +48,25 @@ Handler lives at the bottom of `app.js` (`guideForm`).
 - **GoDaddy: whitelist SemrushBot** — pending support ticket. Clears the ~317
   false-positive "broken JS/CSS" SEMrush warnings (crawler is 403'd by GoDaddy's
   managed bad-bot filter; real browsers are unaffected).
+
+## GA4 key events (conversions) — TABLED 2026-07-19
+
+The site already fires the events; only the GA4-side marking is left. GA4's
+"Create event" button forces a trigger/URL — ignore it. Two easy ways:
+
+- **Easiest:** trigger the event once on the live site (e.g., click a "Book a
+  Free Call" button = `cta_book_call`), then GA4 → Admin → Data display →
+  Events → **Recent events** tab → click the **★ star** on the event's row.
+- **By name:** top-left **"+ Create ▾" dropdown → Key event** → type the name →
+  toggle "Mark as key event" → Create.
+
+Mark these five (exact names):
+`book_call_scheduled` (booked a call), `generate_lead` (guide download),
+`cta_book_call` (clicked book), `newsletter_signup`, `assessment_submit`.
+
+Cleanup: the pre-existing `close_convert_lead` / `qualify_lead` never fire
+(site doesn't send them) — ⋮ → "Unmark as key event" to clear them.
+
+Note: moving to HubSpot will also track bookings HubSpot-side, so GA4 key
+events are for attribution (which traffic source converts), not the source of
+truth for who booked.
