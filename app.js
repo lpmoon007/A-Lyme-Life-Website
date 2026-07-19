@@ -315,22 +315,39 @@ document.documentElement.classList.add('js-anim');
   var form = document.getElementById('guideForm');
   if (!form) return;
   var success = document.getElementById('guideSuccess');
+  var errBox  = document.getElementById('guideError');
+  var btn     = form.querySelector('button[type="submit"]');
+  function onSuccess() {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'generate_lead', {
+        lead_source: 'lead_magnet',
+        content_id: 'lyme-treatment-questions',
+        page_path: location.pathname
+      });
+    }
+    if (success) { form.hidden = true; success.hidden = false; }
+    var dl = document.getElementById('guideDownload');
+    if (dl) { try { dl.focus(); } catch (err) {} }
+  }
+  function onError() {
+    if (btn) { btn.disabled = false; btn.removeAttribute('aria-busy'); }
+    if (errBox) errBox.hidden = false;
+  }
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    var data = new FormData(form);
-    var reveal = function () {
-      if (typeof window.gtag === 'function') {
-        window.gtag('event', 'generate_lead', {
-          lead_source: 'lead_magnet',
-          content_id: 'lyme-treatment-questions',
-          page_path: location.pathname
-        });
-      }
-      if (success) { form.hidden = true; success.hidden = false; }
-      var dl = document.getElementById('guideDownload');
-      if (dl) { try { dl.focus(); } catch (err) {} }
-    };
-    fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
-      .then(reveal).catch(reveal);
+    if (errBox) errBox.hidden = true;
+    if (btn) { btn.disabled = true; btn.setAttribute('aria-busy', 'true'); }
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+      .then(function (res) {
+        // fetch only rejects on network errors, NOT on HTTP 4xx/5xx —
+        // so we must check res.ok before treating it as a real success.
+        if (res.ok) { onSuccess(); return; }
+        onError();
+      })
+      .catch(onError);
   });
 })();

@@ -37,7 +37,7 @@
 
 <link rel="stylesheet" href="fonts.css?v=20260718" />
 <link rel="stylesheet" href="styles.css?v=20260718" />
-<link rel="stylesheet" href="pages.css?v=20260719" />
+<link rel="stylesheet" href="pages.css?v=20260720" />
 
 <script type="application/ld+json">
 {
@@ -116,12 +116,13 @@
           <label for="lo-email">Email</label>
           <input type="email" id="lo-email" name="email" required autocomplete="email" placeholder="you@example.com" />
           <button type="submit" class="btn btn-primary lo-btn">Send me the guide <span class="arrow">→</span></button>
+          <p class="lo-error" id="guideError" hidden>Hmm — that didn't go through. Please try again, or <a href="index.html#contact">reach out here</a> and I'll send the guide to you directly.</p>
           <p class="lo-fine">No spam, ever. Unsubscribe anytime. We never sell your information.</p>
         </form>
         <div class="lo-success" id="guideSuccess" hidden>
           <div class="ico">✓</div>
-          <h2>It's yours — check your inbox too.</h2>
-          <p>I've emailed you a copy as well. Print it, star the questions that matter most for where you are, and bring it to your next appointment.</p>
+          <h2>Your guide is ready.</h2>
+          <p>Download it below, then print it and star the questions that matter most for where you are — and bring it to your next appointment.</p>
           <a class="btn btn-primary lo-btn" id="guideDownload" href="before-you-say-yes-lyme-treatment-questions.pdf" download>Download the guide (PDF)</a>
           <p class="lo-fine">Prefer to talk it through? <a href="index.html#contact">Book a free, no-pressure call →</a></p>
         </div>
@@ -162,6 +163,6 @@
 </footer>
 
 <script src="image-slot.js?v=20260716"></script>
-<script src="app.js?v=20260719"></script>
+<script src="app.js?v=20260720"></script>
 </body>
 </html>
