@@ -52,11 +52,7 @@ document.documentElement.classList.add('js-anim');
       const email = form.querySelector('#email');
       const stage = form.querySelector('#stage');
       const fname = form.querySelector('#fname');
-      const lname = form.querySelector('#lname');
-      [fname, lname].forEach((f) => {
-        const bad = !f.value.trim();
-        if (bad) ok = false;
-      });
+      if (fname && !fname.value.trim()) ok = false;
       const emailBad = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
       setInvalid(email, emailBad);
       if (emailBad) ok = false;
@@ -138,8 +134,7 @@ document.documentElement.classList.add('js-anim');
 
   // ---- Mobile sticky "Book a free call" bar ----
   if (!document.querySelector('.mobile-cta-bar')) {
-    var hasContact = !!document.getElementById('contact');
-    var ctaHref = hasContact ? '#contact' : 'index.html#contact';
+    var ctaHref = 'book.html';
     var bar = document.createElement('div');
     bar.className = 'mobile-cta-bar';
     bar.innerHTML = '<a href="' + ctaHref + '"><span>Free, no-pressure call with someone who\u2019s been there</span><strong>Book&nbsp;Now&nbsp;\u2192</strong></a>';
@@ -349,5 +344,18 @@ document.documentElement.classList.add('js-anim');
         onError();
       })
       .catch(onError);
+  });
+})();
+
+
+/* ---- Booking conversion: fire GA4 event when HubSpot Meetings confirms a booking ---- */
+(function () {
+  window.addEventListener('message', function (e) {
+    var d = e && e.data;
+    var booked = d && (d.meetingBookSucceeded === true ||
+                       (typeof d === 'object' && d.eventName === 'meetingBookSucceeded'));
+    if (booked && typeof window.gtag === 'function') {
+      window.gtag('event', 'book_call_scheduled', { method: 'hubspot_meetings', page_path: location.pathname });
+    }
   });
 })();

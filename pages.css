@@ -283,3 +283,9 @@
 .lead-promo .btn{flex:0 0 auto;white-space:nowrap}
 .lead-optin .lo-error{background:#fbeae6;border:1px solid #e6b6a8;color:#9c3b28;font-size:.86rem;line-height:1.45;border-radius:8px;padding:10px 12px;margin:12px 0 0}
 .lead-optin .lo-error a{color:#9c3b28;font-weight:800;text-decoration:underline}
+
+/* ===== Booking page (HubSpot scheduler) ===== */
+.booking-embed{min-height:640px;background:var(--surface,#fff);border:1px solid var(--line,#e3ddd0);border-radius:14px;padding:8px;overflow:hidden}
+.booking-embed .meetings-iframe-container{min-height:620px}
+.booking-alt{text-align:center;color:var(--ink-soft,#555b62);font-size:.95rem;margin:18px 0 0}
+.booking-alt a{color:var(--green-deep,#6f8a42);font-weight:800}
