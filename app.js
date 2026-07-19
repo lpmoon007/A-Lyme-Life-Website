@@ -309,3 +309,28 @@ document.documentElement.classList.add('js-anim');
     if (!ticking) { ticking = true; (window.requestAnimationFrame || setTimeout)(checkDepth); }
   }, { passive: true });
 })();
+
+/* ---- Lead-magnet opt-in: AJAX submit, reveal instant download, fire GA lead event ---- */
+(function () {
+  var form = document.getElementById('guideForm');
+  if (!form) return;
+  var success = document.getElementById('guideSuccess');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var data = new FormData(form);
+    var reveal = function () {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'generate_lead', {
+          lead_source: 'lead_magnet',
+          content_id: 'lyme-treatment-questions',
+          page_path: location.pathname
+        });
+      }
+      if (success) { form.hidden = true; success.hidden = false; }
+      var dl = document.getElementById('guideDownload');
+      if (dl) { try { dl.focus(); } catch (err) {} }
+    };
+    fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+      .then(reveal).catch(reveal);
+  });
+})();
