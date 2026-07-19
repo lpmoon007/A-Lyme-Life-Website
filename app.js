@@ -261,8 +261,8 @@ document.documentElement.classList.add('js-anim');
     var href = a.getAttribute && a.getAttribute('href') || '';
     var text = (a.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80);
 
-    // Primary conversion CTA — every "Book a Free Call" / "Talk with Christina" points at #contact
-    if (href.indexOf('#contact') !== -1) {
+    // Primary conversion CTA — "Book a Free Call" / "Talk with Christina" now route to book.html
+    if (href.indexOf('book.html') !== -1 || href.indexOf('#contact') !== -1) {
       track('cta_book_call', { link_text: text, page_path: path });
       return;
     }
