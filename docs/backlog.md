@@ -45,9 +45,9 @@ Handler lives at the bottom of `app.js` (`guideForm`).
 - **GA4 conversions** — in GA4 Admin → Events, mark `generate_lead`,
   `cta_book_call`, `newsletter_signup`, and `assessment_submit` as conversions so
   they're measurable. (User-side, ~5 min.)
-- **GoDaddy: whitelist SemrushBot** — pending support ticket. Clears the ~317
-  false-positive "broken JS/CSS" SEMrush warnings (crawler is 403'd by GoDaddy's
-  managed bad-bot filter; real browsers are unaffected).
+- **GoDaddy: whitelist SemrushBot** — ✅ DONE 2026-07-19 (GoDaddy allowed
+  SemrushBot through the managed bad-bot filter). The ~317 false "broken JS/CSS"
+  SEMrush warnings should clear on the next crawl.
 
 ## GA4 key events (conversions) — TABLED 2026-07-19
 
