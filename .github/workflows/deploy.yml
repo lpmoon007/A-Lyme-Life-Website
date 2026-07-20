@@ -34,6 +34,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 2   # need the parent commit so we can diff changed pages for IndexNow
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -150,3 +152,20 @@ jobs:
       - name: Clean up SSH key
         if: always()
         run: rm -f ~/.ssh/deploy_key
+
+      - name: Notify IndexNow (Bing, Yandex, et al.) of changed pages
+        # Instantly tells IndexNow-participating engines which pages changed in
+        # this deploy so they recrawl fast. The key is public by design (hosted
+        # at the keyLocation .txt below), so it isn't a secret. Never fails the
+        # deploy — search-engine notification is best-effort.
+        env:
+          INDEXNOW_KEY: 60374e204ee043e7c64b65f7ed0755e8
+        run: |
+          set -uo pipefail
+          git rev-parse HEAD~1 >/dev/null 2>&1 && CHANGED="$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- '*.html' || true)" || CHANGED=""
+          if [ -z "$CHANGED" ]; then echo "No HTML pages changed in this deploy — skipping IndexNow."; exit 0; fi
+          BODY="$(CHANGED="$CHANGED" python3 -c "import os,json; b='https://alymelife.com'; k=os.environ['INDEXNOW_KEY']; u=sorted({(b+'/' if f=='index.html' else b+'/'+f) for f in os.environ['CHANGED'].split() if f}); print(json.dumps({'host':'alymelife.com','key':k,'keyLocation':b+'/'+k+'.txt','urlList':u}))")"
+          echo "Submitting to IndexNow: $BODY"
+          CODE="$(curl -sS -o /tmp/indexnow_resp -w '%{http_code}' -X POST 'https://api.indexnow.org/IndexNow' -H 'Content-Type: application/json; charset=utf-8' --data "$BODY" || echo 000)"
+          echo "IndexNow responded: HTTP $CODE"; cat /tmp/indexnow_resp 2>/dev/null || true
+          exit 0
