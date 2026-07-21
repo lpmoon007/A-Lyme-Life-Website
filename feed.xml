@@ -6,12 +6,19 @@
     <atom:link href="https://alymelife.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Chronic Lyme disease treatment guidance, patient experience, and honest answers from advocate Christina Carter.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Jul 2026 22:16:51 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2026 09:00:00 GMT</lastBuildDate>
     <image>
       <url>https://alymelife.com/assets/a-lyme-life-logo.webp</url>
       <title>A Lyme Life — Articles</title>
       <link>https://alymelife.com/</link>
     </image>
+    <item>
+      <title>Lyme Disease vs. MS: How to Tell Them Apart</title>
+      <link>https://alymelife.com/blog-lyme-vs-ms.html</link>
+      <guid>https://alymelife.com/blog-lyme-vs-ms.html</guid>
+      <pubDate>Tue, 21 Jul 2026 09:00:00 GMT</pubDate>
+      <description>Lyme and multiple sclerosis can look almost identical — and get confused both ways. The real differences in symptoms, MRI, spinal-fluid testing, and why it matters.</description>
+    </item>
     <item>
       <title>Lyme Disease Flare-Ups: What Triggers Them &amp; How to Calm One</title>
       <link>https://alymelife.com/blog-lyme-flare-ups.html</link>
