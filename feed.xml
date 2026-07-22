@@ -6,12 +6,19 @@
     <atom:link href="https://alymelife.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Chronic Lyme disease treatment guidance, patient experience, and honest answers from advocate Christina Carter.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Jul 2026 09:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 09:00:00 GMT</lastBuildDate>
     <image>
       <url>https://alymelife.com/assets/a-lyme-life-logo.webp</url>
       <title>A Lyme Life — Articles</title>
       <link>https://alymelife.com/</link>
     </image>
+    <item>
+      <title>Lyme Disease vs. Long COVID: How to Tell Them Apart</title>
+      <link>https://alymelife.com/blog-lyme-vs-long-covid.html</link>
+      <guid>https://alymelife.com/blog-lyme-vs-long-covid.html</guid>
+      <pubDate>Wed, 22 Jul 2026 09:00:00 GMT</pubDate>
+      <description>Chronic Lyme and Long COVID share almost the same symptoms. The real differences, why timing and testing matter, and why one is a treatable infection you don't want to miss.</description>
+    </item>
     <item>
       <title>Lyme Disease vs. MS: How to Tell Them Apart</title>
       <link>https://alymelife.com/blog-lyme-vs-ms.html</link>
