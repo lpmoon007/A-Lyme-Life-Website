@@ -190,8 +190,28 @@ Current: "The honest long-term recovery"
 >
 > I'm a chronic Lyme survivor and patient advocate, not a doctor — this is my experience, not medical advice.
 
-Other playlists (lower commercial priority — retitle later): Our Wiegman Protocol journey,
-My stem cell treatment, Your most-asked questions, Cooking with Lyme, Motivation to keep going.
+### Playlist E — `PL2GFI9Om09PldESS1cwfACW0LAOxEQiu-`
+Current: "My stem cell treatment"
+**YouTube title:** Stem Cell Treatment for Lyme Disease: My Experience
+**Description:**
+> What stem cell treatment for chronic Lyme was actually like — my honest experience → https://alymelife.com/blog-alternative-therapies.html
+>
+> Stem cell therapy comes up a lot in chronic Lyme circles, usually wrapped in hype. Here's the unvarnished version: what the stem cell experience was actually like for me, what it involved, and how I'd think about it as one piece of a bigger plan rather than a magic fix.
+>
+> More on stem cells & alternative Lyme therapies: https://alymelife.com/blog-alternative-therapies.html
+> Talk it through with me, free: https://alymelife.com/book.html
+>
+> I'm a chronic Lyme survivor and patient advocate, not a doctor — this is my experience, not medical advice.
+
+**Tags:** stem cell treatment for lyme, stem cells lyme disease, stem cell therapy lyme, chronic lyme stem cells, alternative lyme treatment, lyme treatment mexico
+
+Other playlists (lower commercial priority — retitle later): Your most-asked questions,
+Cooking with Lyme, Motivation to keep going.
+
+### Playlists embedded on-site (Path A — done)
+- "Getting ready before you go" (11) → `blog-germany.html`
+- "Our Wiegman Protocol journey" (5) → `blog-wiegman-protocol.html`
+- "My stem cell treatment" (6) → `blog-alternative-therapies.html`
 
 ---
 
