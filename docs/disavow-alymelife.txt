@@ -1,0 +1,138 @@
+# ---------------------------------------------------------------------------
+# A Lyme Life — Google disavow file  (DRAFT for review — DO NOT SUBMIT as-is)
+# Source: Semrush Backlink Analytics, referring domains, 2026-08-03
+# Profile: 125 referring domains / 252 backlinks / domain Authority Score 2
+#
+# KEPT (legitimate, NOT disavowed):
+#   bayarealyme.org (AS42, Bay Area Lyme Foundation), hometownstation.com (AS38,
+#   local press), thelymespecialist.com (AS14, partner), lymeimmunotherapy.com
+#   (partner, link pending — pre-whitelisted).
+#
+# HELD FOR YOUR REVIEW (NOT disavowed — decide yourself before adding):
+#   lifeonautismlane.com   — may be a real parent/community blog
+#   sendungsverfolgung24.org — 34 links from a German tracking site (odd; likely
+#                              a sitewide scraper link, but verify)
+#   mbprinteddroids.com, drjack.world — higher authority, uncertain
+#
+# Everything below is auto-generated spam: link farms, fake 'website worth/stats'
+# scrapers, junk directories, URL-shorteners, and PBN gibberish.
+# 118 domains disavowed.
+# ---------------------------------------------------------------------------
+domain:1000.co.in
+domain:1stcallglasscare.com
+domain:2x9.co
+domain:5913231.cc
+domain:all-aged-domains.com
+domain:alljobs.info
+domain:alltopleveldomains.space
+domain:allwebsitesdirectory.com
+domain:analyticshaven.top
+domain:anchorurl.cloud
+domain:atomizelink.icu
+domain:australianwebdirectory.shop
+domain:backlinkhouse.com
+domain:backlinkon.com
+domain:backlinkrise.pro
+domain:backlinks-checker.com
+domain:backlinksbank.com
+domain:backlinkshouse.com
+domain:backlinkstree.com
+domain:bazerdaily.com
+domain:bestwebstats.com
+domain:bisprofit.com
+domain:blacksonwhites.com
+domain:blinks.monster
+domain:blinks.sbs
+domain:blogsphere.top
+domain:bmwyng.com
+domain:booksreadr.org
+domain:businessvocal.com
+domain:byteshort.xyz
+domain:carplz.com
+domain:cheapsmmprovider.info
+domain:cheapsmmprovider.online
+domain:cindylaup.com
+domain:creativeposts.top
+domain:daechul.co.com
+domain:dailymusings.top
+domain:dhouse.co.il
+domain:digitalseotool.com
+domain:domain.com.lc
+domain:domainanalysis.org
+domain:domains.com.bz
+domain:domainsc.com
+domain:domainwork.space
+domain:dsnylu.com
+domain:dupurgeniefr.com
+domain:ecommercebenchmarking.com
+domain:egyptiandirectory.com
+domain:factmags.com
+domain:findinfo.in
+domain:findit.co.in
+domain:gamerkun.com
+domain:getonline.co.in
+domain:getwebsiteworth.com
+domain:ggmap.us.com
+domain:global-ranks.pages.dev
+domain:globalecommerce.org
+domain:goooogla.com
+domain:hebagh.cv
+domain:homefinance.co.in
+domain:hostprinter.com
+domain:hzdlpq.com
+domain:indexaward.com
+domain:indians.cc
+domain:jobsapp.info
+domain:kgzxkf.com
+domain:knows.monster
+domain:knows.sbs
+domain:linksnatcher.com
+domain:mp3fresh.net
+domain:musweb.org
+domain:nettools.guru
+domain:newblogerseo.com
+domain:newsblogsports.site
+domain:nivira.shop
+domain:optimisedwebsites.com
+domain:optimizeflow.top
+domain:pagesearch.net
+domain:plrdownloadshub.com
+domain:prashikshan.in
+domain:procycling.org
+domain:pudhe.com
+domain:qhtycw.com
+domain:queries.co.in
+domain:quero.party
+domain:read.org.in
+domain:screenshots.wiki
+domain:seodomains.website
+domain:seol.store
+domain:sergechel.info
+domain:shortenurls.eu
+domain:simplewebdirectory.com
+domain:sitescooponline.com
+domain:sport-life.club
+domain:takes.homes
+domain:takes.sbs
+domain:taxies.biz
+domain:thecloudherald.com
+domain:themumbai.in
+domain:thirty.co.in
+domain:tunca.org
+domain:tyre.pro
+domain:tyres.pro
+domain:uaewebdirectory.info
+domain:urls-shortener.eu
+domain:wallpapers.pro
+domain:wants.cfd
+domain:way2check.art
+domain:way2check.cv
+domain:websiterace.com
+domain:websitescrawl.art
+domain:websitesea.com
+domain:webworthchecker.cv
+domain:wecelebrities.com
+domain:wonvision.com
+domain:ycm.info
+domain:yesdomains.space
+domain:youtoo.in
