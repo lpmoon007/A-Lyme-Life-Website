@@ -22,19 +22,56 @@ document.documentElement.classList.add('js-anim');
     );
   }
 
+  // ---- Site-wide article search (injected into the header nav) ----
+  // The Articles index (blog.html) already honors ?q= on load, so a native
+  // GET form pointed at blog.html?q=<term> needs no JS to navigate. This just
+  // adds the control to every page's header without editing 87 HTML files.
+  (function () {
+    const navRow = document.querySelector('.site-header .nav') || document.querySelector('#header .nav');
+    if (!navRow) return;
+    const cta = navRow.querySelector('.nav-cta');
+    if (!cta || cta.querySelector('.nav-search')) return;
+
+    const ns = document.createElement('div');
+    ns.className = 'nav-search';
+    ns.innerHTML =
+      '<button type="button" class="nav-search-toggle" aria-label="Search articles" aria-expanded="false">' +
+        '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>' +
+      '</button>' +
+      '<form class="nav-search-panel" role="search" action="blog.html" method="get">' +
+        '<input type="search" name="q" placeholder="Search articles…" aria-label="Search articles" autocomplete="off">' +
+      '</form>';
+    cta.insertBefore(ns, cta.firstChild);
+
+    const btn = ns.querySelector('.nav-search-toggle');
+    const input = ns.querySelector('input');
+    const setOpen = (v) => {
+      ns.classList.toggle('open', v);
+      btn.setAttribute('aria-expanded', v ? 'true' : 'false');
+      if (v) { try { input.focus(); } catch (e) {} }
+    };
+    btn.addEventListener('click', function (e) { e.stopPropagation(); setOpen(!ns.classList.contains('open')); });
+    document.addEventListener('click', function (e) { if (!ns.contains(e.target)) setOpen(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+  })();
+
   // ---- FAQ accordion ----
   document.querySelectorAll('.faq-q').forEach((q) => {
     q.addEventListener('click', () => {
       const item = q.closest('.faq-item');
       const ans = item.querySelector('.faq-a');
       const open = item.classList.contains('open');
+      // READ before any WRITE so the click doesn't force a layout thrash
+      // mid-handler (scrollHeight is the full content height regardless of the
+      // collapsed max-height, so it's safe to read while still closed). Lower INP.
+      const targetH = open ? 0 : ans.scrollHeight;
       document.querySelectorAll('.faq-item.open').forEach((other) => {
         other.classList.remove('open');
         other.querySelector('.faq-a').style.maxHeight = null;
       });
       if (!open) {
         item.classList.add('open');
-        ans.style.maxHeight = ans.scrollHeight + 'px';
+        ans.style.maxHeight = targetH + 'px';
       }
     });
   });

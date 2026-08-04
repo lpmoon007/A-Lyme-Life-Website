@@ -218,6 +218,15 @@ section { padding: var(--section-pad) 0; }
 .nav-cta { display: flex; align-items: center; gap: 16px; }
 .menu-toggle { display: none; background: none; border: none; cursor: pointer; }
 
+/* ---- Site-wide article search (injected by app.js) ---- */
+.nav-search { position: relative; display: flex; align-items: center; }
+.nav-search-toggle { display: inline-flex; align-items: center; justify-content: center; background: none; border: none; cursor: pointer; color: var(--ink-soft, #555b62); padding: 6px; border-radius: 50%; line-height: 0; transition: color .15s; }
+.nav-search-toggle:hover, .nav-search.open .nav-search-toggle { color: var(--green-deep, #6f8a42); }
+.nav-search-panel { display: none; position: absolute; top: calc(100% + 12px); right: 0; z-index: 320; background: var(--surface, #fff); border: 1.5px solid var(--line, #e3ddd0); border-radius: 999px; padding: 5px 6px; box-shadow: 0 18px 44px -18px rgba(45,50,57,.4); }
+.nav-search.open .nav-search-panel { display: flex; }
+.nav-search-panel input { font: inherit; font-size: 16px; border: none; outline: none; background: transparent; padding: 8px 16px; width: 230px; max-width: 60vw; color: var(--ink, #2d3239); }
+.nav-search-panel input::placeholder { color: var(--muted, #8a9080); }
+
 /* ============================================================
    Hero
    ============================================================ */
