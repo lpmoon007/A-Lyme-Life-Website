@@ -260,6 +260,19 @@ section { padding: var(--section-pad) 0; }
 .hero-reassure .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
 
 .hero-media { position: relative; aspect-ratio: 1 / 1; }
+/* Hero portrait is a plain <img> (not <image-slot>) so it paints during HTML
+   parse from the preloaded bytes — the LCP element must not wait on the
+   deferred custom-element script. Box styling mirrors the old slot exactly. */
+.hero-media > img.hero-photo-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0% 50%;
+  border-radius: var(--card-radius);
+  background: var(--bg-alt);
+  box-shadow: 0 40px 80px -40px rgba(45,50,57,.45);
+}
 .hero-media image-slot {
   display: block;
   width: 100%;
