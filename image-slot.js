@@ -398,7 +398,10 @@
       // frame's clamp range.
       this._ro = new ResizeObserver(() => this._render());
       this._ro.observe(this);
-      load();
+      // Only fetch the sidecar in the authoring runtime. On the live site there
+      // is no window.omelette, images come from their committed `src`, and the
+      // sidecar (a large data-URL blob) would be a pointless per-page download.
+      if (window.omelette && window.omelette.writeFile) load();
       this._render();
     }
 
@@ -653,7 +656,12 @@
         this._img.style.display = 'none';
         this._img.removeAttribute('src');
         this._ghost.removeAttribute('src');
-        this._empty.style.display = 'flex';
+        // Visitors never see the authoring empty-state (icon + "Drop an image"
+        // + dashed ring) — only show it in the editable runtime. On the live
+        // site an unfilled slot renders nothing so the page's own background
+        // (e.g. a gradient tile) shows through cleanly.
+        this._empty.style.display = editable ? 'flex' : 'none';
+        if (!editable) this._ring.style.display = 'none';
         this.removeAttribute('data-filled');
       }
     }
