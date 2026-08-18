@@ -49,7 +49,7 @@ jobs:
         # NOTHING is deployed (rsync never runs), so the live site is untouched.
         run: |
           set -euo pipefail
-          for f in styles.css pages.css chronicles.css; do
+          for f in styles.css pages.css chronicles.css fonts.css; do
             [ -f "$f" ] || continue
             tmp="$(mktemp)"
             npx --yes clean-css-cli@5 -o "$tmp" "$f"
@@ -147,7 +147,7 @@ jobs:
              && find . -type f -exec chmod 644 {} + \
              && find . -type d -exec chmod 755 {} + \
              && echo '--- perms after chmod ---' \
-             && ls -la styles.css pages.css chronicles.css app.js image-slot.js doc-page.js yt-embed.js index.html"
+             && ls -la styles.css pages.css chronicles.css fonts.css app.js image-slot.js doc-page.js yt-embed.js index.html"
 
       - name: Clean up SSH key
         if: always()
