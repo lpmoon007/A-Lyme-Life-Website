@@ -64,10 +64,12 @@ check "$BASE/contact/" "https://alymelife.com/index.html#contact"
 check "$BASE/page/2/" "https://alymelife.com/blog.html"
 check "$BASE/about.html" "https://alymelife.com/christina-carter.html"
 echo
-echo "== Prefix catch-alls (3) — tested with a sample sub-path =="
+echo "== Prefix catch-alls (5) — tested with a sample sub-path =="
 check "$BASE/category/treatment/some-old-post/" "https://alymelife.com/whole-body-hyperthermia-lyme.html"
 check "$BASE/category/some-old-cat/" "https://alymelife.com/blog.html"
 check "$BASE/author/some-old-author/" "https://alymelife.com/christina-carter.html"
+check "$BASE/it/protocollo-buhner-vs-cowden/" "https://alymelife.com/blog.html"
+check "$BASE/nl/supplementen-lyme-behandeling/" "https://alymelife.com/blog.html"
 echo
 echo "== Sanity: canonical homepage should return 200, NOT redirect =="
 code=$(curl -sS -o /dev/null -w "%{http_code}" "$BASE/"); [ "$code" = "200" ] && { echo "  PASS  $BASE/ -> 200"; pass=$((pass+1)); } || { echo "  FAIL  $BASE/ -> $code (want 200)"; fail=$((fail+1)); }
