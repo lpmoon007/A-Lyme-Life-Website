@@ -385,6 +385,79 @@ document.documentElement.classList.add('js-anim');
 })();
 
 
+/* ============================================================
+   Click-to-enlarge lightbox for content photos.
+   Purpose: Clarity showed ~12% of sessions dead-clicking — on an
+   image-heavy site that's people clicking photos expecting them to
+   enlarge. This converts that dead click into a real interaction.
+   Rules: only non-linked content images open (links keep navigating),
+   size-gated to skip icons/logos, and image-slots open only on the
+   live site (in the authoring runtime a slot click still fills it).
+   ============================================================ */
+(function () {
+  var box = null, imgEl = null, lastFocus = null;
+  function ensureBox() {
+    if (box) return;
+    box = document.createElement('div');
+    box.className = 'lb-overlay';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'true');
+    box.setAttribute('aria-label', 'Enlarged image');
+    box.setAttribute('aria-hidden', 'true');
+    box.innerHTML = '<button class="lb-close" type="button" aria-label="Close">×</button><img class="lb-img" alt="">';
+    imgEl = box.querySelector('.lb-img');
+    document.body.appendChild(box);
+    box.addEventListener('click', function (e) {
+      if (e.target === box || (e.target.closest && e.target.closest('.lb-close'))) close();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && box.classList.contains('open')) close();
+    });
+  }
+  function open(src, alt) {
+    ensureBox();
+    lastFocus = document.activeElement;
+    imgEl.src = src; imgEl.alt = alt || '';
+    box.classList.add('open'); box.setAttribute('aria-hidden', 'false');
+    document.documentElement.style.overflow = 'hidden';
+    var c = box.querySelector('.lb-close'); if (c) { try { c.focus(); } catch (e) {} }
+    if (typeof window.gtag === 'function') window.gtag('event', 'image_zoom', { page_path: location.pathname });
+  }
+  function close() {
+    if (!box) return;
+    box.classList.remove('open'); box.setAttribute('aria-hidden', 'true');
+    imgEl.removeAttribute('src');
+    document.documentElement.style.overflow = '';
+    if (lastFocus && lastFocus.focus) { try { lastFocus.focus(); } catch (e) {} }
+  }
+  var authoring = !!(window.omelette && window.omelette.writeFile);
+  function candidate(target) {
+    if (!target || !target.closest) return null;
+    // <image-slot> — the click retargets to the host element (shadow DOM).
+    var slot = target.closest('image-slot[src]');
+    if (slot) {
+      if (authoring) return null;                       // authoring: click fills the slot
+      if (slot.closest('a')) return null;               // linked: let the link work
+      if (slot.classList.contains('pl-bg')) return null; // video tile: click plays
+      if (slot.hasAttribute('data-no-zoom')) return null;
+      return { src: slot.getAttribute('src'), alt: slot.getAttribute('alt') };
+    }
+    var img = target.closest('img');
+    if (!img) return null;
+    if (img.closest('a')) return null;                  // link/card: navigates
+    if (img.hasAttribute('data-no-zoom')) return null;
+    if (img.classList.contains('lb-img')) return null;  // the overlay image itself
+    if ((img.offsetWidth || 0) < 180) return null;      // skip icons/logos/thumbs
+    return { src: img.currentSrc || img.src, alt: img.alt };
+  }
+  document.addEventListener('click', function (e) {
+    var c = candidate(e.target);
+    if (!c || !c.src) return;
+    e.preventDefault();
+    open(c.src, c.alt);
+  });
+})();
+
 /* ---- Booking conversion: fire GA4 event when HubSpot Meetings confirms a booking ---- */
 (function () {
   window.addEventListener('message', function (e) {
