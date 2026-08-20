@@ -270,14 +270,11 @@ function alymelifeHubSpotSubmit(email, firstname) {
       var fail = function () {
         alert('Sorry - that did not go through. Please try again, or email christina@alymelife.com and I will add you.');
       };
-      if (form.hasAttribute('data-hs-newsletter')) {
-        // Route to HubSpot; show success only on a real 2xx response.
-        alymelifeHubSpotSubmit(data.get('email'), data.get('fname') || data.get('firstname')).then(done).catch(fail);
-      } else {
-        // Legacy Formspree path (inline article forms), unchanged for now.
-        fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
-          .then(done).catch(done);
-      }
+      // Every c-sub-form (inline article boxes, the exit popup, the Chronicles
+      // subscribe blocks) is a newsletter signup — all route to HubSpot now.
+      // Success shows only on a real 2xx; failure shows the fallback, never a
+      // false "you're on the list".
+      alymelifeHubSpotSubmit(data.get('email'), data.get('fname') || data.get('firstname')).then(done).catch(fail);
     });
   });
 })();
