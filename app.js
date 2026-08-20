@@ -2,6 +2,30 @@
 /* Mark that JS is live so the .reveal hidden state can apply; if this script
    never ran, content stays visible (no html.js-anim class = no opacity:0). */
 document.documentElement.classList.add('js-anim');
+
+/* ============================================================
+   HubSpot Forms submission — newsletter capture posts here instead of
+   Formspree, so subscribers land in HubSpot (which can actually send the
+   newsletter). Portal 246801121 (na2 region) / form d75e51fa-…
+   Keeps the site's own styled forms + AJAX (no HubSpot embed script).
+   Only forms marked data-hs-newsletter route here. The HubSpot form needs
+   an Email field (required) and, for the newsletter page's name box, a
+   First name field (optional). Rejects on non-2xx so the caller shows the
+   real fallback instead of a false success.
+   ============================================================ */
+function alymelifeHubSpotSubmit(email, firstname) {
+  var fields = [{ name: 'email', value: (email || '').trim() }];
+  if (firstname && firstname.trim()) fields.push({ name: 'firstname', value: firstname.trim() });
+  return fetch('https://api.hsforms.com/submissions/v3/integration/submit/246801121/d75e51fa-f231-4ac5-873b-ac39e526bb3a', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      fields: fields,
+      context: { pageUri: location.href, pageName: document.title }
+    })
+  }).then(function (r) { if (!r.ok) throw new Error('HubSpot ' + r.status); return r; });
+}
+
 (function () {
   // ---- Header shadow on scroll ----
   const header = document.getElementById('header');
@@ -192,7 +216,7 @@ document.documentElement.classList.add('js-anim');
       +   '<div class="nl-pop-mark">\uD83D\uDC9B</div>'
       +   '<h3 id="nlPopTitle">Get Christina\u2019s Lyme guidance in your inbox</h3>'
       +   '<p>Honest updates from our family\u2019s Lyme journey \u2014 new guides and the hard-won lessons behind them. No spam, unsubscribe anytime.</p>'
-      +   '<form class="c-sub-form nl-pop-form" action="https://formspree.io/f/mkoajneb" method="POST">'
+      +   '<form class="c-sub-form nl-pop-form" data-hs-newsletter action="https://formspree.io/f/mkoajneb" method="POST">'
       +     '<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">'
       +     '<input type="hidden" name="_subject" value="New newsletter subscriber (popup)">'
       +     '<input type="email" name="email" required placeholder="you@email.com" aria-label="Your email">'
@@ -243,8 +267,17 @@ document.documentElement.classList.add('js-anim');
         ok.textContent = 'Thank you — you\u2019re on the list. 💛';
         form.parentNode.replaceChild(ok, form);
       };
-      fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
-        .then(done).catch(done);
+      var fail = function () {
+        alert('Sorry - that did not go through. Please try again, or email christina@alymelife.com and I will add you.');
+      };
+      if (form.hasAttribute('data-hs-newsletter')) {
+        // Route to HubSpot; show success only on a real 2xx response.
+        alymelifeHubSpotSubmit(data.get('email'), data.get('fname') || data.get('firstname')).then(done).catch(fail);
+      } else {
+        // Legacy Formspree path (inline article forms), unchanged for now.
+        fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+          .then(done).catch(done);
+      }
     });
   });
 })();
@@ -370,18 +403,16 @@ document.documentElement.classList.add('js-anim');
     e.preventDefault();
     if (errBox) errBox.hidden = true;
     if (btn) { btn.disabled = true; btn.setAttribute('aria-busy', 'true'); }
-    fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    })
-      .then(function (res) {
-        // fetch only rejects on network errors, NOT on HTTP 4xx/5xx —
-        // so we must check res.ok before treating it as a real success.
-        if (res.ok) { onSuccess(); return; }
-        onError();
-      })
-      .catch(onError);
+    var fd = new FormData(form);
+    // Newsletter page routes to HubSpot (email + first name); the standalone
+    // lead-magnet page keeps its Formspree endpoint. Both reveal the guide on
+    // success and show the error box on failure. fetch only rejects on network
+    // errors (not HTTP 4xx/5xx), so the Formspree branch throws on !res.ok.
+    var req = form.hasAttribute('data-hs-newsletter')
+      ? alymelifeHubSpotSubmit(fd.get('email'), fd.get('fname'))
+      : fetch(form.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
+          .then(function (res) { if (!res.ok) throw new Error(res.status); return res; });
+    req.then(onSuccess).catch(onError);
   });
 })();
 
