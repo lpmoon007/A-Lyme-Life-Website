@@ -198,6 +198,7 @@ document.documentElement.classList.add('js-anim');
       +     '<input type="email" name="email" required placeholder="you@email.com" aria-label="Your email">'
       +     '<button class="btn btn-primary" type="submit">Subscribe</button>'
       +   '</form>'
+      +   '<a class="nl-pop-learn" href="newsletter.html" style="display:inline-block;margin-top:10px;font-size:.82rem;color:var(--green-deep,#6f8a42);text-decoration:underline;text-underline-offset:2px;">What’s included &amp; how we protect your privacy →</a>'
       +   '<button class="nl-pop-dismiss" type="button">No thanks</button>'
       + '</div>';
     document.body.appendChild(pop);
