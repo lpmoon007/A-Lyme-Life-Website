@@ -176,8 +176,10 @@
     var c = document.querySelector('.meetings-iframe-container');
     var fb = document.getElementById('bookingFallback');
     if (!c || !fb) return;
-    // If the HubSpot embed hasn't injected an iframe within a few seconds, reveal the fallback.
-    setTimeout(function () { if (!c.querySelector('iframe')) { c.style.display = 'none'; fb.hidden = false; } }, 4500);
+    // If the HubSpot embed hasn't injected an iframe in time, reveal the fallback.
+    // 8s (was 4.5s) so a slow-but-not-blocked load isn't cut off prematurely; a
+    // real ad-blocker/privacy block still lands here, which is intended.
+    setTimeout(function () { if (!c.querySelector('iframe')) { c.style.display = 'none'; fb.hidden = false; } }, 8000);
   })();
 </script>
 
