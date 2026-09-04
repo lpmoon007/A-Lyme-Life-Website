@@ -1,145 +1,172 @@
 # Content brief / outline — `lyme-immunotherapy.html`
 ### Lyme Re-code · Immunotherapy Institute (ITI) — the immunotherapy explainer
 
-**Status:** Outline for review. Clinical/program specifics marked `[ITI: confirm]`
-must be verified by the Immunotherapy Institute / Christina before publishing —
-we don't publish medical or program claims we can't stand behind. Family details
-are drafted from what Christina provided; **confirm exact wording, dates, and that
-the family is comfortable sharing this publicly** before it goes live.
+**Status:** Build-ready outline. Program facts below are taken from
+lymeimmunotherapy.com (Sept 2026). Two things still need a human before publish:
+(1) **ITI accuracy-check** of how we describe their protocol, and
+(2) **Christina's sign-off** on the family section + consent to publish family
+medical details and names.
 
 ---
 
-## Why this page (the strategy)
+## Why this page
 
-- **Fills a real gap.** The site explains the *therapy* (`treg-therapy.html`) and
-  name-drops the program in a few places, but has **no page about Lyme Re-code /
-  the Immunotherapy Institute as a program.**
-- **Unique, uncopyable content.** Christina serves on ITI's **Clinical Advisory
-  Board**, and her own family are among the earliest patients. No competitor can
-  write this from the inside.
-- **Ranks + gets cited.** Targets real demand ("lyme immunotherapy," "lyme re-code,"
-  "immunotherapy institute lyme," "treg therapy lyme cost," "retrain immune system
-  lyme") and is ideal GEO content — a novel-treatment explainer LLMs cite.
-- **Partner value + a mutual backlink** with lymeimmunotherapy.com (a Tier-6 quick
-  win on the outreach list).
+- Fills a real gap — the site explains Treg therapy (`treg-therapy.html`) and name-
+  drops the program, but has no page on **Lyme Re-code / ITI as a program.**
+- Uniquely credible: Christina is on ITI's **Clinical Advisory Board**, and her
+  family walked the **entire three-step sequence** first-hand.
+- Ranks + gets cited (GEO): "lyme immunotherapy," "lyme re-code," "treg therapy lyme,"
+  "apheresis lyme," "systemic hyperthermia lyme Tijuana," "retrain immune system lyme."
+- Partner value → a **mutual followed backlink** with lymeimmunotherapy.com.
 
-**Primary keyword:** Lyme immunotherapy / Lyme Re-code
-**Secondary:** Immunotherapy Institute Lyme, autologous Treg therapy, retrain immune
-system Lyme, immune reset after Lyme, apheresis for Lyme.
-
-**Framing guardrails (non-negotiable):**
-- Written in Christina's **patient-advocate voice** — lived experience, not medical
-  advice. "Individual results vary." Point clinical questions to ITI's medical team.
-- **Disclose the relationship** plainly (she's on the advisory board; her family are
-  patients). Transparency builds trust and is the honest thing to do.
-- No efficacy guarantees. Hedge honestly ("early," "emerging," "what we experienced").
+**Framing guardrails:** Christina's patient-advocate voice; describe the program as
+*ITI's approach* (attributed), not as A Lyme Life medical claims; disclose the
+advisory-board + patient relationship; "individual results vary"; clinical questions →
+ITI's medical team; site-standard medical disclaimer.
 
 ---
 
-## Page structure (section by section)
+## The program (facts from lymeimmunotherapy.com — use these)
+
+**Lyme Re-code, operated within the Immunotherapy Institute — Tijuana, Mexico**
+(minutes from San Diego). Phone 619.567.4203. Now accepting new patients.
+Core philosophy: *"More is not better. The sequence is the treatment. The terrain
+matters."* Prepare the foundation before deeper interventions; case managers
+recommend the right starting point at consultation.
+
+**Three programs, one sequence:**
+
+- **8-Day · Step 1 — Immune Recalibration (Autologous T-Regulatory Cell Therapy).**
+  The immune problem in chronic Lyme is dysregulation, not weakness. 3 autologous
+  Treg applications teach the immune system to govern itself again. Includes initial
+  bloodwork + medical eval, epigenetic testing, daily functional-medicine physician
+  oversight, clinical nutritionist. Standalone yet foundational. For chronic Lyme,
+  Bartonella, Babesia, coinfections — and the same immune-depletion pattern in long
+  COVID, mold/CIRS, chronic EBV. *8 days outpatient; meals + airport shuttle included;
+  travel/lodging not.*
+
+- **10-Day · Step 2 — Clear · Rebuild · Restore.** Three layers in order:
+  **Therapeutic Apheresis** (clear inflammatory debris/immune complexes/mycotoxins
+  from the blood) → **IV Therapy** (rebuild at the cellular level) → **4 Treg
+  infusions** (restore immune governance into a prepared body). For higher
+  inflammatory burden, or after the 8-day. *10 days outpatient; companions welcome
+  ($42/day meals).*
+
+- **18-Day · Step 3 — Full Protocol (Treg + Apheresis + Systemic Perfusion
+  Hyperthermia).** Adds **Systemic Perfusion Hyperthermia up to 42°C/107.6°F** — a
+  monitored clinical procedure (not a sauna) where Borrelia and co-infections can't
+  survive — applied **last**, on a recalibrated foundation ("applied to a
+  dysregulated system, hyperthermia amplifies dysfunction; on a prepared one it goes
+  somewhere different"). Includes 3 Treg infusions, apheresis, full IV stack
+  (inflammation/antioxidant/nervous-system/metabolic; chelation, DMSO as indicated),
+  multidisciplinary team + supportive care (physio, nutrition, psychological). For
+  patients who completed the 10-day; select complex cases may start here after intake.
+  *18 days outpatient.*
+
+Lodging: Quartz Hotel & Spa, Tijuana (preferred patient rate; 8:45 AM shuttle).
+Cost: **not published on their site** → route to consultation; link `blog-cost.html`
++ `blog-treatment-funding.html`. ITI's related videos match A Lyme Life's video
+library — cross-link those.
+
+---
+
+## Page structure
 
 ### 1. Hero
 - **H1:** *Lyme Immunotherapy: Retraining the Immune System After Lyme* (or ITI-preferred).
-- Subhead: one plain sentence — what it is and who it's for. Draft: *"An emerging
-  approach — autologous regulatory T-cell (Treg) therapy, sometimes with apheresis
-  and moderate hyperthermia — aimed not at killing infection, but at helping a
-  dysregulated immune system govern itself again."*
-- Trust line: *"From Christina Carter — on the Clinical Advisory Board of Lyme Re-code,
-  and whose own family has been through it."*
-- Primary CTA: **Talk with Christina** (`book.html`) · secondary: learn the science (`treg-therapy.html`).
+- Subhead: *"Lyme Re-code is a three-step immunotherapy sequence — recalibrate, clear,
+  then go deep — aimed not at killing infection alone, but at helping a dysregulated
+  immune system govern itself again."*
+- Trust line + disclosure seed: *"From Christina Carter — on Lyme Re-code's Clinical
+  Advisory Board, and whose own family went through all three steps."*
+- CTAs: **Talk with Christina first** (`book.html`) · **Check eligibility** (outbound to ITI).
 
-### 2. The problem this addresses — "the infection's gone, but you're still sick"
-- The post-treatment reality: immune dysregulation, new sensitivities/allergies,
-  autoimmune-flavored symptoms after the bacteria are handled.
-- Why kill-everything approaches (antibiotics, extreme heat) don't restore
-  *regulation*. Sets up why an immune-reset model is different.
-- Link to `treg-therapy.html` (the mechanism) and `blog-lyme-recovery-timeline.html`.
+### 2. The problem — "the infection's gone, but you're still sick"
+- Post-treatment immune dysregulation: over-firing, chronic inflammation, new
+  sensitivities/autoimmune-type symptoms. Why kill-everything approaches don't restore
+  *regulation*. Link `treg-therapy.html`, `blog-lyme-recovery-timeline.html`.
 
 ### 3. What is Lyme Re-code / the Immunotherapy Institute?
-- Plain-language intro to the program (not just the therapy). `[ITI: confirm]`:
-  - What the Immunotherapy Institute is; relationship to "Lyme Re-code" branding.
-  - The core idea: teach the immune system to **recognize Borrelia and self-regulate**
-    (grounded in existing site copy from `blog-lyme-treatment-centers.html`).
-- Christina's role: Clinical Advisory Board member (disclosed here).
+- Plain intro: an integrative program in Tijuana (minutes from San Diego), operated
+  within the Immunotherapy Institute. The core idea — teach the immune system to
+  recognize Borrelia and self-regulate. Christina's advisory-board role (disclosed).
+- The philosophy that makes it different: **sequence and terrain** ("more is not
+  better; the sequence is the treatment").
 
-### 4. How the treatment works — the components
-Explain each in plain terms; `[ITI: confirm exact protocol, sequence, what's standard]`:
-- **Autologous Treg (regulatory T-cell) therapy** — made from the patient's own cells;
-  restores the immune "brakes." (Reuse/adapt `treg-therapy.html`.)
-- **Apheresis** — what it does in this protocol, and when it's used. `[ITI: confirm]`
-- **Moderate whole-body hyperthermia** — how it pairs with the immune work (vs. the
-  extreme-heat, kill-focused model). Link to `whole-body-hyperthermia-lyme.html` and
-  `blog-extreme-vs-moderate-hyperthermia.html`.
-- **Phases / sequencing** — `[ITI: confirm the typical course, number of rounds, timeline]`
+### 4. How it works — the three-step sequence (the core of the explainer)
+Three clear cards, in order — recalibrate → clear/rebuild/restore → full protocol:
+- **Step 1 (8-day): Treg recalibration** — reuse/adapt `treg-therapy.html`.
+- **Step 2 (10-day): apheresis → IV → Treg** — why order matters.
+- **Step 3 (18-day): + systemic perfusion hyperthermia** — why heat comes *last*;
+  link `whole-body-hyperthermia-lyme.html` + `blog-extreme-vs-moderate-hyperthermia.html`.
+- Callout: *"You cannot regulate an immune system still flooded with the signals
+  driving its dysfunction."*
 
-### 5. Who it's for (and who it isn't)
-- Best-fit candidates `[ITI: confirm]` — e.g., people still symptomatic after the
-  infection is addressed, immune dysregulation, autoimmune-type or new-sensitivity
-  symptoms.
-- Honest "may not be right if…" `[ITI: confirm]`. Builds trust and screens fit.
+### 5. Who it's for (and the honest caveats)
+- Best fit: chronic Lyme + coinfections (Bartonella/Babesia), and the same immune-
+  dysregulation pattern in long COVID, mold/CIRS, chronic EBV — especially "my immune
+  system feels like it's overreacting." Starting point is set at consultation by
+  inflammatory burden/symptoms/goals.
+- Honest framing: it's an emerging, integrative approach delivered abroad; not a
+  guaranteed cure; a medical team screens candidacy.
 
-### 6. Our family's experience (the heart of the page)
-> Confirm exact wording/dates with Christina; confirm the family consents to this
-> being public; keep it honest and non-promissory ("this was our experience").
-
-- **Christina** — 10 years misdiagnosed; the whole family has navigated Lyme; why she
-  joined ITI's advisory board.
-- **James (husband)** — post-Lyme immune dysregulation; **two rounds of autologous Treg
-  therapy, one paired with apheresis**; among the earliest patients for the post-Lyme
-  immune-reset approach. `[Confirm: outcomes/how he's doing, in honest terms.]`
-- **Isabella (daughter)** — treated with whole-body hyperthermia in Germany at 14
-  (2017), recovered, **re-bitten in college and hit harder the second time** with new
-  co-infections; has been through **Treg therapy and apheresis**, and is **scheduled for
-  whole-body hyperthermia treatment in October**. `[Confirm year + current status.]`
-- The takeaway: why lived experience — not a brochure — is why Christina can guide
-  people honestly through this.
+### 6. Our family walked all three steps (the heart — confirm wording + consent)
+> Map the family's real journey onto the program sequence — it's an unusually
+> authentic fit. **Confirm names, exact details, dates, current status, and that the
+> family consents to publishing this.**
+- **Christina** — 10 years misdiagnosed; whole family navigated Lyme; why she joined
+  Lyme Re-code's advisory board.
+- **James (husband)** — post-Lyme immune dysregulation; **two rounds of autologous
+  Treg therapy, one paired with apheresis** (Step 1 → Step 2). `[Confirm current status.]`
+- **Isabella (daughter)** — whole-body hyperthermia in Germany at 14 (2017),
+  recovered, **re-bitten in college and hit harder** with new co-infections; has been
+  through **Treg therapy and apheresis** (Steps 1–2) and is **scheduled for hyperthermia
+  — the full 18-day protocol — in October**. `[Confirm year + status.]`
+- Takeaway: Christina guides people through this from the inside — as an advisor *and*
+  a family that lived every step — which is why her read is honest, not a sales pitch.
 
 ### 7. What to expect / getting started
-- Rough process from first contact → evaluation → treatment `[ITI: confirm steps]`.
-- Location(s) `[ITI: confirm — Mexico? elsewhere?]`, and practicalities (travel,
-  duration) at a high level.
-- **Cost:** don't state a number unless ITI confirms one; otherwise link to
-  `blog-cost.html` and `blog-treatment-funding.html` and say costs are discussed
-  directly. `[ITI: confirm whether to publish pricing.]`
-- CTA: **Talk it through with Christina first** (`book.html`) — the no-pressure,
-  been-there entry point — with an outbound link to lymeimmunotherapy.com for the
-  clinical program.
+- Process: consultation/eligibility → case-manager review → recommended program +
+  starting point → outpatient treatment in Tijuana (8/10/18 days). Logistics:
+  meals + airport shuttle included; travel/lodging not; Quartz Hotel preferred rate.
+- Cost: routed to consultation (not published) + link cost/funding articles.
+- CTAs: **Talk it through with Christina** (`book.html`) as the no-pressure first
+  step; **Check eligibility** outbound to lymeimmunotherapy.com/contact.html; phone
+  619.567.4203.
 
-### 8. FAQ (GEO — use real question phrasing, extractable answers)
-Draft questions (answers `[ITI: confirm clinical accuracy]`):
+### 8. FAQ (GEO — real-query phrasing, extractable answers; ITI to accuracy-check)
 - What is Lyme immunotherapy / Lyme Re-code?
-- How is Treg therapy different from antibiotics or hyperthermia?
-- What is autologous Treg therapy, and is it safe?
-- What is apheresis, and why is it used for Lyme?
-- Who is a good candidate for Lyme immunotherapy?
-- Where is the treatment done, and how long does it take?
-- How much does it cost? / Is it covered by insurance?
-- Is this proven? (Honest "emerging / early evidence" answer.)
+- What is autologous Treg therapy, and how is it different from antibiotics or hyperthermia?
+- What is therapeutic apheresis, and why is it used for Lyme?
+- Why does the 18-day protocol do hyperthermia *last*?
+- Which program should I start with (8, 10, or 18 days)?
+- Who is a good candidate — and is it only for Lyme?
+- Where is it, and how long does it take? (Tijuana; 8/10/18 days outpatient.)
+- How much does it cost / is it covered by insurance?
+- Is this proven? (Honest "emerging/integrative" answer.)
 
-### 9. Close + disclosure
-- Warm CTA to book a call with Christina.
-- **Disclosure block:** Christina serves on Lyme Re-code / ITI's Clinical Advisory
-  Board and her family are patients; she shares this because she believes in the
-  approach, and she'll always give an honest read of whether it's right for you.
-- **Medical disclaimer** (site standard) — advocate, not a clinician; not medical
-  advice; individual results vary.
+### 9. Close + disclosure + disclaimer
+- Warm CTA to book with Christina.
+- **Disclosure:** Christina serves on Lyme Re-code / ITI's Clinical Advisory Board and
+  her family are patients; she shares this because she believes in the approach and
+  will always give an honest read of fit.
+- Site-standard **medical disclaimer** (advocate, not a clinician; not medical advice;
+  results vary).
 
 ---
 
-## Technical / SEO checklist (I'll handle at build)
-- Schema: `MedicalWebPage` + `MedicalTherapy` (autologous Treg therapy) + `FAQPage`
-  + `Person` (Christina, with the advisory-board affiliation) + `BreadcrumbList`.
-- Title (~55 char): "Lyme Immunotherapy: Retrain the Immune System | A Lyme Life"
-- Canonical, OG/Twitter, `robots: index,follow`.
-- Internal links in: from `treg-therapy.html`, `blog-lyme-treatment-centers.html`,
-  `blog-alternative-therapies.html`, `chronic-lyme-treatment.html`, homepage
-  affiliation card, and the nav/Articles where it fits.
-- Add to `sitemap.xml`; add to the treatment cluster-nav.
-- Outbound link to lymeimmunotherapy.com — and **request a reciprocal followed link**
-  back to this page (partner backlink win).
+## Build checklist (I handle)
+- Schema: `MedicalWebPage` + `MedicalClinic`/`MedicalOrganization` (Lyme Re-code, ITI,
+  Tijuana) + `MedicalTherapy` (Treg, apheresis, hyperthermia) + `FAQPage` + `Person`
+  (Christina, advisory-board affiliation) + `BreadcrumbList`.
+- Title (~55): "Lyme Immunotherapy: Retrain the Immune System | A Lyme Life"
+- Canonical, OG/Twitter, `index,follow`. Add to `sitemap.xml` + treatment cluster-nav.
+- Internal links IN from: `treg-therapy.html`, `blog-lyme-treatment-centers.html`,
+  `blog-alternative-therapies.html`, `chronic-lyme-treatment.html`,
+  `whole-body-hyperthermia-lyme.html`, homepage affiliation card.
+- Outbound to lymeimmunotherapy.com — and **request a reciprocal followed link back**.
 
-## What I need from you / ITI to build it
-1. ITI accuracy-check on every `[ITI: confirm]` (protocol, components, candidacy,
-   location, process, whether to publish cost).
-2. Christina's sign-off on the family section wording + consent to publish.
-3. Whether to state pricing or route it to a conversation.
+## Still needed to publish
+1. ITI accuracy-check on the program description + FAQ answers.
+2. Christina's sign-off on the family section (names, details, consent).
+3. Confirm we route cost to consultation (recommended) vs. publish any pricing.
