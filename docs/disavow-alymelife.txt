@@ -1,137 +1,283 @@
 # ---------------------------------------------------------------------------
-# A Lyme Life — Google disavow file  (DRAFT for review — DO NOT SUBMIT as-is)
-# Source: Semrush Backlink Analytics, referring domains, 2026-08-03
-# Profile: 125 referring domains / 252 backlinks / domain Authority Score 2
+# A Lyme Life - Google disavow file  (SUBMIT-READY)
+# Source: Semrush Backlink Analytics referring domains, refreshed 2026-09-29
+# (supersedes the 2026-08-03 draft)
 #
 # KEPT (legitimate, NOT disavowed):
-#   bayarealyme.org (AS42, Bay Area Lyme Foundation), hometownstation.com (AS38,
-#   local press), thelymespecialist.com (AS14, partner), lymeimmunotherapy.com
-#   (partner, link pending — pre-whitelisted).
+#   bayarealyme.org  - Bay Area Lyme Foundation
+#   thelymespecialist.com  - partner (Christina's team)
+#   lymeimmunotherapy.com  - partner (Lyme Re-code advisory board)
+#   hometownstation.com  - local press
 #
-# HELD FOR YOUR REVIEW (NOT disavowed — decide yourself before adding):
-#   lifeonautismlane.com   — may be a real parent/community blog
-#   sendungsverfolgung24.org — 34 links from a German tracking site (odd; likely
-#                              a sitewide scraper link, but verify)
-#   mbprinteddroids.com, drjack.world — higher authority, uncertain
+# HELD FOR YOUR DECISION (NOT disavowed - review, then add if spam):
+#   lifeonautismlane.com     - may be a real parent/community blog
+#   mbprinteddroids.com      - hobby forum (links from forum.mbprinteddroids.com)
+#   drjack.world             - uncertain
+#   kernelpanicpodcast.com   - may be a real podcast link
 #
-# Everything below is auto-generated spam: link farms, fake 'website worth/stats'
-# scrapers, junk directories, URL-shorteners, and PBN gibberish.
-# 118 domains disavowed.
+# NOTE: sendungsverfolgung24.org (34 links, German package-tracking scraper -
+#   the single largest source) IS disavowed below. It is a sitewide scraper
+#   link, not a genuine reference. Remove it only if you know otherwise.
+#
+# Everything below is auto-generated spam: SEO/backlink farms, fake
+# website-worth/stats scrapers, junk directories, URL shorteners, casino/
+# betting spam, PBN gibberish, and hacked-site injected links.
+# 258 domains disavowed.
 # ---------------------------------------------------------------------------
 domain:1000.co.in
 domain:1stcallglasscare.com
+domain:24rankings.com
 domain:2x9.co
-domain:5913231.cc
+domain:7-seo.com
+domain:adcreativevideo.com
+domain:advanced-seo.com
+domain:agentbetting.online
 domain:all-aged-domains.com
 domain:alljobs.info
 domain:alltopleveldomains.space
 domain:allwebsitesdirectory.com
+domain:aloysionunes.com
 domain:analyticshaven.top
 domain:anchorurl.cloud
+domain:archive-hu.com
 domain:atomizelink.icu
-domain:australianwebdirectory.shop
+domain:autobacklinkbot.com
 domain:backlinkhouse.com
+domain:backlinkocean.link
 domain:backlinkon.com
-domain:backlinkrise.pro
+domain:backlinkrank.com
 domain:backlinks-checker.com
 domain:backlinksbank.com
+domain:backlinksboost.link
+domain:backlinksguide.com
+domain:backlinksguide.link
+domain:backlinkshome.com
 domain:backlinkshouse.com
+domain:backlinksindia.info
+domain:backlinksocean.com
+domain:backlinkspace.link
+domain:backlinkspulse.info
+domain:backlinkstores.info
 domain:backlinkstree.com
 domain:bazerdaily.com
+domain:best-seo-domains.com
+domain:bestfloridaseo.com
+domain:bestirishcasinoonline.online
+domain:bestnz-poker-casinoslot.com
+domain:bestofthefirstcoast.com
+domain:bestseocenter.info
+domain:bestseosuite.com
+domain:bestwebs123.site
 domain:bestwebstats.com
+domain:betulcrime.com
+domain:betwinnermirror.com
 domain:bisprofit.com
-domain:blacksonwhites.com
 domain:blinks.monster
 domain:blinks.sbs
+domain:blog-backlinks.link
+domain:blogerreviewers.com
 domain:blogsphere.top
-domain:bmwyng.com
 domain:booksreadr.org
-domain:businessvocal.com
+domain:boost-traffic.link
+domain:boosttraffic.site
+domain:breachviews.com
+domain:bunero.shop
+domain:burpio.shop
+domain:bye.fyi
 domain:byteshort.xyz
+domain:canadapsilocybin.com
+domain:canlisohbethatlari.online
 domain:carplz.com
+domain:cartermanageus.com
+domain:casinooftheking.com
+domain:casinoonlinecrazytime.online
+domain:cgpa2percentag.com
 domain:cheapsmmprovider.info
 domain:cheapsmmprovider.online
+domain:chordmp3.net
 domain:cindylaup.com
+domain:clifflisting.com
+domain:cmocheatsheets.com
+domain:coruzants.com
 domain:creativeposts.top
+domain:creativeranker.info
+domain:creativeranker.link
+domain:crembi.shop
+domain:cvillico.com
 domain:daechul.co.com
-domain:dailymusings.top
 domain:dhouse.co.il
+domain:digitalboost.site
+domain:digitalchatni.com
 domain:digitalseotool.com
+domain:digitizeseo.info
+domain:digitizeseo.link
+domain:digitseotools.link
+domain:diversifiedseo.com
 domain:domain.com.lc
 domain:domainanalysis.org
 domain:domains.com.bz
 domain:domainsc.com
 domain:domainwork.space
-domain:dsnylu.com
+domain:domraider.br.com
+domain:domraider.de.com
+domain:domraider.eu.com
+domain:domraider.gb.net
+domain:domraider.it.com
+domain:domraider.uk.com
+domain:domraider.uk.net
+domain:domraider.us.com
+domain:doxycycline100mg.store
+domain:drobo.shop
 domain:dupurgeniefr.com
-domain:ecommercebenchmarking.com
 domain:egyptiandirectory.com
+domain:eliteseo.site
+domain:emergencydentistinrichmondva.com
+domain:exotichealths.com
+domain:expresskitchendesigns.com
 domain:factmags.com
+domain:fashionclothingnews.com
+domain:fastlifesite.com
+domain:fastranking.shop
 domain:findinfo.in
 domain:findit.co.in
+domain:fioro.shop
+domain:firstguestpost.com
+domain:fittyfoody.com
+domain:flenro.shop
+domain:fletcherrld.com
+domain:freesimpleseo.info
 domain:gamerkun.com
+domain:geobacklinks.link
 domain:getonline.co.in
+domain:getranked.site
+domain:getseotips.link
 domain:getwebsiteworth.com
+domain:ggmap.co.com
 domain:ggmap.us.com
 domain:global-ranks.pages.dev
 domain:globalecommerce.org
+domain:gofreebacklinks.info
+domain:goldbacklinks.link
 domain:goooogla.com
+domain:greatseolinks.link
+domain:growwithseo.shop
+domain:guestbacklink.link
 domain:hebagh.cv
+domain:highquality-seo.link
 domain:homefinance.co.in
+domain:homesforsaleoldgreenwichct.com
 domain:hostprinter.com
-domain:hzdlpq.com
+domain:hotonlinegaming.com
 domain:indexaward.com
 domain:indians.cc
 domain:jobsapp.info
-domain:kgzxkf.com
+domain:juaralaundry.com
+domain:kalio.shop
+domain:kkinsider.com
 domain:knows.monster
 domain:knows.sbs
+domain:krito.shop
+domain:linksnatcher.art
 domain:linksnatcher.com
+domain:localranking.site
+domain:luminko.shop
+domain:marinasone.com
+domain:masihnyata.com
+domain:mediaboooster.com
+domain:mertio.shop
+domain:metamagic.top
 domain:mp3fresh.net
-domain:musweb.org
-domain:nettools.guru
+domain:mylisthero.com
+domain:mymarketpost.com
+domain:nelpa.shop
 domain:newblogerseo.com
 domain:newsblogsports.site
+domain:nimpa.shop
+domain:ninko.shop
 domain:nivira.shop
-domain:optimisedwebsites.com
+domain:onlineshoppingidea.com
+domain:onlyhealthydeals.com
+domain:onvaxs.com
 domain:optimizeflow.top
+domain:organictraffic.site
 domain:pagesearch.net
+domain:phanerosart.com
+domain:piolo.shop
+domain:plixmo.shop
 domain:plrdownloadshub.com
 domain:prashikshan.in
+domain:premiumseo.shop
+domain:prepaidgiftbalance.online
+domain:preparation.co.in
+domain:primenewsartical.com
 domain:procycling.org
+domain:profitsurgeseo.info
 domain:pudhe.com
-domain:qhtycw.com
 domain:queries.co.in
 domain:quero.party
+domain:quotesblom.com
+domain:rankfirst.shop
+domain:rdxextremez.com
 domain:read.org.in
+domain:realwinningonlinecasino.online
+domain:royaldb.us.com
+domain:sahammurah.com
+domain:sapphirevpn.net
 domain:screenshots.wiki
+domain:sendungsverfolgung24.org
+domain:seo-asia.link
+domain:seo-zoom.com
+domain:seobacklinkhub.info
 domain:seodomains.website
+domain:seoinks.link
 domain:seol.store
+domain:seopaul.com
+domain:seozens.info
 domain:sergechel.info
+domain:shanzytechs.site
 domain:shortenurls.eu
-domain:simplewebdirectory.com
-domain:sitescooponline.com
-domain:sport-life.club
+domain:sitewebseo.com
+domain:smartstimer.com
+domain:soulvocable.com
+domain:southfwb.com
+domain:stackbacklinks.com
+domain:sushimean.com
 domain:takes.homes
 domain:takes.sbs
 domain:taxies.biz
+domain:techbumppy.com
 domain:thecloudherald.com
+domain:thedocmag.com
+domain:theface.in
+domain:theforbestimes.com
+domain:themicrodigits.com
 domain:themumbai.in
 domain:thirty.co.in
+domain:tokyopush188.online
+domain:top5casino.online
+domain:topranking.shop
+domain:trafficbeastapp.info
+domain:trafficexperts.site
 domain:tunca.org
 domain:tyre.pro
 domain:tyres.pro
 domain:uaewebdirectory.info
+domain:ufabettererm4.com
+domain:uncledspizza.com
 domain:urls-shortener.eu
 domain:wallpapers.pro
 domain:wants.cfd
 domain:way2check.art
 domain:way2check.cv
+domain:webrandseo.link
 domain:websiterace.com
 domain:websitescrawl.art
 domain:websitesea.com
 domain:webworthchecker.cv
 domain:wecelebrities.com
+domain:wiki-park.com
+domain:winningseo.site
+domain:wioutlet.com
 domain:wonvision.com
 domain:ycm.info
 domain:yesdomains.space
