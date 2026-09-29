@@ -23,6 +23,10 @@ _Last updated: 2026-08-31_
 
 ## 🟡 Operator / dashboard tasks
 
+- [ ] **🔴 Submit the disavow file** — upload `docs/disavow-alymelife.txt` in
+      Google Search Console if not already done. The backlink profile is 94%
+      spam (Authority Score ~2), which suppresses the whole domain. Likely the
+      single highest-impact off-page action. See `docs/off-page-growth-plan.md`.
 - [ ] **GA4 bot + internal-traffic filters** — apply `docs/ga4-traffic-filters.md`.
       Reports stay noisy (Urumqi/Singapore bots) until this is done.
 - [ ] **Clarity bot filtering** — same idea, in the Clarity dashboard.
@@ -33,13 +37,23 @@ _Last updated: 2026-08-31_
 
 ## 🟢 Growth — off-site (the real ranking lever)
 
+**See `docs/off-page-growth-plan.md` for the full SEO+GEO strategy and the
+2026-09-29 data (57 Google clicks/92 days; but already cited in AI answers).**
+
 - [ ] **Backlink outreach** — work `docs/backlink-targets.md`, top-down:
   - [ ] Tier 6 quick wins first — verify partner bio links (thelymespecialist.com,
         lymeimmunotherapy.com, the Mexico program) link to alymelife.com and are
-        **followed**, not nofollow.
+        **followed**, not nofollow. Request the reciprocal link to the new
+        `lyme-immunotherapy.html` page.
   - [ ] Pitch **Tick Boot Camp podcast** (highest-ROI single target).
   - [ ] Set up **HARO/Qwoted** for journalist queries.
   - Target: 2–4 quality links/month. Authority moves rankings over months.
+- [ ] **Activate Christina's YouTube + communities** — link alymelife.com from
+      the channel About + video descriptions; participate in Reddit/FB/Quora
+      Lyme communities. Fastest path to real humans *and* GEO signal.
+- [ ] **GEO monitoring** — Otterly report "A Lyme Life" (5 treatment prompts) is
+      live; review monthly. Account is near its 100-prompt cap, shared with the
+      Building Teams business — upgrade or free slots to track more prompts.
 - [ ] **Watch the trend** — send me a fresh GSC export in ~2 weeks; watch
       Referring Domains in Semrush and the buried money pages (chronic-lyme-
       treatment, supplements, find-a-doctor) climbing off page 5.
