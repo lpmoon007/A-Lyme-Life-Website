@@ -1,28 +1,25 @@
 # ---------------------------------------------------------------------------
 # A Lyme Life - Google disavow file  (SUBMIT-READY)
-# Source: Semrush Backlink Analytics referring domains, refreshed 2026-09-29
-# (supersedes the 2026-08-03 draft)
+# Source: Semrush Backlink Analytics referring domains, refreshed 2026-10-02
+# (supersedes the 2026-08-03 and 2026-09-29 drafts)
 #
 # KEPT (legitimate, NOT disavowed):
 #   bayarealyme.org  - Bay Area Lyme Foundation
 #   thelymespecialist.com  - partner (Christina's team)
 #   lymeimmunotherapy.com  - partner (Lyme Re-code advisory board)
 #   hometownstation.com  - local press
+#   lifeonautismlane.com  - the Carter family's own site (kept out intentionally)
 #
-# HELD FOR YOUR DECISION (NOT disavowed - review, then add if spam):
-#   lifeonautismlane.com     - may be a real parent/community blog
-#   mbprinteddroids.com      - hobby forum (links from forum.mbprinteddroids.com)
-#   drjack.world             - uncertain
-#   kernelpanicpodcast.com   - may be a real podcast link
+# Confirmed spam since the 2026-09-29 version (now disavowed below):
+#   mbprinteddroids.com, kernelpanicpodcast.com, drjack.world
 #
-# NOTE: sendungsverfolgung24.org (34 links, German package-tracking scraper -
-#   the single largest source) IS disavowed below. It is a sitewide scraper
-#   link, not a genuine reference. Remove it only if you know otherwise.
+# sendungsverfolgung24.org (34 links, German package-tracking scraper - the
+#   single largest source) is disavowed below.
 #
 # Everything below is auto-generated spam: SEO/backlink farms, fake
 # website-worth/stats scrapers, junk directories, URL shorteners, casino/
 # betting spam, PBN gibberish, and hacked-site injected links.
-# 258 domains disavowed.
+# 261 domains disavowed.
 # ---------------------------------------------------------------------------
 domain:1000.co.in
 domain:1stcallglasscare.com
@@ -127,6 +124,7 @@ domain:domraider.uk.com
 domain:domraider.uk.net
 domain:domraider.us.com
 domain:doxycycline100mg.store
+domain:drjack.world
 domain:drobo.shop
 domain:dupurgeniefr.com
 domain:egyptiandirectory.com
@@ -173,6 +171,7 @@ domain:indians.cc
 domain:jobsapp.info
 domain:juaralaundry.com
 domain:kalio.shop
+domain:kernelpanicpodcast.com
 domain:kkinsider.com
 domain:knows.monster
 domain:knows.sbs
@@ -183,6 +182,7 @@ domain:localranking.site
 domain:luminko.shop
 domain:marinasone.com
 domain:masihnyata.com
+domain:mbprinteddroids.com
 domain:mediaboooster.com
 domain:mertio.shop
 domain:metamagic.top
