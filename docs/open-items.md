@@ -23,10 +23,12 @@ _Last updated: 2026-08-31_
 
 ## 🟡 Operator / dashboard tasks
 
-- [ ] **🔴 Submit the disavow file** — upload `docs/disavow-alymelife.txt` in
-      Google Search Console if not already done. The backlink profile is 94%
-      spam (Authority Score ~2), which suppresses the whole domain. Likely the
-      single highest-impact off-page action. See `docs/off-page-growth-plan.md`.
+- [x] **Submit the disavow file** — ✅ submitted 2026-10-02 (258-domain version).
+- [ ] **🔴 Re-submit the disavow file** — the file was updated to **261 domains**
+      after the first submission: added `mbprinteddroids.com`,
+      `kernelpanicpodcast.com`, `drjack.world` (confirmed spam). Re-upload
+      `docs/disavow-alymelife.txt` in GSC (it replaces the prior file).
+      `lifeonautismlane.com` stays out — it's the family's own site.
 - [ ] **GA4 bot + internal-traffic filters** — apply `docs/ga4-traffic-filters.md`.
       Reports stay noisy (Urumqi/Singapore bots) until this is done.
 - [ ] **Clarity bot filtering** — same idea, in the Clarity dashboard.
@@ -48,6 +50,13 @@ _Last updated: 2026-08-31_
   - [ ] Pitch **Tick Boot Camp podcast** (highest-ROI single target).
   - [ ] Set up **HARO/Qwoted** for journalist queries.
   - Target: 2–4 quality links/month. Authority moves rankings over months.
+- [ ] **lifeonautismlane.com link (low priority).** The Carters' own family site.
+      Semrush: **no organic rankings**, Authority Score 2, ~260 referring domains
+      (same spam pattern as alymelife had — likely a compromised WordPress).
+      A followed link to alymelife.com is a modest nice-to-have (little ranking
+      power, some real referral + a clean refdomain) — but **rebuild it off
+      WordPress and clean its spam first**, then add the link. Not a priority
+      lever vs. the partner/podcast links below.
 - [ ] **Activate Christina's YouTube + communities** — link alymelife.com from
       the channel About + video descriptions; participate in Reddit/FB/Quora
       Lyme communities. Fastest path to real humans *and* GEO signal.
