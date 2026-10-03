@@ -42,11 +42,21 @@ _Last updated: 2026-08-31_
 **See `docs/off-page-growth-plan.md` for the full SEO+GEO strategy and the
 2026-09-29 data (57 Google clicks/92 days; but already cited in AI answers).**
 
+- [ ] **🔵 Reciprocal link from lymeimmunotherapy.com (Lyme Re-code) — top quick win.**
+      Ask Lyme Re-code to add a **followed** in-content link to
+      **https://alymelife.com/lyme-immunotherapy.html** from a relevant page
+      (e.g. their Treg/immunotherapy posts, or an advisory-board/partners page).
+      Why it's high-value: the 2026-09-30 GEO baseline shows lymeimmunotherapy.com
+      is *already cited by AI* for the Treg/immunotherapy prompts where our own
+      new page isn't yet — a link from them should lift it fastest. It's also a
+      warm ask (Christina is on their advisory board) and a genuine topical match.
+      Anchor: descriptive, e.g. "A Lyme Life's guide to Lyme immunotherapy."
+      Confirm it's `followed`, not `nofollow`. Log it in `docs/backlink-targets.md`.
 - [ ] **Backlink outreach** — work `docs/backlink-targets.md`, top-down:
   - [ ] Tier 6 quick wins first — verify partner bio links (thelymespecialist.com,
         lymeimmunotherapy.com, the Mexico program) link to alymelife.com and are
-        **followed**, not nofollow. Request the reciprocal link to the new
-        `lyme-immunotherapy.html` page.
+        **followed**, not nofollow. (The reciprocal link to
+        `lyme-immunotherapy.html` is now called out as its own item above.)
   - [ ] Pitch **Tick Boot Camp podcast** (highest-ROI single target).
   - [ ] Set up **HARO/Qwoted** for journalist queries.
   - Target: 2–4 quality links/month. Authority moves rankings over months.
