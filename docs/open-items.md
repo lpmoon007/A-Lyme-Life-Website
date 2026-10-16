@@ -79,15 +79,30 @@ _Last updated: 2026-08-31_
 
 ## ⚪ Deferred by choice (fix later)
 
-- [ ] **Lead-magnet form → HubSpot** (`lyme-treatment-questions.html`, currently
-      Formspree `mqerqren`). Easy; consolidates all email capture in HubSpot.
-- [ ] **Assessment gate → HubSpot** (`hyperthermia-self-assessment.html`,
-      Formspree `xjgnbyye`). Bigger — needs custom HubSpot fields to preserve the
-      assessment answers, not just the email.
+- [ ] **HubSpot Marketing Email reauthorization** → then set up auto-emails that
+      deliver the guide PDF + the assessment's printable result ("check your
+      inbox" is NOT true yet — guide is on-page download, result is on-screen).
+- [ ] **Self-assessment-primary CTA pass on the hyperthermia money pages**
+      (whole-body-hyperthermia, extreme-vs-moderate, germany, treatment-centers,
+      chronic-lyme-treatment, lyme-immunotherapy, treg-therapy): lead with
+      "Is hyperthermia right for you? Take the 5-min assessment →" instead of
+      the generic newsletter/guide — it's the money-aligned capture.
+
+> ⚠️ **HubSpot forms gotcha (learned 2026-10-16):** any form that receives
+> submissions via the API (our site posts via the Forms v3 endpoint, not the
+> HubSpot embed) MUST have **reCAPTCHA / bot protection turned OFF** in the
+> form's Options, or it returns `FORM_HAS_RECAPTCHA_ENABLED` and every submit
+> fails. Apply this to any new form you create for the site.
 
 ---
 
 ## ✅ Done (recent, for reference)
+
+- Guide + hyperthermia self-assessment forms migrated off Formspree → HubSpot
+  (verified live 2026-10-16); assessment lands with `hyperthermia_assessment_result`
+  (score/band/safety-flags) so candidacy is visible in the CRM
+- Low-friction email capture placed high on top-traffic pages; evidence-framed
+  "does hyperthermia work" section + FAQ on the pillar
 
 - Newsletter fully migrated to HubSpot (page + popup + all inline forms), verified live
 - Dedicated `/newsletter.html` + welcome gift, linked sitewide (footer + popup)
