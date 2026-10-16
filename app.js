@@ -228,7 +228,7 @@ function alymelifeHubSpotPost(formGuid, fields) {
       +   '<div class="nl-pop-mark">\uD83D\uDC9B</div>'
       +   '<h3 id="nlPopTitle">Get Christina\u2019s Lyme guidance in your inbox</h3>'
       +   '<p>Honest updates from our family\u2019s Lyme journey \u2014 new guides and the hard-won lessons behind them. No spam, unsubscribe anytime.</p>'
-      +   '<form class="c-sub-form nl-pop-form" data-hs-newsletter action="https://formspree.io/f/mkoajneb" method="POST">'
+      +   '<form class="c-sub-form nl-pop-form" data-hs-newsletter action="newsletter.html" method="POST">'
       +     '<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">'
       +     '<input type="hidden" name="_subject" value="New newsletter subscriber (popup)">'
       +     '<input type="email" name="email" required placeholder="you@email.com" aria-label="Your email">'
@@ -362,9 +362,8 @@ function alymelifeHubSpotPost(formGuid, fields) {
   document.addEventListener('submit', function (e) {
     var form = e.target;
     if (!form || form.tagName !== 'FORM') return;
-    var action = form.getAttribute('action') || '';
-    if (action.indexOf('mkoajneb') !== -1) track('newsletter_signup', { page_path: path });
-    else if (action.indexOf('xjgnbyye') !== -1) track('assessment_submit', { page_path: path });
+    if (form.classList && form.classList.contains('c-sub-form')) track('newsletter_signup', { page_path: path });
+    else if (form.id === 'gateForm') track('assessment_submit', { page_path: path });
   }, true);
 
   // ---- Scroll depth (25/50/75/90%), once each ----
@@ -459,7 +458,10 @@ function alymelifeHubSpotPost(formGuid, fields) {
     var go = function () { window.location.href = 'book.html'; };
     alymelifeHubSpotPost('ce2f201c-e79b-4388-b434-25e305e9b42a', fields)
       .then(go)
-      .catch(function () { try { form.submit(); } catch (err) { go(); } });
+      .catch(function () {
+        if (btn) { btn.disabled = false; btn.removeAttribute('aria-busy'); }
+        alert('Sorry — that didn’t go through. Please try again, or book a free call and I’ll bring your result.');
+      });
   });
 })();
 
