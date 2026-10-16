@@ -26,6 +26,18 @@ function alymelifeHubSpotSubmit(email, firstname) {
   }).then(function (r) { if (!r.ok) throw new Error('HubSpot ' + r.status); return r; });
 }
 
+/* Generic HubSpot Forms v3 submit for the other A Lyme Life forms (lead-magnet
+   guide + hyperthermia self-assessment). Same portal 246801121 (na2); the form
+   GUID and fields are passed in. Rejects on non-2xx so callers show a real
+   fallback instead of a false success. */
+function alymelifeHubSpotPost(formGuid, fields) {
+  return fetch('https://api.hsforms.com/submissions/v3/integration/submit/246801121/' + formGuid, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ fields: fields, context: { pageUri: location.href, pageName: document.title } })
+  }).then(function (r) { if (!r.ok) throw new Error('HubSpot ' + r.status); return r; });
+}
+
 (function () {
   // ---- Header shadow on scroll ----
   const header = document.getElementById('header');
@@ -405,14 +417,51 @@ function alymelifeHubSpotSubmit(email, firstname) {
     // lead-magnet page keeps its Formspree endpoint. Both reveal the guide on
     // success and show the error box on failure. fetch only rejects on network
     // errors (not HTTP 4xx/5xx), so the Formspree branch throws on !res.ok.
-    var req = form.hasAttribute('data-hs-newsletter')
-      ? alymelifeHubSpotSubmit(fd.get('email'), fd.get('fname'))
-      : fetch(form.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
-          .then(function (res) { if (!res.ok) throw new Error(res.status); return res; });
+    var req;
+    if (form.hasAttribute('data-hs-newsletter')) {
+      // Newsletter page's guide form -> newsletter HubSpot form.
+      req = alymelifeHubSpotSubmit(fd.get('email'), fd.get('fname'));
+    } else {
+      // Standalone lead-magnet page (15-questions guide) -> its own HubSpot form.
+      var gfields = [{ name: 'email', value: (fd.get('email') || '').trim() }];
+      var gfn = (fd.get('fname') || '').trim();
+      if (gfn) gfields.push({ name: 'firstname', value: gfn });
+      req = alymelifeHubSpotPost('62476c3f-48f5-470b-adcf-d1ce5c7d4e2d', gfields);
+    }
     req.then(onSuccess).catch(onError);
   });
 })();
 
+
+/* ---- Hyperthermia self-assessment gate: AJAX to HubSpot, then booking ----
+   The quiz populates hidden score/band/flags; we pack them into one HubSpot
+   property (hyperthermia_assessment_result) so Christina sees candidacy at a
+   glance. On success -> book.html. On HubSpot failure -> native Formspree
+   submit (its _next also lands on book.html), so a lead is never lost. */
+(function () {
+  var form = document.getElementById('gateForm');
+  if (!form) return;
+  var btn = form.querySelector('button[type="submit"]');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (btn) { btn.disabled = true; btn.setAttribute('aria-busy', 'true'); }
+    var fd = new FormData(form);
+    var result = 'Score: ' + (fd.get('assessment_score') || 'n/a').trim()
+      + ' | Band: ' + (fd.get('assessment_band') || 'n/a').trim()
+      + ' | Safety flags: ' + (fd.get('safety_flags') || 'none').trim();
+    var fields = [{ name: 'email', value: (fd.get('email') || '').trim() }];
+    var fn = (fd.get('first_name') || '').trim();
+    if (fn) fields.push({ name: 'firstname', value: fn });
+    fields.push({ name: 'hyperthermia_assessment_result', value: result });
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'generate_lead', { lead_source: 'hyperthermia_assessment', content_id: 'hyperthermia-self-assessment', page_path: location.pathname });
+    }
+    var go = function () { window.location.href = 'book.html'; };
+    alymelifeHubSpotPost('ce2f201c-e79b-4388-b434-25e305e9b42a', fields)
+      .then(go)
+      .catch(function () { try { form.submit(); } catch (err) { go(); } });
+  });
+})();
 
 /* ============================================================
    Click-to-enlarge lightbox for content photos.
