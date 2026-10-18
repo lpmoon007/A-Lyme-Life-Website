@@ -541,21 +541,11 @@
           <li><span class="ck">✓</span> Completely free — and entirely up to you what comes next</li>
         </ul>
       </div>
-      <!-- ====================================================================
-           FORM DELIVERY — how Christina gets these messages by email + storage
-           --------------------------------------------------------------------
-           This posts to Formspree, a form-backend service. Christina's email is
-           NOT in this page (so spammers can't scrape it) — it lives only in the
-           Formspree dashboard. To activate:
-             1. Go to formspree.io → sign up with Christina's email (free).
-             2. Create a new form; it gives you an ID like  xdorwkpq
-             3. Replace YOUR_FORM_ID below with that ID.
-           Result: every submission is EMAILED to Christina AND STORED in the
-           Formspree dashboard (exportable to CSV / Google Sheets).
-           (Web3Forms or FormSubmit work the same way if you prefer those.)
-      ==================================================================== -->
-      <form class="form-card" id="consultForm" action="https://formspree.io/f/mkoajneb" method="POST" novalidate>
-        <input type="hidden" name="_subject" value="New free-consultation request from A Lyme Life" />
+      <!-- FORM DELIVERY — this consultation request submits to HubSpot
+           (Forms v3 API, portal 246801121) via app.js; leads land in the
+           HubSpot CRM. Christina's email is not in the page. The action is a
+           graceful fallback only (JS handles the real submit in place). -->
+      <form class="form-card" id="consultForm" action="book.html" method="POST" novalidate>
         <div class="form-fields">
           <div class="form-row">
             <label for="fname">First name</label>
@@ -683,7 +673,7 @@
 <!-- ===================== SCRIPTS ===================== -->
 <script defer src="image-slot.js?v=20260817"></script>
 <script defer src="yt-embed.js?v=20260716"></script>
-<script defer src="app.js?v=20261016"></script>
+<script defer src="app.js?v=20261017"></script>
 
 <!-- In-browser visual editor ("tweaks"): only loaded when the URL has ?edit=1,
      so normal visitors don't download React dev + Babel. Add ?edit=1 to the

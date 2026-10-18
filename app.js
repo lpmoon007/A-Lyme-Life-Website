@@ -4,8 +4,8 @@
 document.documentElement.classList.add('js-anim');
 
 /* ============================================================
-   HubSpot Forms submission — newsletter capture posts here instead of
-   Formspree, so subscribers land in HubSpot (which can actually send the
+   HubSpot Forms submission — newsletter capture posts here, so
+   subscribers land in HubSpot (which can actually send the
    newsletter). Portal 246801121 (na2 region) / form d75e51fa-…
    Keeps the site's own styled forms + AJAX (no HubSpot embed script).
    Only forms marked data-hs-newsletter route here. The HubSpot form needs
@@ -134,45 +134,34 @@ function alymelifeHubSpotPost(formGuid, fields) {
       if (stageBad) ok = false;
       if (!ok) return;
 
-      // ---- Send to the form backend (Formspree etc.) without leaving the page ----
-      const action = form.getAttribute('action') || '';
+      // ---- Send the consultation request to HubSpot (Forms v3) in place ----
       const submitBtn = form.querySelector('button[type="submit"]');
       const showSuccess = () => {
         form.classList.add('sent');
         document.getElementById('formSuccess').classList.add('show');
       };
-
-      // If the endpoint hasn't been configured yet, just show success (demo mode)
-      // so the page is testable. Once YOUR_FORM_ID is replaced, it really sends.
-      if (action.indexOf('YOUR_FORM_ID') !== -1 || !action) {
-        showSuccess();
-        return;
-      }
+      const fail = () => {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = 'Request My Free Consultation <span class="arrow">→</span>'; }
+        alert("Sorry — that didn't go through. Please try again, or email Christina directly at christina@alymelife.com.");
+      };
 
       if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
-      fetch(action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { Accept: 'application/json' },
-      })
-        .then((res) => {
-          if (res.ok) {
-            showSuccess();
-          } else {
-            if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = 'Request My Free Consultation <span class="arrow">→</span>'; }
-            res.json().then((data) => {
-              var msg = (data && data.errors && data.errors.length)
-                ? data.errors.map(function (er) { return er.message; }).join(' ')
-                : ('Form service returned status ' + res.status + '.');
-              alert("Couldn't send your message: " + msg + "\n\nYou can also email Christina directly at christina@alymelife.com.");
-            }).catch(function () {
-              alert("Couldn't send your message (status " + res.status + "). Please try again, or email Christina directly at christina@alymelife.com.");
-            });
-          }
-        })
-        .catch(() => {
-          if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = 'Request My Free Consultation <span class="arrow">→</span>'; }
-          alert("Sorry — something went wrong sending your message. Please check your connection and try again.");
+      const phone = form.querySelector('#phone');
+      const message = form.querySelector('#message');
+      const fields = [{ name: 'email', value: email.value.trim() }];
+      if (fname && fname.value.trim()) fields.push({ name: 'firstname', value: fname.value.trim() });
+      if (phone && phone.value.trim()) fields.push({ name: 'phone', value: phone.value.trim() });
+      if (message && message.value.trim()) fields.push({ name: 'message', value: message.value.trim() });
+      const withStage = (stage && stage.value) ? fields.concat([{ name: 'journey_stage', value: stage.value }]) : fields;
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'generate_lead', { lead_source: 'consultation_request', content_id: 'homepage-consult', page_path: location.pathname });
+      }
+      // Try with journey_stage; if that custom property's internal name doesn't
+      // match, retry without it so the lead is never lost.
+      alymelifeHubSpotPost('e48a5a7a-2fbe-477e-b056-1753d4804dcc', withStage)
+        .then(showSuccess)
+        .catch(function () {
+          alymelifeHubSpotPost('e48a5a7a-2fbe-477e-b056-1753d4804dcc', fields).then(showSuccess).catch(fail);
         });
     });
     // clear error as user types
@@ -228,7 +217,7 @@ function alymelifeHubSpotPost(formGuid, fields) {
       +   '<div class="nl-pop-mark">\uD83D\uDC9B</div>'
       +   '<h3 id="nlPopTitle">Get Christina\u2019s Lyme guidance in your inbox</h3>'
       +   '<p>Honest updates from our family\u2019s Lyme journey \u2014 new guides and the hard-won lessons behind them. No spam, unsubscribe anytime.</p>'
-      +   '<form class="c-sub-form nl-pop-form" data-hs-newsletter action="https://formspree.io/f/mkoajneb" method="POST">'
+      +   '<form class="c-sub-form nl-pop-form" data-hs-newsletter action="newsletter.html" method="POST">'
       +     '<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">'
       +     '<input type="hidden" name="_subject" value="New newsletter subscriber (popup)">'
       +     '<input type="email" name="email" required placeholder="you@email.com" aria-label="Your email">'
@@ -362,9 +351,8 @@ function alymelifeHubSpotPost(formGuid, fields) {
   document.addEventListener('submit', function (e) {
     var form = e.target;
     if (!form || form.tagName !== 'FORM') return;
-    var action = form.getAttribute('action') || '';
-    if (action.indexOf('mkoajneb') !== -1) track('newsletter_signup', { page_path: path });
-    else if (action.indexOf('xjgnbyye') !== -1) track('assessment_submit', { page_path: path });
+    if (form.classList && form.classList.contains('c-sub-form')) track('newsletter_signup', { page_path: path });
+    else if (form.id === 'gateForm') track('assessment_submit', { page_path: path });
   }, true);
 
   // ---- Scroll depth (25/50/75/90%), once each ----
@@ -413,10 +401,10 @@ function alymelifeHubSpotPost(formGuid, fields) {
     if (errBox) errBox.hidden = true;
     if (btn) { btn.disabled = true; btn.setAttribute('aria-busy', 'true'); }
     var fd = new FormData(form);
-    // Newsletter page routes to HubSpot (email + first name); the standalone
-    // lead-magnet page keeps its Formspree endpoint. Both reveal the guide on
-    // success and show the error box on failure. fetch only rejects on network
-    // errors (not HTTP 4xx/5xx), so the Formspree branch throws on !res.ok.
+    // Newsletter page routes to the newsletter HubSpot form (email + first
+    // name); the standalone lead-magnet page routes to its own HubSpot form.
+    // Both reveal the guide on success and show the error box on failure.
+    // alymelifeHubSpotPost rejects on any non-2xx response.
     var req;
     if (form.hasAttribute('data-hs-newsletter')) {
       // Newsletter page's guide form -> newsletter HubSpot form.
@@ -436,8 +424,8 @@ function alymelifeHubSpotPost(formGuid, fields) {
 /* ---- Hyperthermia self-assessment gate: AJAX to HubSpot, then booking ----
    The quiz populates hidden score/band/flags; we pack them into one HubSpot
    property (hyperthermia_assessment_result) so Christina sees candidacy at a
-   glance. On success -> book.html. On HubSpot failure -> native Formspree
-   submit (its _next also lands on book.html), so a lead is never lost. */
+   glance. On success -> book.html. On HubSpot failure -> re-enable the
+   button and show a retry message pointing to the free call. */
 (function () {
   var form = document.getElementById('gateForm');
   if (!form) return;
@@ -459,7 +447,10 @@ function alymelifeHubSpotPost(formGuid, fields) {
     var go = function () { window.location.href = 'book.html'; };
     alymelifeHubSpotPost('ce2f201c-e79b-4388-b434-25e305e9b42a', fields)
       .then(go)
-      .catch(function () { try { form.submit(); } catch (err) { go(); } });
+      .catch(function () {
+        if (btn) { btn.disabled = false; btn.removeAttribute('aria-busy'); }
+        alert('Sorry — that didn’t go through. Please try again, or book a free call and I’ll bring your result.');
+      });
   });
 })();
 
