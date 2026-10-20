@@ -122,7 +122,7 @@
         <p>If a path forward fits your situation, I connect you to trusted hospitals and walk beside you. And if it's not right for you, I'll tell you that honestly too.</p>
       </div>
     </div>
-    <p style="margin:24px auto 0;max-width:620px;text-align:center;color:var(--ink-soft,#555b62);font-size:.98rem;">Wondering about cost or insurance before you book? That's fair — here's an honest look at <a href="blog-cost.html">what Lyme treatment abroad really costs</a>.</p>
+    <p style="margin:24px auto 0;max-width:640px;text-align:center;color:var(--ink-soft,#555b62);font-size:.98rem;">Worried you couldn't afford this anyway? Please don't rule yourself out before we talk — almost everyone feels that way, and there are real ways families pay for treatment (including partners who help recover part of the cost through insurance). Here's an honest look at <a href="blog-cost.html">what it really costs</a> and <a href="blog-treatment-funding.html">how families actually fund it</a>.</p>
   </div>
 </section>
 
@@ -153,10 +153,21 @@
       <div style="display:flex;align-items:center;gap:14px;color:var(--ink-faint,#8a8f97);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-bottom:18px;">
         <span style="flex:1;height:1px;background:var(--line,#e3ddd0);"></span>or<span style="flex:1;height:1px;background:var(--line,#e3ddd0);"></span>
       </div>
-      <div style="background:var(--surface,#fff);border:1px solid var(--line,#e3ddd0);border-radius:var(--card-radius,16px);padding:26px 28px;">
-        <h3 style="margin:0 0 6px;font-family:var(--font-head,'Cormorant Garamond',serif);font-size:1.4rem;color:var(--ink,#2d3239);">Not ready to pick a time?</h3>
-        <p style="margin:0 0 16px;color:var(--ink-soft,#555b62);">You don't have to choose a slot to start. Send me a message instead and I'll personally reach out — usually within one business day. No calendar, no commitment.</p>
-        <a class="btn btn-primary" href="index.html#contact">Send Christina a message <span class="arrow">→</span></a>
+      <div style="background:var(--surface,#fff);border:1px solid var(--line,#e3ddd0);border-radius:var(--card-radius,16px);padding:26px 28px;text-align:left;">
+        <h3 style="margin:0 0 6px;font-family:var(--font-head,'Cormorant Garamond',serif);font-size:1.4rem;color:var(--ink,#2d3239);text-align:center;">Not ready to pick a time?</h3>
+        <p style="margin:0 0 16px;color:var(--ink-soft,#555b62);text-align:center;">You don't have to choose a slot to start. Tell me a little about where you are and I'll personally reach out — usually within one business day. No calendar, no commitment.</p>
+        <form id="bookMsgForm" novalidate>
+          <div style="display:grid;gap:12px;">
+            <input type="text" id="bmName" name="fname" placeholder="First name (optional)" autocomplete="given-name" style="width:100%;padding:12px 14px;border:1px solid var(--line,#e3ddd0);border-radius:10px;font:inherit;background:var(--bg,#fff);color:var(--ink,#2d3239);box-sizing:border-box;" />
+            <input type="email" id="bmEmail" name="email" required placeholder="Email (so I can reach you)" autocomplete="email" style="width:100%;padding:12px 14px;border:1px solid var(--line,#e3ddd0);border-radius:10px;font:inherit;background:var(--bg,#fff);color:var(--ink,#2d3239);box-sizing:border-box;" />
+            <textarea id="bmMsg" name="message" rows="3" placeholder="Where are you right now? Even a sentence helps (optional)" style="width:100%;padding:12px 14px;border:1px solid var(--line,#e3ddd0);border-radius:10px;font:inherit;background:var(--bg,#fff);color:var(--ink,#2d3239);resize:vertical;box-sizing:border-box;"></textarea>
+            <button type="submit" class="btn btn-primary" style="justify-self:start;">Send Christina a message <span class="arrow">→</span></button>
+            <p style="margin:0;font-size:.82rem;color:var(--ink-faint,#8a8f97);">No spam, ever — Christina reads these herself.</p>
+          </div>
+        </form>
+        <div id="bookMsgSuccess" hidden style="background:var(--green-tint,#eef3e2);border:1px solid #d6e0bf;border-radius:12px;padding:20px 22px;">
+          <p style="margin:0;color:var(--ink,#2d3239);"><strong>Got it — thank you.</strong> Christina will personally reach out, usually within one business day. If you'd rather not wait, you can pick a time on the calendar above anytime.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -206,7 +217,7 @@
 </footer>
 
 <script src="image-slot.js?v=20260817"></script>
-<script src="app.js?v=20261017"></script>
+<script src="app.js?v=20261020"></script>
 <!-- HubSpot meetings embed (current loader — the old MeetingsEmbedCode/current
      path is deprecated and no longer injects the iframe) -->
 <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>

@@ -454,6 +454,39 @@ function alymelifeHubSpotPost(formGuid, fields) {
   });
 })();
 
+/* ---- Booking page: inline "message instead" form -> HubSpot consult form ----
+   The lower-commitment path on book.html. Posts name/email/message to the same
+   HubSpot consultation form as the homepage consult form, in place (no navigation
+   away), so a hesitant visitor never loses the booking page. journey_stage is
+   omitted (kept low-friction); HubSpot still records the page as the source. */
+(function () {
+  var form = document.getElementById('bookMsgForm');
+  if (!form) return;
+  var btn = form.querySelector('button[type="submit"]');
+  var ok = document.getElementById('bookMsgSuccess');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var emailEl = form.querySelector('#bmEmail');
+    var email = (emailEl && emailEl.value || '').trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { if (emailEl) emailEl.focus(); return; }
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+    var fields = [{ name: 'email', value: email }];
+    var fn = (form.querySelector('#bmName').value || '').trim();
+    if (fn) fields.push({ name: 'firstname', value: fn });
+    var msg = (form.querySelector('#bmMsg').value || '').trim();
+    if (msg) fields.push({ name: 'message', value: msg });
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'generate_lead', { lead_source: 'booking_message', content_id: 'book-message', page_path: location.pathname });
+    }
+    var done = function () { form.style.display = 'none'; if (ok) ok.hidden = false; };
+    var fail = function () {
+      if (btn) { btn.disabled = false; btn.innerHTML = 'Send Christina a message <span class="arrow">→</span>'; }
+      alert("Sorry — that didn't go through. Please try again, or email Christina directly at christina@alymelife.com.");
+    };
+    alymelifeHubSpotPost('e48a5a7a-2fbe-477e-b056-1753d4804dcc', fields).then(done).catch(fail);
+  });
+})();
+
 /* ============================================================
    Click-to-enlarge lightbox for content photos.
    Purpose: Clarity showed ~12% of sessions dead-clicking — on an
