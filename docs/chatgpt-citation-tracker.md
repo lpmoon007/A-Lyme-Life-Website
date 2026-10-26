@@ -87,6 +87,7 @@ to institutional literature. Apheresis is a brand-new dedicated page.
 | Export date | Treg | Immunotherapy | Buhner | Germany | Apheresis | Notes |
 |---|---|---|---|---|---|---|
 | 2026-10-20 (baseline) | 0 | 0 | 0 | 0 | 0 | pre-recrawl baseline |
+| 2026-10-26 | 0 | 0 | 0 | 0 | 0 | +6 days — too soon for ChatGPT recrawl; apheresis page brand-new. But overall our-domain AI citations grew 221→305 (Copilot 112→139, Google 57→75, **Perplexity 33→68 doubled**, ChatGPT 19→23). Re-check ~mid-Nov. |
 | _(next export)_ | | | | | | |
 
 ---
