@@ -24,14 +24,9 @@ _Last updated: 2026-08-31_
 ## 🟡 Operator / dashboard tasks
 
 - [x] **Submit the disavow file** — ✅ submitted 2026-10-02 (258-domain version).
-- [ ] **🔴 RE-SUBMIT the disavow file — now 1,736 domains (refreshed 2026-10-30).**
-      Ongoing negative-SEO spam ballooned the junk-domain count ~7× since Oct 2
-      (hundreds of new `.shop`/`.store`/`.site`/`.space`/`.online`/`.website`
-      link-farm domains). Re-upload `docs/disavow-alymelife.txt` in GSC → Disavow
-      Links tool — it **replaces** the prior file. Whitelist preserved
-      (bayarealyme, hometownstation, thelymespecialist, lymeimmunotherapy,
-      globallymealliance, lifeonautismlane). **Then refresh it every 1–2 months**
-      while the attack continues.
+- [x] **Re-submit the disavow file (1,736 domains)** — ✅ submitted 2026-10-30.
+      Ongoing negative-SEO spam had ballooned the junk-domain count ~7× since Oct 2.
+      Now a **recurring monthly task** — see `docs/monthly-maintenance.md`.
       NOTE: a disavow is private to Google — it will NOT lower the Authority Score
       or backlink count that Semrush reports; it only stops the links hurting
       Google rankings.
