@@ -1,61 +1,67 @@
-# Off-page link targets — the outreach plan
+# Off-page plan — grow authority & audience
 
-The one lever that unlocks everything: **Authority Score 2 → competitors at 42–43.**
-This is the working list of where to earn quality backlinks, built from the sites
-our top competitors (danielcameronmd.com, bayarealyme.org, lymedisease.org) already
-have and we don't. Source: Semrush referring-domains, Oct 2026.
+The ceiling on traffic is **Authority Score 2 vs competitors at 42–43.** Raising it
+happens off the site, over months. This is the working plan, built from the links
+our competitors (danielcameronmd.com, bayarealyme.org, lymedisease.org) have and we
+don't. Source: Semrush, Oct 2026.
 
-_Created: 2026-10-30_
+_Created 2026-10-30 · updated 2026-10-30_
 
 ---
 
+## Read this first: followed vs. nofollow
+Not every link raises Authority Score — only **followed** links pass authority.
+Many popular platforms (Substack, Medium, GoFundMe, podcast directories, social
+profiles) tag their outbound links **nofollow**, which tells Google *don't pass
+authority through this.* Those still matter — they grow **traffic, audience and
+brand** — but they won't move the score. So this plan splits the two:
+
+- **A. Authority links (followed)** → raise the score → lift page-3–10 rankings to page 1 → more traffic. Harder to earn; the real long-term lever.
+- **B. Audience & referral (mostly nofollow)** → send real visitors now and build the subscriber base we can nurture toward consults. The nearer-term lever, since the funnel's actual problem is *too few visitors*.
+
+(Competitors show 131–176 "Substack links" in Semrush — but those are nofollow and are **not** what gives them Authority Score 42. Their score comes from section A.)
+
 ## The situation, in numbers
-- alymelife.com Authority Score: **2** · Cameron **42** · Bay Area Lyme **42** · LymeDisease.org **43**
-- ~2,900 backlinks, but **72% are spam** (junk `.shop`/`.online`/`.store`/`.site` domains); **2,660 of 2,667 referring domains score 0**.
-- We have exactly **2 quality links**: bayarealyme.org (AS 10) and a local news story (hometownstation.com, AS 8).
-- Result: 162 keywords ranking, but ~1 Google visit/day — because they sit on pages 3–10.
+- Authority Score: **2** · Cameron 42 · Bay Area 42 · LymeDisease.org 43.
+- ~2,900 backlinks, but **72% spam**; only **2 quality links** (bayarealyme.org, a local news story).
+- 162 keywords ranking, but ~1 Google visit/day — they sit on pages 3–10.
 
-## Step 0 — protect what we build: disavow the spam
-Much of the profile is toxic (junk-TLD link networks). Submit/refresh a Google
-disavow for the `.shop`/`.online`/`.store`/`.site` spam domains so new quality links
-aren't dragged down. (A disavow list for 261 domains was drafted earlier — expand it
-to cover the ~1,900 junk-TLD referrers.)
+## Step 0 — protect it: keep the disavow current
+Done 2026-10-30 (1,736 domains). The site is under ongoing negative-SEO spam, so
+refresh and re-upload monthly — see `docs/monthly-maintenance.md`.
 
-## Tier 1 — Quick wins (self-serve, start this week, free)
-| Target | AS | Why it works |
+## A. Authority links (followed — these move the score)
+Harder to earn, but the real lever. Target the sites that already link our competitors:
+| Target | AS | How · usually FOLLOWED |
 |---|---|---|
-| **Medium.com** | 98 | Republish Christina's articles with a canonical/link home. LymeDisease has 10, Bay Area 7. |
-| **Substack.com** | 88 | Start a newsletter / cross-post. Bay Area has 131 links here, LymeDisease 176. Biggest single opportunity. |
-| **The Mighty** (themighty.com) | 49 | Submit Christina's chronic-illness story — the platform is built for patient stories. Links Cameron. |
-| **GoFundMe** | 75 | Patient treatment fundraisers that cite alymelife resources. Links all competitors. |
-| **Change.org** | 70 | A Lyme-awareness petition linking the site. Links Cameron. |
-| **LinkTree / podcast directories** | 55–89 | iHeart (80), Podbean (55), Apple Podcasts, TuneIn — earned via podcast guesting (below). |
-
-## Tier 2 — Digital PR (a few hours/week, or a freelancer)
-| Target | AS | How |
-|---|---|---|
-| **HARO / Qwoted / Featured** | — | Answer journalist queries as a patient-advocate source → links from HuffPost (76), Women's Health (74), Parade (75), Bustle (56), Everyday Health (73), YourTango (65). |
-| **PRNewswire / EIN Presswire** | 74 | Distribute press releases (new programs, milestones, Christina's story). Bay Area Lyme has **60 links** from PRNewswire alone. |
-| **Healthline** | 100 | Contributor pitch / expert quote. Links all three competitors (LymeDisease 17 links). |
-| **Medical News Today / News-Medical / MedicalXpress** | 58–91 | Expert commentary / study reaction pitches. |
-| **Verywell Health, Health.com, HealthDigest, Everyday Health** | 45–82 | Guest contribution or source quote. |
-| **Podcast guesting** (Lyme & chronic-illness shows) | — | Each booking → show-notes links + directory links. |
-
-## Tier 3 — Relationships (highest trust, longer game)
-| Target | AS | How |
-|---|---|---|
-| **Global Lyme Alliance** (globallymealliance.org) | 45 | Resource listing / guest blog / partnership. Already links Cameron. Natural nonprofit fit. |
-| **ILADS, Project Lyme, other Lyme nonprofits** | — | Patient-resource directories & reciprocal references. |
-| **Christina's LinkedIn & YouTube** | — | The one lever only Christina can pull — active presence builds brand signals + authoritative profile links. |
-| **The Lyme Specialist / Lyme Re-code** (affiliated) | — | Easy, relevant links — point them at the hyperthermia money pages. |
+| **Earned press / HARO / Qwoted** | 56–100 | Answer journalist queries as a patient-advocate source → editorial links from HuffPost, Women's Health, Parade, Everyday Health, Bustle. Real article links are followed. |
+| **Health publications** — Healthline (100), Medical News Today (91), Verywell (82), News-Medical (73) | 73–100 | Contributor piece or expert quote. All of these link our competitors. |
+| **Global Lyme Alliance & Lyme nonprofits** — GLA (45), Project Lyme | 45 | Resource listing / guest blog / partnership. GLA already links Cameron. Natural fit. |
 | **University / .edu patient-resource pages** | 70–100 | Aspirational; competitors have Berkeley, Harvard, Cornell, Stanford. Pitch as a patient resource. |
+| **Genuine guest posts** on Lyme/health blogs | varies | A real in-content followed link inside a bylined article. |
+
+> **Note on press-release wires (PRNewswire / EIN):** the wire copies are usually
+> **nofollow** — their value is triggering journalist *pickups* that become followed
+> links. Use PR as a catalyst, not as the link itself.
+
+## B. Audience, referral & brand (mostly nofollow — grow visitors, not the score)
+The nearer-term win for the funnel: more visitors plus a subscriber base to nurture.
+| Channel | What to do |
+|---|---|
+| **Revive `alymelife.substack.com`** | It already exists but is **dormant** — last post June 2025, ~0 subscribers, 6–24 views/post. Resume publishing regularly, **link every post back to alymelife.com**, and grow subscribers by cross-promoting from the site, newsletter and social. Goal: an engaged audience to nurture toward consults — not backlinks. |
+| **Medium** | Republish articles (with a canonical or clear link home). Nofollow, but referral + reach. |
+| **The Mighty** | Submit Christina's chronic-illness story — the platform is built for patient stories. |
+| **GoFundMe / Change.org** | Patient fundraisers / awareness that cite her resources — referral + brand. |
+| **Podcast guesting** (Lyme & chronic-illness shows) | Each booking → show-notes + directory listings (iHeart, Podbean, Apple). Referral + brand, plus the occasional followed show-notes link. |
+| **Christina's LinkedIn & YouTube** | The one lever only she can pull. Profile links are nofollow, but they build the brand/entity signals Google and AI reward — and feed the AI citations she's already winning. |
+| **Affiliated sites** (The Lyme Specialist, Lyme Re-code) | Easy, relevant links pointed at the hyperthermia pages — some may be followed. |
 
 ## Where every new link should point
-Per the priority, weight links toward the **hyperthermia money cluster**
-(whole-body-hyperthermia-lyme, wiegman, germany, immunotherapy, apheresis) and the
-homepage — that's what we help people get, and it's already our best-ranked, most-cited content.
+Weight links toward the **hyperthermia money cluster** (whole-body-hyperthermia-lyme,
+wiegman, germany, immunotherapy, apheresis) and the homepage — what we help people
+get, and already our best-ranked, most-cited content.
 
-## How to measure it
-Re-pull Semrush `backlinks_overview` monthly and watch **Authority Score** and
-**referring domains (quality)** climb. A move from AS 2 → even 10–15 would
-meaningfully lift page-3–10 rankings toward page 1.
+## How to measure
+Monthly (`docs/monthly-maintenance.md`): re-pull Semrush `backlinks_overview` and
+watch **Authority Score** + **quality referring domains** climb (target AS 2 → 10–15),
+and watch **referral traffic + newsletter/Substack subscribers** grow from section B.
