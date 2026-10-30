@@ -150,6 +150,111 @@ the good ones.
 
 ---
 
+## Ready-to-paste post 4 — the "is it for you?" filter
+> **Title:** How do you know if whole-body hyperthermia is even for you?
+> **Subtitle:** An honest filter, before you spend a dollar or a flight
+
+I get a version of this almost every week: *"Should I be doing hyperthermia?"* And
+the honest answer is — I don't know yet, and neither should anyone who's only read a
+sales page. It's a real medical treatment with real reasons it isn't right for some
+people, and figuring that out *first* is how you avoid pouring money and hope into the
+wrong door.
+
+So we built a short, free version of the questions I'd actually walk through with you —
+your history, your current health, the things that make someone a good candidate and
+the things that are red flags. It takes about five minutes and nobody sees your answers
+but you:
+**[Is hyperthermia right for me?](https://alymelife.com/hyperthermia-self-assessment.html)**
+
+If you want the fuller picture of what the treatment is before you even do that, start
+with the guide:
+**[Whole-body hyperthermia for Lyme](https://alymelife.com/whole-body-hyperthermia-lyme.html)**.
+
+And if your result leaves you with questions — most people's does — that's exactly what
+a free consult is for. No pressure, no pitch:
+**[book a call](https://alymelife.com/book.html)**.
+
+*— Christina, [alymelife.com](https://alymelife.com)*
+
+---
+
+## Ready-to-paste post 5 — a Chronicles chapter
+> **Title:** Ground zero: the year we almost gave up
+> **Subtitle:** Where our Lyme story actually started
+
+Before any of the treatment talk, there was a year I don't like to revisit. The one
+where the tests came back "normal," the doctors ran out of ideas, and I started to
+believe the problem was me. If you're in that year right now, I want you to hear this
+from someone on the other side of it: you are not imagining it, and you are not out of
+options.
+
+I've been writing our family's full story — the misdiagnoses, the dead ends, and the
+turn that finally changed things — as the Chronicles. This is where it begins:
+**[the Chronicles](https://alymelife.com/chronicles.html)**.
+
+The short version of the turn: we stopped looking for one more antibiotic and started
+looking at **whole-body hyperthermia**, which is the thing this whole publication now
+exists to help people get. If you're ready to skip ahead to that part, the guide is
+here: **[whole-body hyperthermia for Lyme](https://alymelife.com/whole-body-hyperthermia-lyme.html)**.
+
+Wherever you are in your own version of this — I read every message myself. You can
+**[reach me here](https://alymelife.com/book.html)**.
+
+*— Christina, [alymelife.com](https://alymelife.com)*
+
+---
+
+## Ready-to-paste post 6 — the trust-builder (nurture)
+> **Title:** The 15 questions I wish we'd asked before any Lyme treatment
+> **Subtitle:** How to spend your money and hope wisely
+
+Chronic Lyme is an expensive disease to treat, and a brutally easy one to get sold to.
+We learned that the costly way. If I could hand my earlier self one thing, it wouldn't
+be a treatment recommendation — it'd be a list of questions sharp enough to tell a
+real option from an expensive detour.
+
+That list exists now, and it's free. It's the same set of questions I'd want you asking
+any clinic, any program, any protocol — including the ones I believe in:
+**[the 15 questions to ask before any Lyme treatment](https://alymelife.com/lyme-treatment-questions.html)**.
+
+I'm not afraid of you asking these about **hyperthermia**, either — it holds up, and I'd
+rather you choose it clear-eyed than on hype. The guide's here when you want it:
+**[whole-body hyperthermia for Lyme](https://alymelife.com/whole-body-hyperthermia-lyme.html)**.
+
+Working through the questions and want a second set of eyes on your situation? That's
+what I'm here for — **[book a free consult](https://alymelife.com/book.html)**.
+
+*— Christina, [alymelife.com](https://alymelife.com)*
+
+---
+
+## Ready-to-paste post 7 — beyond hyperthermia (introduce adjacent money pages)
+> **Title:** Hyperthermia isn't the only tool — here's what else is on the table
+> **Subtitle:** Immunotherapy and apheresis, in plain language
+
+Whole-body hyperthermia is the center of what we help people get — but it rarely travels
+alone. Two other treatments come up constantly in the same conversations, and if you've
+been researching, you've probably hit the names without a plain explanation. Let me fix
+that.
+
+- **Immunotherapy** — approaches aimed at the immune dysregulation chronic Lyme leaves
+  behind, rather than only at the bacteria. Here's the overview:
+  **[Lyme immunotherapy](https://alymelife.com/lyme-immunotherapy.html)**.
+- **Therapeutic apheresis** — filtering the blood to reduce the inflammatory load some
+  patients carry. What it is and who it's considered for:
+  **[therapeutic apheresis for Lyme](https://alymelife.com/therapeutic-apheresis-lyme.html)**.
+
+None of these is a silver bullet, and the right combination depends entirely on the
+person. That's the whole reason I don't sell a one-size protocol — I help people figure
+out *their* path, usually anchored by **[whole-body hyperthermia](https://alymelife.com/whole-body-hyperthermia-lyme.html)**.
+
+Want help sorting out which of these even applies to you?
+**[Book a free consult](https://alymelife.com/book.html)** and we'll talk it through.
+
+*— Christina, [alymelife.com](https://alymelife.com)*
+
+---
+
 ## Step 4 — cross-promote (grow the subscriber base)
 Substack won't grow itself from zero. Feed it:
 - **From the site:** add a "Read the newsletter" / subscribe link (footer + newsletter
