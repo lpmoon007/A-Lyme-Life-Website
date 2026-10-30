@@ -24,11 +24,17 @@ _Last updated: 2026-08-31_
 ## 🟡 Operator / dashboard tasks
 
 - [x] **Submit the disavow file** — ✅ submitted 2026-10-02 (258-domain version).
-- [ ] **🔴 Re-submit the disavow file** — the file was updated to **261 domains**
-      after the first submission: added `mbprinteddroids.com`,
-      `kernelpanicpodcast.com`, `drjack.world` (confirmed spam). Re-upload
-      `docs/disavow-alymelife.txt` in GSC (it replaces the prior file).
-      `lifeonautismlane.com` stays out — it's the family's own site.
+- [ ] **🔴 RE-SUBMIT the disavow file — now 1,736 domains (refreshed 2026-10-30).**
+      Ongoing negative-SEO spam ballooned the junk-domain count ~7× since Oct 2
+      (hundreds of new `.shop`/`.store`/`.site`/`.space`/`.online`/`.website`
+      link-farm domains). Re-upload `docs/disavow-alymelife.txt` in GSC → Disavow
+      Links tool — it **replaces** the prior file. Whitelist preserved
+      (bayarealyme, hometownstation, thelymespecialist, lymeimmunotherapy,
+      globallymealliance, lifeonautismlane). **Then refresh it every 1–2 months**
+      while the attack continues.
+      NOTE: a disavow is private to Google — it will NOT lower the Authority Score
+      or backlink count that Semrush reports; it only stops the links hurting
+      Google rankings.
 - [ ] **GA4 bot + internal-traffic filters** — apply `docs/ga4-traffic-filters.md`.
       Reports stay noisy (Urumqi/Singapore bots) until this is done.
 - [ ] **Clarity bot filtering** — same idea, in the Clarity dashboard.
