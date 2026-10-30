@@ -38,6 +38,22 @@ function alymelifeHubSpotPost(formGuid, fields) {
   }).then(function (r) { if (!r.ok) throw new Error('HubSpot ' + r.status); return r; });
 }
 
+/* Safety net: if a HubSpot submit fails (e.g. the form is misconfigured in the
+   portal), a high-intent lead must not be lost. Build a mailto to Christina with
+   the visitor's details already written in, so the fallback is one click, not a
+   "go type an email yourself." Returns an href the fail handlers surface. */
+function alymelifeMailtoFallback(fields, subject) {
+  var get = function (n) { for (var i = 0; i < fields.length; i++) { if (fields[i].name === n) return fields[i].value; } return ''; };
+  var lines = [];
+  var fn = get('firstname'); if (fn) lines.push('Name: ' + fn);
+  var em = get('email'); if (em) lines.push('Email: ' + em);
+  var ph = get('phone'); if (ph) lines.push('Phone: ' + ph);
+  var st = get('journey_stage'); if (st) lines.push('Where I am: ' + st);
+  var msg = get('message'); if (msg) lines.push('', msg);
+  return 'mailto:christina@alymelife.com?subject=' + encodeURIComponent(subject) +
+    '&body=' + encodeURIComponent(lines.join('\n'));
+}
+
 (function () {
   // ---- Header shadow on scroll ----
   const header = document.getElementById('header');
@@ -142,7 +158,17 @@ function alymelifeHubSpotPost(formGuid, fields) {
       };
       const fail = () => {
         if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = 'Request My Free Consultation <span class="arrow">→</span>'; }
-        alert("Sorry — that didn't go through. Please try again, or email Christina directly at christina@alymelife.com.");
+        const href = alymelifeMailtoFallback(withStage, 'Free consultation request — A Lyme Life');
+        let note = document.getElementById('consultFallback');
+        if (!note) {
+          note = document.createElement('p');
+          note.id = 'consultFallback';
+          note.style.cssText = 'margin:14px 0 0;font-size:.92rem;color:var(--ink-soft,#555b62);';
+          form.appendChild(note);
+        }
+        note.innerHTML = "Hmm — that didn't send on our end. " +
+          '<a href="' + href + '" style="color:#6b8e3d;font-weight:700;text-decoration:underline;">' +
+          'Email Christina directly →</a> — your details are already filled in, just hit send.';
       };
 
       if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
@@ -481,7 +507,17 @@ function alymelifeHubSpotPost(formGuid, fields) {
     var done = function () { form.style.display = 'none'; if (ok) ok.hidden = false; };
     var fail = function () {
       if (btn) { btn.disabled = false; btn.innerHTML = 'Send Christina a message <span class="arrow">→</span>'; }
-      alert("Sorry — that didn't go through. Please try again, or email Christina directly at christina@alymelife.com.");
+      var href = alymelifeMailtoFallback(fields, 'Message from the A Lyme Life booking page');
+      var note = document.getElementById('bookMsgFallback');
+      if (!note) {
+        note = document.createElement('p');
+        note.id = 'bookMsgFallback';
+        note.style.cssText = 'margin:14px 0 0;font-size:.92rem;color:var(--ink-soft,#555b62);';
+        form.appendChild(note);
+      }
+      note.innerHTML = "Hmm — that didn't send on our end. " +
+        '<a href="' + href + '" style="color:#6b8e3d;font-weight:700;text-decoration:underline;">' +
+        'Email Christina directly →</a> — your note is already filled in, just hit send.';
     };
     alymelifeHubSpotPost('e48a5a7a-2fbe-477e-b056-1753d4804dcc', fields).then(done).catch(fail);
   });
