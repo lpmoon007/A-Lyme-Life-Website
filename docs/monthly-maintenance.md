@@ -46,6 +46,26 @@ The site is under ongoing negative-SEO spam — new junk domains appear every mo
       citations CSV → log overall citations by engine + the ChatGPT-niche prompts.
 - [ ] From the AI Performance Overview, note monthly citation total (Aug 285 →
       Sep 1,471 → Oct 1,700 …) and cited-pages/day.
+- [ ] **Per-engine coverage (do this every month — a one-engine swing can look
+      like a total collapse).** Pull each tracked engine's brand coverage via the
+      Otterly `get_brand_report_stats` with the `engines` filter (report
+      `01M3Q9RB0V3E2EKKZRA3R2SSE6`, country `us`), and log it:
+  | Month | Copilot | ChatGPT | Perplexity | Google AI | Overall | Notes |
+  |-------|---------|---------|------------|-----------|---------|-------|
+  | 2026-10 | ~16% (#1 brand) | <1% | <1% | <1% | ~5% | Copilot carried ~95% of our AI coverage |
+  | 2026-11 | → 0 | 0 | 0 | 0 | ~0 | Copilot platform change cut citations for everyone; we (lowest authority) dropped to 0 while higher-authority competitors held a ~4% floor |
+  | | | | | | | |
+  > **How to read this:** our AI visibility has been **concentrated in Copilot**
+  > — so a Copilot-side change (or any single engine) can tank the *overall*
+  > number even though the site, Google rankings and traffic are fine (Nov 2026
+  > was exactly this). Two things to watch:
+  > 1. **Concentration** — are ChatGPT / Perplexity still ~0? Diversifying off
+  >    Copilot is the resilience play (the GEO content work targets this).
+  > 2. **Authority** — when an engine tightens its bar, the lowest-authority
+  >    source is dropped first. Climbing Authority Score is what keeps us cited.
+  > Engines NOT tracked in this report: Gemini, Claude, Google-AI-Mode (they
+  > return `no_data`). Before calling a drop real, confirm competitors moved too
+  > — if only we dropped, it's us; if everyone dropped, it's the engine.
 
 ## 5. Google rankings & traffic
 - [ ] GSC: clicks, impressions, avg position (trend). Watch avg position (was 57 → 33).
