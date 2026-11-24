@@ -4,7 +4,7 @@ Running list of things that are **not** code changes (those ship as they're done
 These are operator/dashboard actions, off-site growth work, and deferred cleanups.
 Ordered by impact.
 
-_Last updated: 2026-08-31_
+_Last updated: 2026-11-24_
 
 ---
 
@@ -21,6 +21,13 @@ _Last updated: 2026-08-31_
       This is the difference between a booking page that converts and one that
       can't. Highest priority.
 
+- [ ] **Turn OFF reCAPTCHA on the consult form.** HubSpot portal **246801121** →
+      Marketing → Forms → consult form `e48a5a7a-2fbe-477e-b056-1753d4804dcc` →
+      Options. Submissions fail with `FORM_HAS_RECAPTCHA_ENABLED`; the same GUID
+      powers the homepage consult form *and* book.html's message form, so both
+      silently fail. We shipped a one-click, pre-filled-email fallback so leads
+      aren't lost — but this is the real fix. Then send a test submit on book.html.
+
 ## 🟡 Operator / dashboard tasks
 
 - [x] **Submit the disavow file** — ✅ submitted 2026-10-02 (258-domain version).
@@ -35,6 +42,13 @@ _Last updated: 2026-08-31_
 - [ ] **Clarity bot filtering** — same idea, in the Clarity dashboard.
 - [ ] **Re-run Semrush Site Audit** — confirm the two earlier fixes cleared
       (structured-data error → 0, unminified CSS dropped), then send me the export.
+- [ ] **Server / bot-crawl hygiene (host / Plesk) — low priority.** From the Nov 2026
+      investigation: GSC crawl stats show ~24% of Googlebot requests failing + ~24%
+      404s, and live probing found ~5% of bot connections reset. Googlebot tolerates
+      it, but it can degrade AI-crawler indexing. Have the host check Apache
+      `error_log` / ModSecurity / fail2ban for connection resets or worker limits,
+      whitelist the published AI-crawler IP ranges, and trim junk 404s. Not urgent —
+      Google's own AI still indexes the site fine — but good hygiene.
 - [ ] **HubSpot Marketing Email reauthorization** — needed *when ready to send*
       the newsletter (collection already works; sending needs the extra scope).
 
@@ -56,11 +70,14 @@ _Last updated: 2026-08-31_
 - [ ] **Backlink outreach** — work `docs/backlink-targets.md`, top-down:
   - [ ] Tier 6 quick wins first — verify partner bio links (thelymespecialist.com,
         lymeimmunotherapy.com, the Mexico program) link to alymelife.com and are
-        **followed**, not nofollow. (The reciprocal link to
-        `lyme-immunotherapy.html` is now called out as its own item above.)
+        **followed**, not nofollow. **Ready-to-send email: `docs/outreach-email-partners.md`.**
+        (The reciprocal link to `lyme-immunotherapy.html` is its own item above.)
   - [ ] Pitch **Tick Boot Camp podcast** (highest-ROI single target).
-  - [ ] Set up **HARO/Qwoted** for journalist queries.
-  - Target: 2–4 quality links/month. Authority moves rankings over months.
+  - [ ] Set up **HARO/Qwoted** for journalist queries. **Ready-to-send pitch +
+        per-query link guidance: `docs/outreach-haro-pitch.md`.**
+  - Target: 2–4 quality links/month. Authority moves rankings over months — and it's
+    the durable lever for AI citations too (the lowest-authority source is dropped
+    first when an engine tightens its bar, as Copilot did in Nov 2026).
 - [ ] **lifeonautismlane.com link (low priority).** The Carters' own family site.
       Semrush: **no organic rankings**, Authority Score 2, ~260 referring domains
       (same spam pattern as alymelife had — likely a compromised WordPress).
@@ -71,9 +88,22 @@ _Last updated: 2026-08-31_
 - [ ] **Activate Christina's YouTube + communities** — link alymelife.com from
       the channel About + video descriptions; participate in Reddit/FB/Quora
       Lyme communities. Fastest path to real humans *and* GEO signal.
-- [ ] **GEO monitoring** — Otterly report "A Lyme Life" (5 treatment prompts) is
-      live; review monthly. Account is near its 100-prompt cap, shared with the
-      Building Teams business — upgrade or free slots to track more prompts.
+- [ ] **GEO — diversify off Copilot & track per-engine.** Nov 2026: the Otterly
+      dashboard looked like it "collapsed," but it was a **single engine** — Copilot,
+      which carried ~95% of our AI coverage — dropping after a Microsoft platform
+      change; the site, Google rankings, Google's own AI Overviews, and traffic were
+      all fine (full diagnosis logged). ChatGPT & Perplexity had always been ~0%, so
+      we shipped **8 citation-ready long-tail FAQs** (visible + FAQPage schema) across
+      the hyperthermia money cluster (pillar, Wiegman, Germany, cost, herbal) aimed at
+      those two engines — see `docs/geo-chatgpt-perplexity-content.md`.
+      **Now:** give the engines **2–4 weeks** to re-index, then log per-engine coverage
+      monthly (`docs/monthly-maintenance.md` §4) and watch ChatGPT/Perplexity tick off
+      zero. Otterly account near its prompt cap (shared with Building Teams) —
+      free/upgrade slots to track more prompts.
+- [ ] **Revive the Substack** (`alymelife.substack.com`, dormant since mid-2025) —
+      7 ready-to-paste posts + plan in `docs/substack-revival-kit.md`; Christina/James
+      publish. Audience/nurture + referral, **not** authority (its links are nofollow).
+      On-site links to it are already live (footer + newsletter page).
 - [ ] **Watch the trend** — send me a fresh GSC export in ~2 weeks; watch
       Referring Domains in Semrush and the buried money pages (chronic-lyme-
       treatment, supplements, find-a-doctor) climbing off page 5.
@@ -99,6 +129,19 @@ _Last updated: 2026-08-31_
 
 ## ✅ Done (recent, for reference)
 
+- **GEO content diversification pass (Nov 2026)** — 8 citation-ready long-tail FAQs
+  (visible + FAQPage schema) across the hyperthermia money cluster (pillar ×4, Wiegman,
+  Germany, cost, herbal), aimed at ChatGPT/Perplexity; per-engine tracking added to the
+  monthly checklist; drafts/strategy in `docs/geo-chatgpt-perplexity-content.md`
+- **Diagnosed the Nov 2026 Otterly "drop"** — a single-engine (Copilot) swing after a
+  Microsoft platform change, not a site/Google/penalty issue (site, Google rankings,
+  Google AI Overviews and traffic all verified healthy)
+- **Off-site outreach kits written** — partner link email (`docs/outreach-email-partners.md`),
+  HARO/Qwoted pitch (`docs/outreach-haro-pitch.md`), Substack revival kit
+  (`docs/substack-revival-kit.md`); on-site Substack links shipped (footer + newsletter)
+- **Conversion resilience** — one-click, pre-filled-email fallback when a HubSpot form
+  submit fails (book.html message form + homepage consult)
+- **Blog card thumbnails fixed** — titles no longer cropped across the article grid
 - Guide + hyperthermia self-assessment forms migrated off Formspree → HubSpot
   (verified live 2026-10-16); assessment lands with `hyperthermia_assessment_result`
   (score/band/safety-flags) so candidacy is visible in the CRM
