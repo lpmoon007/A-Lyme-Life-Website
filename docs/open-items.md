@@ -116,11 +116,13 @@ _Last updated: 2026-11-24_
 - [ ] **HubSpot Marketing Email reauthorization** → then set up auto-emails that
       deliver the guide PDF + the assessment's printable result ("check your
       inbox" is NOT true yet — guide is on-page download, result is on-screen).
-- [ ] **Self-assessment-primary CTA pass on the hyperthermia money pages**
-      (whole-body-hyperthermia, extreme-vs-moderate, germany, treatment-centers,
-      chronic-lyme-treatment, lyme-immunotherapy, treg-therapy): lead with
-      "Is hyperthermia right for you? Take the 5-min assessment →" instead of
-      the generic newsletter/guide — it's the money-aligned capture.
+- [x] **Self-assessment-primary CTA on the hyperthermia money pages** — ✅ shipped
+      2026-11-24 (app.js, scoped by pathname). An "Is hyperthermia right for you?
+      Take the 5-min assessment →" callout now injects after the standfirst on
+      whole-body-hyperthermia, wiegman, germany, extreme-vs-moderate, treatment-
+      centers, and chronic-lyme-treatment, with "or book a free call" as the
+      secondary. Plus a **sticky mobile CTA bar** on the same pages (2/3 of traffic
+      is mobile). reCAPTCHA on the consult form confirmed OFF 2026-11-24.
 
 > ⚠️ **HubSpot forms gotcha (learned 2026-10-16):** any form that receives
 > submissions via the API (our site posts via the Forms v3 endpoint, not the

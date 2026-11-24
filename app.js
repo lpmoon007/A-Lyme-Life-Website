@@ -607,3 +607,61 @@ function alymelifeMailtoFallback(fields, subject) {
     }
   });
 })();
+
+/* ============================================================
+   Money-page conversion: assessment-first CTA + sticky mobile bar.
+   The hyperthermia money pages' bottleneck is converting high-intent
+   visitors, not getting more of them. Lead with the low-commitment,
+   qualifying 5-min assessment (it lands candidacy data in HubSpot),
+   keep booking as the clear secondary. Scoped by pathname so it only
+   shows where "is hyperthermia right for you?" is on-topic.
+   ============================================================ */
+(function () {
+  var MONEY = ['whole-body-hyperthermia-lyme', 'blog-wiegman-protocol', 'blog-germany',
+    'blog-extreme-vs-moderate-hyperthermia', 'blog-lyme-treatment-centers', 'chronic-lyme-treatment'];
+  var path = location.pathname.replace(/\/+$/, '');
+  var slug = path.substring(path.lastIndexOf('/') + 1).replace(/\.html$/, '');
+  if (MONEY.indexOf(slug) === -1) return;
+  var ASSESS = 'hyperthermia-self-assessment.html';
+  var BOOK = 'book.html';
+
+  // 1) Assessment-first callout, injected right after the article standfirst.
+  var sf = document.querySelector('article .standfirst') || document.querySelector('.standfirst');
+  if (sf && sf.parentNode && !document.getElementById('assessCta')) {
+    var box = document.createElement('div');
+    box.id = 'assessCta';
+    box.style.cssText = 'margin:22px 0 4px;padding:18px 20px;border:1px solid var(--line,#e3ddd0);border-left:4px solid #6b8e3d;border-radius:12px;background:var(--green-tint,#eef3e2);';
+    box.innerHTML =
+      '<p style="margin:0 0 10px;font-weight:700;color:var(--ink,#2d3239);font-size:1.05rem;">Not sure if hyperthermia is right for you?</p>' +
+      '<p style="margin:0 0 14px;color:var(--ink-soft,#555b62);">Take the free 5-minute assessment — it walks through the same questions Christina would, and you’ll see where you stand. No cost, no pressure.</p>' +
+      '<div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">' +
+        '<a href="' + ASSESS + '" class="btn btn-primary" style="text-decoration:none;">Take the 5-min assessment <span class="arrow">→</span></a>' +
+        '<a href="' + BOOK + '" style="color:#6b8e3d;font-weight:700;text-decoration:underline;">or book a free call</a>' +
+      '</div>';
+    sf.parentNode.insertBefore(box, sf.nextSibling);
+  }
+
+  // 2) Sticky mobile CTA bar (shown on phones only, via the CSS below).
+  if (!document.getElementById('stickyCta')) {
+    var bar = document.createElement('div');
+    bar.id = 'stickyCta';
+    bar.innerHTML =
+      '<a href="' + ASSESS + '" class="sc-primary">Is hyperthermia right for you? Take the 5-min quiz →</a>' +
+      '<a href="' + BOOK + '" class="sc-secondary" aria-label="Book a free call">Book</a>';
+    document.body.appendChild(bar);
+    var css = document.createElement('style');
+    css.textContent =
+      '#stickyCta{display:none}' +
+      '@media (max-width:760px){' +
+        '#stickyCta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:1000;gap:8px;' +
+          'padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);' +
+          'border-top:1px solid var(--line,#e3ddd0);box-shadow:0 -4px 16px rgba(0,0,0,.08);align-items:center}' +
+        '#stickyCta .sc-primary{flex:1;background:#6b8e3d;color:#fff;text-decoration:none;font-weight:700;' +
+          'font-size:.9rem;text-align:center;padding:12px 10px;border-radius:10px;line-height:1.2}' +
+        '#stickyCta .sc-secondary{flex:0 0 auto;background:var(--surface,#fff);border:1px solid #6b8e3d;' +
+          'color:#6b8e3d;text-decoration:none;font-weight:700;padding:12px 14px;border-radius:10px}' +
+        'body{padding-bottom:76px}' +
+      '}';
+    document.head.appendChild(css);
+  }
+})();
