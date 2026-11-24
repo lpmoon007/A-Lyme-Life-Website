@@ -231,7 +231,7 @@ section { padding: var(--section-pad) 0; }
    Hero
    ============================================================ */
 .hero {
-  padding-top: 168px;
+  padding-top: 112px;
   padding-bottom: 90px;
   position: relative;
 }
