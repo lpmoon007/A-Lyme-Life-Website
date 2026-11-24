@@ -34,10 +34,9 @@ _Last updated: 2026-11-24_
 - [x] **Re-submit the disavow file (1,736 domains)** — ✅ submitted 2026-10-30.
       Ongoing negative-SEO spam had ballooned the junk-domain count ~7× since Oct 2.
       Now a **recurring task** — see `docs/monthly-maintenance.md`.
-- [ ] **Re-upload the refreshed disavow (2,232 domains)** — regenerated 2026-11-24
-      from the Semrush backlinks export (+496 new spam since Oct 30). File ready at
-      `docs/disavow-alymelife.txt`. **Action: upload it in GSC → Disavow Links tool**
-      (it replaces the prior file). Refresh again in ~2 weeks.
+- [x] **Re-upload the refreshed disavow (2,232 domains)** — ✅ submitted & validated
+      2026-11-24 (Semrush backlinks export; +496 new spam since Oct 30). Replaced the
+      Oct 30 file. Refresh again on the ~2-week GEO cadence.
       NOTE: a disavow is private to Google — it will NOT lower the Authority Score
       or backlink count that Semrush reports; it only stops the links hurting
       Google rankings.
