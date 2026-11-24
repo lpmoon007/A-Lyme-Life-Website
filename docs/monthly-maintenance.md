@@ -3,7 +3,8 @@
 Run this once a month. It takes ~30–45 minutes, or hand the five exports to
 Claude and it runs the whole thing and updates the tracking files.
 
-_Set up 2026-10-30. Last run: 2026-10-30._
+_Set up 2026-10-30. Last full run: 2026-10-30._
+_**GEO / per-engine check (§4) runs every ~2 weeks**, separately from the monthly cycle. Last GEO pull: 2026-11-24._
 
 ---
 
@@ -46,15 +47,18 @@ The site is under ongoing negative-SEO spam — new junk domains appear every mo
       citations CSV → log overall citations by engine + the ChatGPT-niche prompts.
 - [ ] From the AI Performance Overview, note monthly citation total (Aug 285 →
       Sep 1,471 → Oct 1,700 …) and cited-pages/day.
-- [ ] **Per-engine coverage (do this every month — a one-engine swing can look
-      like a total collapse).** Pull each tracked engine's brand coverage via the
-      Otterly `get_brand_report_stats` with the `engines` filter (report
-      `01M3Q9RB0V3E2EKKZRA3R2SSE6`, country `us`), and log it:
-  | Month | Copilot | ChatGPT | Perplexity | Google AI | Overall | Notes |
-  |-------|---------|---------|------------|-----------|---------|-------|
-  | 2026-10 | ~16% (#1 brand) | <1% | <1% | <1% | ~5% | Copilot carried ~95% of our AI coverage |
-  | 2026-11 | → 0 | 0 | 0 | 0 | ~0 | Copilot platform change cut citations for everyone; we (lowest authority) dropped to 0 while higher-authority competitors held a ~4% floor |
-  | | | | | | | |
+- [ ] **Per-engine coverage — pull this every ~2 weeks** (GEO moves faster than the
+      monthly cycle; a one-engine swing can look like a total collapse). Pull each
+      tracked engine's brand coverage via the Otterly `get_brand_report_stats` with
+      the `engines` filter (report `01M3Q9RB0V3E2EKKZRA3R2SSE6`, country `us`), and
+      also `list_brand_report_citations` (search `alymelife.com`) to see which pages
+      are being cited. Log it:
+  | Date | Copilot | ChatGPT | Perplexity | Google AI | Notes |
+  |------|---------|---------|------------|-----------|-------|
+  | 2026-10 | ~16% (#1 brand) | <1% | <1% | <1% | Copilot carried ~95% of our AI coverage |
+  | 2026-11-12 | → 0 | 0 | 0 | 0 | Copilot platform change cut citations for everyone; we (lowest authority) dropped to 0 while higher-authority competitors held a ~4% floor |
+  | 2026-11-24 | 0 | **~4% steady** | 0 | **~4% steady** | **Diversification working** — ChatGPT (since ~Nov 13) and Google-AI (since ~Nov 18) came off zero and now cite us almost daily; Copilot still 0 (not recovered), Perplexity still 0. Most-cited pages: wiegman (28), cost (23), extreme-vs-moderate (22), apheresis (20), disulfiram (17), pillar (16) |
+  | | | | | | |
   > **How to read this:** our AI visibility has been **concentrated in Copilot**
   > — so a Copilot-side change (or any single engine) can tank the *overall*
   > number even though the site, Google rankings and traffic are fine (Nov 2026
